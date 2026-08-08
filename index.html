@@ -616,36 +616,6 @@
             color: rgba(255, 255, 255, 0.4);
         }
 
-        .project-card.featured {
-            grid-column: 1 / -1;
-            flex-direction: row;
-            align-items: center;
-            gap: 32px;
-            background: linear-gradient(135deg, rgba(255,255,255,0.03), rgba(102, 252, 241, 0.08));
-            border: 1px solid rgba(102, 252, 241, 0.4);
-            box-shadow: 0 10px 30px rgba(102, 252, 241, 0.15);
-            padding: 32px; /* Slightly larger padding for featured */
-        }
-
-        .project-card.featured .project-image {
-            width: 40%;
-            margin-bottom: 0;
-            height: 180px;
-        }
-
-        .project-card.featured .project-content {
-            width: 55%;
-            display: flex;
-            flex-direction: column;
-            text-align: left;
-        }
-
-        .project-card.featured .project-header {
-            justify-content: flex-start;
-            text-align: left;
-            margin-bottom: 12px;
-            min-height: auto;
-        }
 
         .harshita-highlight {
             background: linear-gradient(120deg, #66FCF1, #45A29E, #66FCF1);
@@ -689,9 +659,6 @@
             
             .project-grid { grid-template-columns: 1fr; }
             .project-card { padding: 24px; }
-            .project-card.featured { flex-direction: column; gap: 24px; }
-            .project-card.featured .project-image, .project-card.featured .project-content { width: 100%; height: auto; }
-            .project-card.featured .project-header { text-align: center; justify-content: center; }
             .project-footer { flex-direction: column; align-items: flex-start; gap: 20px; }
             
             .footer-links { flex-wrap: wrap; gap: 16px; }
@@ -817,8 +784,8 @@
 
             <div class="project-grid">
                 
-                <!-- Nnotes Project (Featured) -->
-                <a href="nnotes.html" class="project-card featured">
+                <!-- Nnotes Project -->
+                <a href="nnotes.html" class="project-card">
                     <img src="image/nnotes_logo.png" alt="Nnotes Logo" class="project-image" onerror="this.style.display='none'">
                     <div class="project-header">
                         <h3 class="project-title">Nnotes App</h3>
