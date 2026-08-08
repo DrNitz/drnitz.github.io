@@ -362,18 +362,19 @@
             max-width: 500px;
         }
 
-        /* Neat 3-column premium grid */
+        /* Neat 4-column premium grid for smaller cards */
         .project-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
             gap: 24px;
         }
 
         .project-card {
             background: var(--bg-card);
             border: 1px solid var(--border);
-            border-radius: 16px;
-            padding: 24px;
+            border-radius: 20px;
+            padding: 0;
+
             text-decoration: none;
             color: inherit;
             display: flex;
@@ -387,11 +388,12 @@
 
         .project-image {
             width: 100%;
-            height: 120px;
-            object-fit: contain; /* ensures logo is visible */
-            border-radius: 8px;
-            margin-bottom: 20px;
-            border: 1px solid var(--border);
+            aspect-ratio: 1 / 1;
+            object-fit: cover; /* ensures image fills the area */
+            border-radius: 20px 20px 0 0;
+            margin-bottom: 0;
+            border: none;
+            border-bottom: 1px solid var(--border);
             background: rgba(0,0,0,0.4);
             transition: transform 0.3s ease;
         }
@@ -430,12 +432,18 @@
             opacity: 1;
         }
 
+        .project-card > :not(.project-image), .project-content {
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+
         .project-header {
             display: flex;
             justify-content: center;
             align-items: center;
             text-align: center;
             margin-bottom: 12px;
+            padding-top: 16px;
             position: relative;
             z-index: 1;
             min-height: 50px; /* Forces uniform height even if title wraps */
@@ -490,6 +498,7 @@
             align-items: center;
             border-top: 1px solid var(--border);
             padding-top: 16px;
+            padding-bottom: 20px;
             position: relative;
             z-index: 1;
         }
