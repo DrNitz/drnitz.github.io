@@ -362,23 +362,23 @@
             max-width: 500px;
         }
 
-        /* Re-arranged 2x2 grid */
+        /* Neat 3-column premium grid */
         .project-grid {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 32px;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
         }
 
         .project-card {
             background: var(--bg-card);
             border: 1px solid var(--border);
-            border-radius: 24px;
-            padding: 40px;
+            border-radius: 16px;
+            padding: 24px;
             text-decoration: none;
             color: inherit;
             display: flex;
             flex-direction: column;
-            transition: box-shadow 0.4s ease, border-color 0.4s ease;
+            transition: box-shadow 0.4s ease, border-color 0.4s ease, transform 0.4s ease;
             position: relative;
             overflow: hidden;
             transform-style: preserve-3d;
@@ -387,10 +387,10 @@
 
         .project-image {
             width: 100%;
-            height: 160px;
+            height: 120px;
             object-fit: contain; /* ensures logo is visible */
-            border-radius: 12px;
-            margin-bottom: 24px;
+            border-radius: 8px;
+            margin-bottom: 20px;
             border: 1px solid var(--border);
             background: rgba(0,0,0,0.4);
             transition: transform 0.3s ease;
@@ -400,7 +400,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 4rem;
+            font-size: 3rem;
             color: var(--accent-blue);
             background: radial-gradient(circle, rgba(69, 162, 158, 0.1), transparent);
             text-shadow: 0 0 20px var(--accent-blue);
@@ -422,7 +422,8 @@
 
         .project-card:hover {
             border-color: rgba(102, 252, 241, 0.3);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.4);
+            transform: translateY(-4px); /* Premium float effect */
         }
 
         .project-card:hover::before {
@@ -434,23 +435,23 @@
             justify-content: center;
             align-items: center;
             text-align: center;
-            margin-bottom: 20px;
+            margin-bottom: 12px;
             position: relative;
             z-index: 1;
-            min-height: 70px; /* Forces uniform height even if title wraps */
+            min-height: 50px; /* Forces uniform height even if title wraps */
         }
 
         .project-title {
             font-family: var(--font-display);
-            font-size: 1.8rem;
+            font-size: 1.35rem;
             font-weight: 700;
             letter-spacing: -0.5px;
         }
 
         .project-tag {
-            padding: 6px 14px;
+            padding: 4px 10px;
             border-radius: 100px;
-            font-size: 0.7rem;
+            font-size: 0.65rem;
             font-weight: 600;
             text-transform: uppercase;
             letter-spacing: 1px;
@@ -470,14 +471,14 @@
 
         .project-body p {
             color: var(--text-muted);
-            font-size: 1.05rem;
-            line-height: 1.7;
-            margin-bottom: 32px;
+            font-size: 0.92rem;
+            line-height: 1.6;
+            margin-bottom: 24px;
             position: relative;
             z-index: 1;
             text-align: justify; /* Aligns start and end perfectly */
             display: -webkit-box;
-            -webkit-line-clamp: 4; /* Forces uniform 4-line height */
+            -webkit-line-clamp: 4; /* Fits well in smaller cards */
             line-clamp: 4;
             -webkit-box-orient: vertical;
             overflow: hidden;
@@ -488,7 +489,7 @@
             justify-content: space-between;
             align-items: center;
             border-top: 1px solid var(--border);
-            padding-top: 24px;
+            padding-top: 16px;
             position: relative;
             z-index: 1;
         }
@@ -496,8 +497,8 @@
         .tech-stack {
             display: flex;
             flex-wrap: wrap;
-            gap: 12px;
-            font-size: 0.8rem;
+            gap: 8px;
+            font-size: 0.75rem;
             color: var(--text-main);
             font-weight: 500;
         }
@@ -505,10 +506,10 @@
         .project-link-btn {
             color: var(--accent-blue);
             font-weight: 600;
-            font-size: 0.95rem;
+            font-size: 0.85rem;
             display: flex;
             align-items: center;
-            gap: 8px;
+            gap: 6px;
             transition: gap 0.3s ease;
             white-space: nowrap;
         }
@@ -557,16 +558,17 @@
             grid-column: 1 / -1;
             flex-direction: row;
             align-items: center;
-            gap: 40px;
+            gap: 32px;
             background: linear-gradient(135deg, rgba(255,255,255,0.03), rgba(102, 252, 241, 0.08));
             border: 1px solid rgba(102, 252, 241, 0.4);
             box-shadow: 0 10px 30px rgba(102, 252, 241, 0.15);
+            padding: 32px; /* Slightly larger padding for featured */
         }
 
         .project-card.featured .project-image {
-            width: 45%;
+            width: 40%;
             margin-bottom: 0;
-            height: 220px;
+            height: 180px;
         }
 
         .project-card.featured .project-content {
@@ -613,7 +615,7 @@
         }
 
         @media (max-width: 1024px) {
-            .project-grid { grid-template-columns: repeat(2, 1fr); }
+            .project-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
         }
 
         @media (max-width: 768px) {
