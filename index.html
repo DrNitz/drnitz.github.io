@@ -362,11 +362,11 @@
             max-width: 500px;
         }
 
-        /* Neat 4-column premium grid for smaller cards */
+        /* Neat premium grid for true small app-icon style cards */
         .project-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-            gap: 24px;
+            grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+            gap: 16px;
         }
 
         .project-card {
@@ -435,8 +435,8 @@
         }
 
         .project-card > :not(.project-image), .project-content {
-            padding-left: 16px;
-            padding-right: 16px;
+            padding-left: 12px;
+            padding-right: 12px;
         }
 
         .project-header {
@@ -444,17 +444,17 @@
             justify-content: flex-start;
             align-items: center;
             text-align: left;
-            margin-bottom: 4px;
-            padding-top: 12px;
+            margin-bottom: 2px;
+            padding-top: 8px;
             position: relative;
             z-index: 1;
         }
 
         .project-title {
             font-family: var(--font-display);
-            font-size: 1.1rem;
-            font-weight: 700;
-            letter-spacing: -0.3px;
+            font-size: 0.95rem;
+            font-weight: 800;
+            letter-spacing: -0.2px;
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
@@ -482,19 +482,19 @@
             flex-grow: 1;
             display: flex;
             align-items: flex-start;
-            margin-bottom: 8px;
+            margin-bottom: 4px;
         }
 
         .project-body p {
             color: var(--text-muted);
-            font-size: 0.8rem;
-            line-height: 1.4;
+            font-size: 0.7rem;
+            line-height: 1.3;
             margin-bottom: 0;
             position: relative;
             z-index: 1;
             text-align: left;
             display: -webkit-box;
-            -webkit-line-clamp: 2; /* Fits exactly 2 lines in smaller cards */
+            -webkit-line-clamp: 2; /* Fits exactly 2 lines */
             line-clamp: 2;
             -webkit-box-orient: vertical;
             overflow: hidden;
@@ -505,8 +505,8 @@
             justify-content: space-between;
             align-items: center;
             border-top: 1px solid rgba(255,255,255,0.05); /* Softer line */
-            padding-top: 10px;
-            padding-bottom: 14px;
+            padding-top: 8px;
+            padding-bottom: 12px;
             margin-top: auto;
             position: relative;
             z-index: 1;
@@ -515,16 +515,16 @@
         .tech-stack {
             display: flex;
             flex-wrap: wrap;
-            gap: 6px;
-            font-size: 0.65rem;
+            gap: 4px;
+            font-size: 0.6rem;
             color: var(--text-main);
-            font-weight: 600;
+            font-weight: 700;
         }
 
         .project-link-btn {
             color: var(--accent-blue);
-            font-weight: 600;
-            font-size: 0.75rem;
+            font-weight: 700;
+            font-size: 0.65rem;
             display: flex;
             align-items: center;
             gap: 6px;
