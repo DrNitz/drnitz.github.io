@@ -518,6 +518,50 @@
             gap: 12px;
         }
 
+        /* --- Contact Section --- */
+        section.contact {
+            padding: 80px 0;
+            border-top: 1px solid var(--border);
+            text-align: center;
+            background: radial-gradient(circle at bottom center, rgba(102, 252, 241, 0.03), transparent 70%);
+        }
+
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 40px;
+        }
+
+        .contact-btn {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(102, 252, 241, 0.2);
+            padding: 14px 28px;
+            border-radius: 100px;
+            color: var(--text-main);
+            text-decoration: none;
+            font-size: 1.05rem;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(5px);
+        }
+
+        .contact-btn:hover {
+            background: rgba(102, 252, 241, 0.1);
+            border-color: rgba(102, 252, 241, 0.5);
+            color: #fff;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(102, 252, 241, 0.15);
+        }
+
+        .contact-icon {
+            font-size: 1.2rem;
+        }
+
         /* --- Footer --- */
         footer {
             padding: 60px 0;
@@ -705,6 +749,7 @@
         <a href="nnotes.html" title="Nnotes App">📝</a>
         <a href="https://p2pcompanion.com" target="_blank" title="P2P Terminal">⚡</a>
         <a href="https://github.com/drnitz" target="_blank" title="GitHub">💻</a>
+        <a href="#contact" title="Contact">📬</a>
     </nav>
 
     <!-- Hero Section -->
@@ -897,6 +942,26 @@
                     </div>
                 </a>
 
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Let's Connect</h2>
+            <p class="section-desc" style="margin: 0 auto;">Feel free to reach out for collaboration or just to say hi.</p>
+            
+            <div class="contact-links">
+                <a href="mailto:drnitz@proton.me" class="contact-btn">
+                    <span class="contact-icon">📧</span> Email
+                </a>
+                <a href="https://x.com/14itish" target="_blank" class="contact-btn">
+                    <span class="contact-icon">𝕏</span> Twitter
+                </a>
+                <a href="https://t.me/Niti0014" target="_blank" class="contact-btn">
+                    <span class="contact-icon">✈️</span> Telegram
+                </a>
             </div>
         </div>
     </section>
