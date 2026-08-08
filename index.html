@@ -553,16 +553,99 @@
             color: rgba(255, 255, 255, 0.4);
         }
 
+        .project-card.featured {
+            grid-column: 1 / -1;
+            flex-direction: row;
+            align-items: center;
+            gap: 40px;
+            background: linear-gradient(135deg, rgba(255,255,255,0.03), rgba(102, 252, 241, 0.08));
+            border: 1px solid rgba(102, 252, 241, 0.4);
+            box-shadow: 0 10px 30px rgba(102, 252, 241, 0.15);
+        }
+
+        .project-card.featured .project-image {
+            width: 45%;
+            margin-bottom: 0;
+            height: 220px;
+        }
+
+        .project-card.featured .project-content {
+            width: 55%;
+            display: flex;
+            flex-direction: column;
+            text-align: left;
+        }
+
+        .project-card.featured .project-header {
+            justify-content: flex-start;
+            text-align: left;
+            margin-bottom: 12px;
+            min-height: auto;
+        }
+
+        .harshita-highlight {
+            background: linear-gradient(120deg, #66FCF1, #45A29E, #66FCF1);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 800;
+            font-size: 1.15em;
+            text-shadow: 0 0 20px rgba(102, 252, 241, 0.5);
+            display: inline-block;
+            animation: shine 3s linear infinite;
+        }
+        
+        .harshita-tag {
+            background: rgba(102, 252, 241, 0.15) !important;
+            color: var(--accent-blue) !important;
+            border-color: rgba(102, 252, 241, 0.6) !important;
+            box-shadow: 0 0 15px rgba(102, 252, 241, 0.3);
+            font-weight: 800 !important;
+            font-size: 0.85rem !important;
+            letter-spacing: 1.5px !important;
+            padding: 8px 16px !important;
+        }
+
+        @keyframes shine {
+            to {
+                background-position: 200% center;
+            }
+        }
+
         @media (max-width: 1024px) {
             .project-grid { grid-template-columns: repeat(2, 1fr); }
         }
 
         @media (max-width: 768px) {
-            header.hero { padding: 100px 0 60px; }
+            .container { padding: 0 16px; }
+            header.hero { padding: 80px 0 40px; }
+            .hero-slogan-bar { padding: 10px 20px; font-size: 1rem; letter-spacing: 1px; }
+            .hero h1 { font-size: clamp(2.5rem, 10vw, 3.5rem); margin-bottom: 16px; }
+            .manifesto-quote { font-size: 1.3rem; }
+            
             .project-grid { grid-template-columns: 1fr; }
             .project-card { padding: 24px; }
+            .project-card.featured { flex-direction: column; gap: 24px; }
+            .project-card.featured .project-image, .project-card.featured .project-content { width: 100%; height: auto; }
+            .project-card.featured .project-header { text-align: center; justify-content: center; }
             .project-footer { flex-direction: column; align-items: flex-start; gap: 20px; }
-            #anatomy-figure { height: 100vh; }
+            
+            .footer-links { flex-wrap: wrap; gap: 16px; }
+            
+            .side-dock {
+                width: 90%;
+                max-width: 360px;
+                gap: 8px;
+                padding: 8px 12px;
+                overflow-x: auto;
+                justify-content: flex-start;
+                -ms-overflow-style: none;
+                scrollbar-width: none;
+            }
+            .side-dock::-webkit-scrollbar { display: none; }
+            .side-dock a { width: 34px; height: 34px; font-size: 1.1rem; flex-shrink: 0; }
+            
+            #anatomy-figure { height: 80vh; opacity: 0.1; }
         }
     </style>
     <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "1447bf27ee144931ae324db6be9a9942"}'></script><!-- End Cloudflare Web Analytics -->
@@ -656,7 +739,7 @@
                 <span class="physiology-highlight">Physiology</span> & Philosophy
             </h2>
             <div class="manifesto-quote">
-                "Medicine is my full-time vocation, while coding is my fun sandbox. I'm definitely not a master developer — I'm a passionate enthusiast who learns by building real tools, experimenting with AI, and <span>relying heavily on brilliant co-developers like Lead Developer Harshita</span> to make things actually work reliably!"
+                "Medicine is my full-time vocation, while coding is my fun sandbox. I'm definitely not a master developer — I'm a passionate enthusiast who learns by building real tools, experimenting with AI, and relying heavily on brilliant co-developers like <span class="harshita-highlight">Lead Developer Harshita</span> to make things actually work reliably!"
             </div>
         </div>
     </section>
@@ -669,6 +752,29 @@
 
             <div class="project-grid">
                 
+                <!-- Nnotes Project (Featured) -->
+                <a href="nnotes.html" class="project-card featured">
+                    <img src="image/nnotes_logo.png" alt="Nnotes Logo" class="project-image" onerror="this.style.display='none'">
+                    <div class="project-content">
+                        <div class="project-header">
+                            <h3 class="project-title">Nnotes App</h3>
+                        </div>
+                        <div class="project-body">
+                            <p>An infinite canvas handwriting and sketching notebook for Android. Features on-device Auto-Beautify handwriting-to-text, a customizable floating toolbar, and 3D profession mascots.</p>
+                        </div>
+                        <div class="project-footer">
+                            <div class="tech-stack">
+                                <span>Kotlin</span>
+                                <span>Compose</span>
+                                <span class="harshita-tag">Lead Dev: Harshita 👑</span>
+                            </div>
+                            <div class="project-link-btn">
+                                Showcase <span>→</span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
                 <!-- MedEdu Project -->
                 <a href="mededu.html" class="project-card">
                     <div class="project-image fallback-img" style="color: var(--accent-teal);">📚</div>
@@ -685,27 +791,6 @@
                         </div>
                         <div class="project-link-btn">
                             Visit Clinic <span>→</span>
-                        </div>
-                    </div>
-                </a>
-
-                <!-- Nnotes Project -->
-                <a href="nnotes.html" class="project-card">
-                    <img src="image/nnotes_logo.png" alt="Nnotes Logo" class="project-image" onerror="this.style.display='none'">
-                    <div class="project-header">
-                        <h3 class="project-title">Nnotes</h3>
-                    </div>
-                    <div class="project-body">
-                        <p>An infinite canvas handwriting and sketching notebook for Android. Features on-device Auto-Beautify handwriting-to-text, a customizable floating toolbar, and 3D profession mascots.</p>
-                    </div>
-                    <div class="project-footer">
-                        <div class="tech-stack">
-                            <span>Kotlin</span>
-                            <span>Compose</span>
-                            <span>Dev: Harshita</span>
-                        </div>
-                        <div class="project-link-btn">
-                            Showcase <span>→</span>
                         </div>
                     </div>
                 </a>
@@ -771,7 +856,7 @@
                 </a>
 
                 <!-- Medical Assets Project -->
-                <a href="https://github.com/DrNitz/medical-assets" target="_blank" class="project-card">
+                <a href="https://drnitz.com/medical-assets/" target="_blank" class="project-card">
                     <div class="project-image fallback-img">🖼️</div>
                     <div class="project-header">
                         <h3 class="project-title">Medical Assets</h3>
@@ -782,16 +867,16 @@
                     <div class="project-footer">
                         <div class="tech-stack">
                             <span>Assets</span>
-                            <span>Open Source</span>
+                            <span>Site</span>
                         </div>
                         <div class="project-link-btn">
-                            GitHub <span>→</span>
+                            Visit Site <span>→</span>
                         </div>
                     </div>
                 </a>
 
                 <!-- Nnotes Assets Project -->
-                <a href="https://github.com/DrNitz/nnotes-assets" target="_blank" class="project-card">
+                <a href="https://drnitz.com/nnotes-assets/" target="_blank" class="project-card">
                     <div class="project-image fallback-img">📝</div>
                     <div class="project-header">
                         <h3 class="project-title">Nnotes Assets</h3>
@@ -802,10 +887,10 @@
                     <div class="project-footer">
                         <div class="tech-stack">
                             <span>Assets</span>
-                            <span>Open Source</span>
+                            <span>Site</span>
                         </div>
                         <div class="project-link-btn">
-                            GitHub <span>→</span>
+                            Visit Site <span>→</span>
                         </div>
                     </div>
                 </a>
