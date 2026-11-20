@@ -5,110 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Clinical MedEdu by Dr.N | Free Medical Notes for GPs</title>
 
-    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-
-    <!-- Three.js and Vanta.js -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js" integrity="sha384-9EQoUIJYrv09/oYhSxnw1VpLcfPw3BM9dE7+D/3wGUPeLLa7F9Z6OAoD+i/M6FK9" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vanta@0.5.24/dist/vanta.net.min.js" integrity="sha384-L0sjdcIWJ156WmvbxIBHx79j1WrCqANCyw456nl/aPWSYiHNywEU2VIAcbSJeIiX" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" integrity="sha384-d+vyQ0dYcymoP8ndq2hW7FGC50nqGdXUEgoOUGxbbkAJwZqL7h+jKN0GGgn9hFDS" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Crimson+Pro:wght@400;500;600;700&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="assets/base.css">
-    <link rel="stylesheet" href="assets/dock.css">
+    <link rel="stylesheet" href="assets/medu.css">
 
-    <style>
-        :root {
-            --bg-deep: #E0E5EC;
-            --clay-base: #E0E5EC;
-            --clay-light: #F4F7FB;
-            --cyan: #006A94;
-            --purple: #9D4EDD;
-            --text: #2D3748;
-            --text-secondary: #4A5568;
-            --text-muted: #52606D;
-            --font-display: 'Plus Jakarta Sans', sans-serif;
-            --font-body: 'Inter', sans-serif;
-        }
-
-        body {
-            background-color: var(--bg-deep);
-            color: var(--text);
-            font-family: var(--font-body);
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
-
-        #vanta-bg {
-            position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: -2;
-        }
-
-        #anatomy-figure {
-            position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%);
-            height: 110vh; z-index: -1; opacity: 0.15; pointer-events: none;
-        }
-
-        .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
-
-        /* MedEdu's resting dock-link opacity (0.85) differs from the shared dock (0.6); kept local. */
-        .side-dock a {
-            text-decoration: none; font-size: 1.2rem; display: flex; align-items: center; justify-content: center;
-            width: 38px; height: 38px; border-radius: 50%; filter: grayscale(80%) opacity(0.85);
-            background: var(--clay-base); position: relative; transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            box-shadow: inset 2px 2px 5px rgba(255,255,255,0.8), inset -2px -2px 5px rgba(163,177,198,0.4);
-            border: 1px solid rgba(255,255,255,0.4);
-        }
-
-        /* --- Header --- */
-        header { padding: 160px 0 60px; text-align: center; }
-        .badge {
-            display: inline-block; padding: 6px 16px; border-radius: 100px; font-size: 0.85rem; font-weight: 700;
-            text-transform: uppercase; letter-spacing: 1px; margin-bottom: 24px;
-            background: var(--clay-light); color: var(--cyan); border: 2px solid rgba(255,255,255,0.5);
-            box-shadow: 4px 4px 10px rgba(163,177,198,0.3), -2px -2px 8px rgba(255,255,255,0.6);
-        }
-        h1 { font-family: var(--font-display); font-size: clamp(3rem, 6vw, 4.5rem); font-weight: 800; line-height: 1.1; letter-spacing: -2px; margin-bottom: 24px; color: var(--text); }
-        h1 span { color: var(--cyan); }
-        .desc { font-size: clamp(1.1rem, 2vw, 1.25rem); color: var(--text-secondary); max-width: 700px; margin: 0 auto 40px; line-height: 1.6; }
-
-        /* --- Content Grid --- */
-        .content-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; padding-bottom: 120px; }
-        
-        .resource-card {
-            background: var(--clay-base); border: 2px solid rgba(255, 255, 255, 0.4); border-radius: 32px; padding: 48px;
-            position: relative; overflow: hidden;
-            display: flex; flex-direction: column; justify-content: space-between;
-            box-shadow: 15px 15px 35px rgba(163, 177, 198, 0.5), -10px -10px 25px rgba(255, 255, 255, 0.8), inset 4px 4px 10px rgba(255, 255, 255, 0.9), inset -4px -4px 10px rgba(163, 177, 198, 0.4);
-            transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
-        }
-        .resource-card:hover {
-            transform: translateY(-6px); border-color: rgba(255,255,255,0.8);
-            box-shadow: 20px 20px 45px rgba(163, 177, 198, 0.6), -15px -15px 35px rgba(255, 255, 255, 0.9), inset 4px 4px 10px rgba(255, 255, 255, 1), inset -4px -4px 10px rgba(163, 177, 198, 0.5);
-        }
-
-        .status-badge {
-            position: absolute; top: 24px; right: 24px; background: var(--clay-light); color: var(--text-secondary);
-            padding: 6px 14px; border-radius: 100px; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1px;
-            border: 2px solid rgba(255,255,255,0.4); box-shadow: 2px 2px 5px rgba(163,177,198,0.3);
-        }
-
-        .icon-box { font-size: 3rem; margin-bottom: 24px; display: inline-block; }
-
-        h2 { font-family: var(--font-display); font-size: 2rem; font-weight: 700; margin-bottom: 16px; letter-spacing: -0.5px; color: var(--text); }
-        .resource-card p { color: var(--text-secondary); font-size: 1.1rem; line-height: 1.7; margin-bottom: 32px; }
-
-        .notify-box {
-            background: var(--clay-light); border: 2px solid rgba(255,255,255,0.4); border-radius: 16px; padding: 24px; text-align: center;
-            box-shadow: inset 3px 3px 6px rgba(163,177,198,0.3), inset -3px -3px 6px rgba(255,255,255,0.8);
-        }
-        .notify-box p { margin-bottom: 0; font-size: 0.9rem; color: var(--cyan); font-weight: 600; }
-
-        @media (max-width: 900px) {
-            .content-grid { grid-template-columns: 1fr; }
-        }
-
-    </style>
     <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "1447bf27ee144931ae324db6be9a9942"}'></script><!-- End Cloudflare Web Analytics -->
     <!-- Open Graph / Social Sharing -->
     <meta property="og:type" content="website">
@@ -130,94 +33,171 @@
     <link rel="canonical" href="https://drnitz.com/mededu.html">
 </head>
 <body>
-    <div id="vanta-bg"></div>
-    <img src="anatomy_bg.png?v=3" alt="" aria-hidden="true" id="anatomy-figure">
+    <svg xmlns="http://www.w3.org/2000/svg" style="position:absolute;width:0;height:0;overflow:hidden" aria-hidden="true">
+        <symbol id="i-cross" viewBox="0 0 24 24"><path d="M9 3h6v6h6v6h-6v6H9v-6H3V9h6z"/></symbol>
+        <symbol id="i-book" viewBox="0 0 24 24"><path d="M4 4.5A2.5 2.5 0 0 1 6.5 2H20v18H6.5A2.5 2.5 0 0 0 4 22z"/><path d="M4 17.5A2.5 2.5 0 0 1 6.5 15H20"/></symbol>
+        <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12 4.5 4.5L19 7"/></symbol>
+        <symbol id="i-pulse" viewBox="0 0 24 24"><path d="M2 12h4l2.5-6 4 12 3-8 2 2h4.5"/></symbol>
+        <symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="3.5"/><path d="M5 20a7 7 0 0 1 14 0"/></symbol>
+        <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.7 5.6 3.7 9s-1.2 6.4-3.7 9c-2.5-2.6-3.7-5.6-3.7-9S9.5 5.6 12 3z"/></symbol>
+        <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14m-6-6 6 6-6 6"/></symbol>
+        <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></symbol>
+        <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></symbol>
+    </svg>
 
-    <!-- Bottom Dock -->
-    <nav class="side-dock" aria-label="Main navigation">
-        <a href="index.html" title="Home" aria-label="Home">🏠</a>
-        <a href="mededu.html" title="MedEdu" aria-label="MedEdu">📚</a>
-        <a href="index.html#sandbox" title="The Sandbox" aria-label="The Sandbox">🔬</a>
-        <a href="nnotes.html" title="Nnotes App" aria-label="Nnotes App">📝</a>
-        <a href="https://p2pcompanion.com" target="_blank" rel="noopener noreferrer" title="P2P Terminal" aria-label="P2P Terminal">⚡</a>
-    </nav>
+    <a class="skip-link" href="#main">Skip to content</a>
 
-    <main class="container">
-        <header class="gsap-reveal">
-            <div class="badge">Open Clinic Initiative</div>
-            <h1>Clinical <span>MedEdu</span></h1>
-            <p class="desc">Bridging the knowledge gap. I will be releasing free, unified clinical notes and video breakdowns on various diseases. Designed to be technically rich for fellow doctors, yet clearly explained for the general public.</p>
-        </header>
-
-        <div class="content-grid">
-            
-            <!-- Video Breakdowns -->
-            <div class="resource-card gsap-reveal">
-                <div class="status-badge">Available Soon</div>
-                <div>
-                    <div class="icon-box">▶️</div>
-                    <h2>Video Breakdowns</h2>
-                    <p>Deep-dive visual lectures on pathophysiology, diagnostic criteria, and treatment modalities. I will break down complex diseases into digestible concepts using clear analogies alongside technical rigor.</p>
-                </div>
-                <div class="notify-box">
-                    <p>Curriculum currently in development.</p>
-                </div>
-            </div>
-
-            <!-- Clinical Notes -->
-            <div class="resource-card gsap-reveal">
-                <div class="status-badge">Available Soon</div>
-                <div>
-                    <div class="icon-box">📝</div>
-                    <h2>High-Yield Notes</h2>
-                    <p>Beautifully formatted, downloadable clinical notes summarizing disease etiology, presentation, and management. A unified resource that helps medical students review and helps patients understand.</p>
-                </div>
-                <div class="notify-box">
-                    <p>Notes are being compiled.</p>
-                </div>
-            </div>
-
+    <header class="site-header">
+        <div class="wrap header-inner">
+            <a class="wordmark" href="index.html" aria-label="MedEdu — back to portfolio">
+                <span class="mark"><svg class="icon" aria-hidden="true"><use href="#i-cross"/></svg></span>
+                <span><strong>MedEdu</strong><small>Open Clinic Initiative</small></span>
+            </a>
+            <nav class="primary-nav" aria-label="Primary">
+                <a href="#curriculum">Curriculum</a>
+                <a href="#method">How it works</a>
+                <a href="#about">About</a>
+                <a href="index.html">Portfolio</a>
+            </nav>
         </div>
+    </header>
+
+    <main id="main">
+        <section class="hero wrap">
+            <div class="hero-copy">
+                <div class="kicker">Free clinical education</div>
+                <h1>Clinical knowledge,<br><em>made clear.</em></h1>
+                <p class="deck">A free library of high-yield notes and visual breakdowns on disease — technically rigorous for clinicians, plainly explained for everyone else. Built in the open by a practising GP.</p>
+                <div class="hero-actions">
+                    <a class="btn btn-primary" href="#curriculum">Explore the curriculum <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+                    <a class="btn btn-secondary" href="#about">About the initiative</a>
+                </div>
+            </div>
+
+            <aside class="preview" aria-label="Curriculum preview">
+                <div class="preview-head">
+                    <span class="preview-label">Curriculum preview</span>
+                    <span class="chip"><svg class="icon" aria-hidden="true"><use href="#i-clock"/></svg> In development</span>
+                </div>
+                <ul class="preview-list">
+                    <li><svg class="icon" aria-hidden="true"><use href="#i-pulse"/></svg><strong>Cardiology</strong><span>Drafting</span></li>
+                    <li><svg class="icon" aria-hidden="true"><use href="#i-book"/></svg><strong>Respiratory medicine</strong><span>Drafting</span></li>
+                    <li><svg class="icon" aria-hidden="true"><use href="#i-user"/></svg><strong>General practice</strong><span>Planned</span></li>
+                    <li><svg class="icon" aria-hidden="true"><use href="#i-globe"/></svg><strong>Patient explainers</strong><span>Planned</span></li>
+                </ul>
+                <div class="preview-foot">Structured notes · Visual breakdowns · Clinical reasoning</div>
+            </aside>
+        </section>
+
+        <section class="facts" aria-label="What MedEdu stands for">
+            <div class="wrap facts-inner">
+                <div class="fact"><svg class="icon" aria-hidden="true"><use href="#i-book"/></svg><div><strong>Free, always</strong><span>No sign-up, no paywall.</span></div></div>
+                <div class="fact"><svg class="icon" aria-hidden="true"><use href="#i-user"/></svg><div><strong>Written by a GP</strong><span>From daily clinical practice.</span></div></div>
+                <div class="fact"><svg class="icon" aria-hidden="true"><use href="#i-pulse"/></svg><div><strong>Evidence first</strong><span>Guideline-aware, plainspoken.</span></div></div>
+                <div class="fact"><svg class="icon" aria-hidden="true"><use href="#i-globe"/></svg><div><strong>For everyone</strong><span>Doctors, students, patients.</span></div></div>
+            </div>
+        </section>
+
+        <section id="curriculum" class="wrap section">
+            <div class="section-head">
+                <div class="section-no">01 / Curriculum</div>
+                <h2>What we're building</h2>
+                <p>Topics are being written and reviewed one at a time. Each one pairs a concise note with a short visual walkthrough. Nothing here is final — suggestions are welcome.</p>
+            </div>
+            <div class="card-grid">
+                <article class="subject">
+                    <div class="subject-top"><span class="subject-no">01</span><span class="chip">Drafting</span></div>
+                    <h3>Cardiology</h3>
+                    <p>Presentation, investigation and management of common cardiac presentations, with diagnostic criteria kept close at hand.</p>
+                    <div class="subject-meta">Notes and visual breakdowns in progress</div>
+                </article>
+                <article class="subject">
+                    <div class="subject-top"><span class="subject-no">02</span><span class="chip">Drafting</span></div>
+                    <h3>Respiratory medicine</h3>
+                    <p>From breathlessness to interpretation of spirometry and imaging — the reasoning steps behind the diagnosis.</p>
+                    <div class="subject-meta">Notes and visual breakdowns in progress</div>
+                </article>
+                <article class="subject">
+                    <div class="subject-top"><span class="subject-no">03</span><span class="chip">Drafting</span></div>
+                    <h3>Neurology</h3>
+                    <p>Localising lesions and working through headache, stroke and seizure presentations without the jargon.</p>
+                    <div class="subject-meta">Notes in progress</div>
+                </article>
+                <article class="subject">
+                    <div class="subject-top"><span class="subject-no">04</span><span class="chip">Planned</span></div>
+                    <h3>Infectious disease</h3>
+                    <p>Empirical therapy, red flags and the questions worth asking before the cultures come back.</p>
+                    <div class="subject-meta">Structure mapped, writing next</div>
+                </article>
+                <article class="subject">
+                    <div class="subject-top"><span class="subject-no">05</span><span class="chip">Planned</span></div>
+                    <h3>Endocrinology</h3>
+                    <p>Diabetes, thyroid and adrenal workups arranged as decision paths rather than long lists.</p>
+                    <div class="subject-meta">Structure mapped, writing next</div>
+                </article>
+                <article class="subject">
+                    <div class="subject-top"><span class="subject-no">06</span><span class="chip">Planned</span></div>
+                    <h3>General practice</h3>
+                    <p>Everyday consultation problems, safety-netting language and the small details that make follow-up work.</p>
+                    <div class="subject-meta">Structure mapped, writing next</div>
+                </article>
+            </div>
+        </section>
+
+        <section id="method" class="method">
+            <div class="wrap section">
+                <div class="section-head">
+                    <div class="section-no">02 / Method</div>
+                    <h2>Notes you can actually use</h2>
+                    <p>Three layers for each topic, so you can skim, study, or take the reasoning into a consultation.</p>
+                </div>
+                <div class="method-grid">
+                    <article class="step">
+                        <div class="step-no">01</div>
+                        <h3>Read the note</h3>
+                        <p>A tight summary of etiology, presentation and management — the page you wish you had before a shift.</p>
+                    </article>
+                    <article class="step">
+                        <div class="step-no">02</div>
+                        <h3>Watch the breakdown</h3>
+                        <p>A short visual walk through the pathophysiology and the diagnostic decisions behind it.</p>
+                    </article>
+                    <article class="step">
+                        <div class="step-no">03</div>
+                        <h3>Take it with you</h3>
+                        <p>Plain-language versions for patients, so the same explanation travels from clinic to home.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="wrap section">
+            <div class="callout">
+                <div>
+                    <div class="section-no">03 / About</div>
+                    <h2>Built in public, still in progress</h2>
+                    <p>MedEdu is a personal initiative, not a finished course. Notes are being compiled and reviewed gradually. If a topic is missing, an explanation is unclear, or you spot something that needs correcting, the fastest way to help is a short email.</p>
+                </div>
+                <a class="btn btn-primary" href="mailto:drnitz@proton.me?subject=MedEdu%20suggestion">Suggest a topic <svg class="icon" aria-hidden="true"><use href="#i-mail"/></svg></a>
+            </div>
+        </section>
     </main>
 
-    <script>
-        // Initialize Vanta.js WebGL background only when the CDN is available
-        if (window.VANTA) {
-          VANTA.NET({
-            el: "#vanta-bg", mouseControls: true, touchControls: true, gyroControls: false,
-            minHeight: 200.00, minWidth: 200.00, scale: 1.00, scaleMobile: 1.00,
-            color: 0xa0aec0, backgroundColor: 0xe0e5ec, points: 10.00, maxDistance: 20.00, spacing: 18.00, showDots: true
-          });
-        }
-
-        const anatomyFig = document.getElementById('anatomy-figure');
-        document.addEventListener('mousemove', (e) => {
-            const x = (e.clientX / window.innerWidth - 0.5) * 40; 
-            const y = (e.clientY / window.innerHeight - 0.5) * 40;
-            anatomyFig.style.transform = `translate(calc(-50% + ${x}px), calc(-50% + ${y}px))`;
-        });
-
-        // Reveal elements only when GSAP loaded; otherwise they stay visible
-        if (window.gsap) {
-            gsap.set(".gsap-reveal", { y: 30, opacity: 0 });
-            gsap.to(".gsap-reveal", { y: 0, opacity: 1, duration: 1, stagger: 0.2, ease: "power3.out", delay: 0.2 });
-        }
-
-        // Auto-hide dock on scroll down; hide off-screen links from the tab order
-        const dock = document.querySelector('.side-dock');
-        let lastScrollY = window.scrollY;
-        window.addEventListener('scroll', () => {
-            if (!window.gsap) return;
-            if (window.scrollY > lastScrollY && window.scrollY > 100) {
-                dock.style.visibility = 'visible';
-                gsap.to(".side-dock", { y: 150, duration: 0.4, ease: "power2.out", overwrite: "auto",
-                    onComplete: () => { dock.style.visibility = 'hidden'; } });
-            } else {
-                dock.style.visibility = 'visible';
-                gsap.to(".side-dock", { y: 0, duration: 0.4, ease: "power2.out", overwrite: "auto" });
-            }
-            lastScrollY = window.scrollY;
-        });
-    </script>
+    <footer class="site-footer">
+        <div class="wrap footer-inner">
+            <a class="wordmark" href="index.html" aria-label="Back to portfolio">
+                <span class="mark"><svg class="icon" aria-hidden="true"><use href="#i-cross"/></svg></span>
+                <span><strong>MedEdu</strong><small>Open Clinic Initiative</small></span>
+            </a>
+            <nav class="footer-links" aria-label="Footer">
+                <a href="#curriculum">Curriculum</a>
+                <a href="#method">Method</a>
+                <a href="nnotes.html">Nnotes</a>
+                <a href="privacy.html">Privacy</a>
+                <a href="index.html">Portfolio</a>
+            </nav>
+            <div class="footer-note"><em>Cure. Code. Create.</em> &nbsp;·&nbsp; © 2026 Dr.N. Free clinical education, built one note at a time.</div>
+        </div>
+    </footer>
 </body>
 </html>
