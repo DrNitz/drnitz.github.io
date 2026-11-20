@@ -5,15 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dr.N | Medicine &amp; Technology</title>
 
+    <link rel="icon" href="image/icon.jpg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js" integrity="sha384-9EQoUIJYrv09/oYhSxnw1VpLcfPw3BM9dE7+D/3wGUPeLLa7F9Z6OAoD+i/M6FK9" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vanta@0.5.24/dist/vanta.net.min.js" integrity="sha384-L0sjdcIWJ156WmvbxIBHx79j1WrCqANCyw456nl/aPWSYiHNywEU2VIAcbSJeIiX" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" integrity="sha384-d+vyQ0dYcymoP8ndq2hW7FGC50nqGdXUEgoOUGxbbkAJwZqL7h+jKN0GGgn9hFDS" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" integrity="sha384-poC0r6usQOX2Ayt/VGA+t81H6V3iN9L+Irz9iO8o+s0X20tLpzc9DOOtnKxhaQSE" crossorigin="anonymous"></script>
-
     <link rel="stylesheet" href="assets/base.css">
 
     <style>
@@ -80,10 +75,12 @@
         .eyebrow { display: flex; align-items: center; gap: 12px; color: var(--accent); font-size: 0.74rem; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; }
         .eyebrow::before { content: ''; width: 28px; height: 1px; background: var(--accent); }
         h1 { font-family: var(--font-display); font-size: clamp(2.7rem, 5vw, 4.2rem); line-height: 1.03; letter-spacing: -0.04em; margin: 14px 0 6px; font-weight: 700; }
-        .hero-sub { font-family: var(--font-display); font-size: clamp(1.1rem, 2.2vw, 1.5rem); font-weight: 500; color: var(--accent); min-height: 1.5em; letter-spacing: -0.02em; }
+        .hero-sub { font-family: var(--font-display); font-size: clamp(1.05rem, 2.1vw, 1.4rem); font-weight: 500; color: var(--accent); line-height: 1.45; letter-spacing: -0.02em; }
+        .hero-sub-item::before { content: ' · '; color: var(--muted); }
+        @media (max-width: 640px) { .hero-sub-item { display: block; } .hero-sub-item::before { content: none; } }
         .hero-text { color: var(--muted); max-width: 52ch; font-size: 0.98rem; margin: 16px 0 20px; }
         .status { display: inline-flex; align-items: center; gap: 9px; font-size: 0.78rem; color: var(--muted); border: 1px solid var(--border); background: var(--surface); padding: 7px 13px; border-radius: 100px; }
-        .status-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--accent-deep); box-shadow: 0 0 0 4px rgba(69, 162, 158, 0.16); }
+        .status-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--accent-deep); }
         .actions { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 20px; }
         .btn { display: inline-flex; align-items: center; gap: 10px; min-height: 46px; padding: 11px 20px; border-radius: 8px; font: inherit; font-size: 0.9rem; font-weight: 600; border: 1px solid transparent; transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease; cursor: pointer; }
         .btn:hover { transform: translateY(-2px); }
@@ -115,6 +112,11 @@
             text-align: left; color: inherit;
         }
         .card:hover { transform: translateY(-3px); border-color: rgba(102, 252, 241, 0.26); background: var(--surface-strong); box-shadow: 0 12px 26px rgba(0, 0, 0, 0.22); }
+        .card.featured:first-child { grid-column: span 2; }
+        .card.featured { min-height: 260px; }
+        .card.featured h3 { font-size: 1.35rem; }
+        .card.featured .card-media { height: 78px; }
+        .card.featured .card-media img { width: 60px; height: 60px; }
         .card-media { height: 66px; display: flex; align-items: center; color: var(--accent); }
         .card-media img { width: 52px; height: 52px; border-radius: 10px; object-fit: cover; border: 1px solid var(--border); }
         .card-media .icon { width: 30px; height: 30px; }
@@ -150,6 +152,7 @@
             .site-nav a { padding: 8px 10px; font-size: 0.82rem; }
             .site-nav a.primary { display: none; }
             .grid { grid-template-columns: 1fr; }
+            .card.featured:first-child { grid-column: auto; }
             .section { padding: 52px 0; }
         }
     </style>
@@ -218,7 +221,11 @@
             <div>
                 <div class="eyebrow">General practitioner · Software enthusiast</div>
                 <h1>Dr.N</h1>
-                <div class="hero-sub" id="typewriter">Full-time doctor.</div>
+                <div class="hero-sub">
+                    <span>Full-time doctor.</span>
+                    <span class="hero-sub-item">Part-time technologist.</span>
+                    <span class="hero-sub-item">AI explorer.</span>
+                </div>
                 <p class="hero-text">I work at the intersection of clinical medicine and software — building tools that make health information clearer, and learning in public along the way.</p>
                 <div class="status"><span class="status-dot"></span> Preparing for Medical Residency &amp; AHIMA CCS</div>
                 <div class="actions">
@@ -227,7 +234,7 @@
                 </div>
             </div>
             <figure class="portrait reveal">
-                <img src="drn_avatar.jpg" alt="Portrait of Dr.N" width="1600" height="1600" data-fallback="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%23111820'/%3E%3Ctext x='50' y='56' font-family='sans-serif' font-size='30' fill='%2366FCF1' text-anchor='middle'%3EDr.N%3C/text%3E%3C/svg%3E">
+                <img src="drn_avatar.jpg" alt="Portrait of Dr.N" width="1600" height="1600" fetchpriority="high" data-fallback="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%23111820'/%3E%3Ctext x='50' y='56' font-family='sans-serif' font-size='30' fill='%2366FCF1' text-anchor='middle'%3EDr.N%3C/text%3E%3C/svg%3E">
                 <figcaption><strong>Dr.N</strong><span>General Practitioner</span></figcaption>
             </figure>
         </section>
@@ -257,20 +264,20 @@
                 <p class="lead">A small, deliberate set of projects — from patient-facing health notes to note-taking apps and live market terminals.</p>
 
                 <div class="grid">
-                    <a href="nnotes/" class="card">
+                    <a href="nnotes/" class="card featured">
                         <div class="card-media"><img src="image/nnotes_logo.png" alt="" width="512" height="512" data-fallback></div>
                         <h3>Nnotes</h3>
                         <p>Infinite-canvas handwriting for Android with on-device recognition, PDF annotation, vector export and animated companions. Lead Dev: Harshita.</p>
                         <div class="tags"><span>Kotlin</span><span>Compose</span><span>Android</span></div>
-                        <span class="card-link">View showcase <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></span>
+                        <span class="card-link">View showcase</span>
                     </a>
 
-                    <a href="anraksha/" class="card">
+                    <a href="anraksha/" class="card featured">
                         <div class="card-media"><svg class="icon" aria-hidden="true"><use href="#i-cross"/></svg></div>
                         <h3>Anraksha</h3>
                         <p>Plain-language health notes and early-warning guidance for patients, with the clinical detail doctors trust. Primum non nocere.</p>
                         <div class="tags"><span>Clinical notes</span><span>Patient education</span></div>
-                        <span class="card-link">Visit Anraksha <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></span>
+                        <span class="card-link">Visit Anraksha</span>
                     </a>
 
                     <a href="https://p2pcompanion.com" target="_blank" rel="noopener noreferrer" class="card">
@@ -278,7 +285,7 @@
                         <h3>P2P Companion</h3>
                         <p>A real-time terminal for P2P crypto rates and arbitrage spreads across 6 exchanges, 80+ fiat currencies and BTC, ETH and USDC pairs.</p>
                         <div class="tags"><span>Real-time data</span><span>Arbitrage</span></div>
-                        <span class="card-link">Open terminal <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></span>
+                        <span class="card-link">Open terminal</span>
                     </a>
 
                     <a href="https://github.com/drnitz/Med" target="_blank" rel="noopener noreferrer" class="card">
@@ -286,7 +293,7 @@
                         <h3>Med Reminder</h3>
                         <p>A medication tracking and dosage reminder prototype designed from a physician's perspective to support daily adherence.</p>
                         <div class="tags"><span>HealthTech</span><span>Prototype</span></div>
-                        <span class="card-link">View on GitHub <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></span>
+                        <span class="card-link">View on GitHub</span>
                     </a>
 
                     <a href="https://play.google.com/store/apps/details?id=p2p.mobile" target="_blank" rel="noopener noreferrer" class="card">
@@ -294,7 +301,7 @@
                         <h3>P2P Mobile</h3>
                         <p>The mobile companion to P2P Companion — live rates and spreads on the go, built with TypeScript.</p>
                         <div class="tags"><span>TypeScript</span><span>Mobile</span></div>
-                        <span class="card-link">Play Store <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></span>
+                        <span class="card-link">Play Store</span>
                     </a>
 
                     <a href="https://drnitz.com/medical-assets/" target="_blank" rel="noopener noreferrer" class="card">
@@ -302,7 +309,7 @@
                         <h3>Medical Assets</h3>
                         <p>A growing library of medical images and diagrams used across the health projects, with source attributions.</p>
                         <div class="tags"><span>Assets</span><span>Reference</span></div>
-                        <span class="card-link">Visit library <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></span>
+                        <span class="card-link">Visit library</span>
                     </a>
 
                     <a href="https://drnitz.com/nnotes-assets/" target="_blank" rel="noopener noreferrer" class="card">
@@ -310,7 +317,7 @@
                         <h3>Nnotes Assets</h3>
                         <p>Stickers, frames and illustration resources that give Nnotes its distinctive visual character.</p>
                         <div class="tags"><span>Assets</span><span>Design</span></div>
-                        <span class="card-link">Visit library <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></span>
+                        <span class="card-link">Visit library</span>
                     </a>
                 </div>
             </div>
@@ -349,6 +356,10 @@
         </div>
     </footer>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js" integrity="sha384-9EQoUIJYrv09/oYhSxnw1VpLcfPw3BM9dE7+D/3wGUPeLLa7F9Z6OAoD+i/M6FK9" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanta@0.5.24/dist/vanta.net.min.js" integrity="sha384-L0sjdcIWJ156WmvbxIBHx79j1WrCqANCyw456nl/aPWSYiHNywEU2VIAcbSJeIiX" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" integrity="sha384-d+vyQ0dYcymoP8ndq2hW7FGC50nqGdXUEgoOUGxbbkAJwZqL7h+jKN0GGgn9hFDS" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" integrity="sha384-poC0r6usQOX2Ayt/VGA+t81H6V3iN9L+Irz9iO8o+s0X20tLpzc9DOOtnKxhaQSE" crossorigin="anonymous"></script>
     <script>
         function imgError(img) {
             if (img.dataset.fallback) img.src = img.dataset.fallback;
@@ -376,22 +387,6 @@
         });
 
         const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-        if (!reduceMotion) {
-            const words = ['Full-time doctor.', 'Part-time technologist.', 'AI explorer.'];
-            const el = document.getElementById('typewriter');
-            let wi = 0, ci = 0, deleting = false;
-            function type() {
-                const word = words[wi];
-                el.textContent = deleting ? word.substring(0, ci - 1) : word.substring(0, ci + 1);
-                ci += deleting ? -1 : 1;
-                let speed = deleting ? 45 : 85;
-                if (!deleting && ci === word.length) { speed = 1800; deleting = true; }
-                else if (deleting && ci === 0) { deleting = false; wi = (wi + 1) % words.length; speed = 450; }
-                setTimeout(type, speed);
-            }
-            setTimeout(type, 700);
-        }
 
         if (window.gsap && window.ScrollTrigger && !reduceMotion) {
             gsap.registerPlugin(ScrollTrigger);

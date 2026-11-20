@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Privacy Policy &amp; Terms | Nnotes App</title>
-    
+
     <!-- Meta & Social tags -->
-                
+
     <!-- Fonts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" integrity="sha384-d+vyQ0dYcymoP8ndq2hW7FGC50nqGdXUEgoOUGxbbkAJwZqL7h+jKN0GGgn9hFDS" crossorigin="anonymous"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -14,6 +14,7 @@
 
     <link rel="stylesheet" href="../../assets/base.css">
     <link rel="stylesheet" href="../../assets/dock.css">
+    <link rel="icon" href="../../image/icon.jpg">
 
     <style>
         :root {
@@ -41,10 +42,10 @@
         .clay-card {
             background: var(--clay-base);
             border-radius: 24px;
-            box-shadow: 
-                15px 15px 35px rgba(163, 177, 198, 0.5), 
-                -10px -10px 25px rgba(255, 255, 255, 0.8), 
-                inset 4px 4px 10px rgba(255, 255, 255, 0.9), 
+            box-shadow:
+                15px 15px 35px rgba(163, 177, 198, 0.5),
+                -10px -10px 25px rgba(255, 255, 255, 0.8),
+                inset 4px 4px 10px rgba(255, 255, 255, 0.9),
                 inset -4px -4px 10px rgba(163, 177, 198, 0.4);
             border: 2px solid rgba(255, 255, 255, 0.4);
         }
@@ -75,11 +76,11 @@
         }
         .hero-title { font-size: clamp(2.2rem, 5vw, 3.8rem); font-weight: 800; line-height: 1.15; margin-bottom: 16px; color: var(--text); letter-spacing: -1.5px; }
         .hero-subtitle { font-size: 1.1rem; color: var(--text-secondary); max-width: 680px; margin: 0 auto 30px; }
-        
+
         .meta-pills { display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; margin-bottom: 40px; }
         .meta-pill { padding: 6px 14px; border-radius: 100px; font-size: 0.75rem; font-family: var(--font-mono); background: var(--clay-light); border: 2px solid rgba(255,255,255,0.5); color: var(--text-secondary); box-shadow: 4px 4px 8px rgba(163,177,198,0.3), -2px -2px 6px rgba(255,255,255,0.6); }
 
-        .tab-switcher { display: flex; justify-content: center; gap: 12px; margin-bottom: 50px; }
+        .tab-switcher { display: flex; justify-content: center; gap: 12px; margin-bottom: 50px; flex-wrap: wrap; }
         .tab-btn { padding: 12px 28px; border-radius: 16px; font-size: 0.9rem; font-weight: 700; border: 2px solid rgba(255, 255, 255, 0.4); background: var(--clay-base); color: var(--text-secondary); cursor: pointer; transition: all 0.3s; font-family: var(--font-body); box-shadow: 6px 6px 15px rgba(163,177,198,0.5), -4px -4px 12px rgba(255,255,255,0.8); }
         .tab-btn.active { color: var(--cyan); box-shadow: inset 4px 4px 10px rgba(163,177,198,0.5), inset -4px -4px 10px rgba(255,255,255,0.8); transform: translateY(2px); }
 
@@ -113,8 +114,9 @@
 
         .license-details { margin-top: 16px; }
         .license-details summary { cursor: pointer; color: var(--cyan); font-weight: 700; font-size: 0.9rem; }
+        .content-grid > * { min-width: 0; }
         .license-details pre {
-            margin-top: 14px; padding: 18px; border-radius: 14px; overflow-x: auto;
+            margin-top: 14px; padding: 18px; border-radius: 14px; overflow-x: auto; max-width: 100%;
             background: var(--clay-light); border: 2px solid rgba(255,255,255,0.5);
             font-family: var(--font-mono); font-size: 0.78rem; line-height: 1.6; color: var(--text-secondary);
             box-shadow: inset 3px 3px 6px rgba(163,177,198,0.3), inset -3px -3px 6px rgba(255,255,255,0.8);
@@ -126,6 +128,17 @@
         .footer-link:hover { color: var(--cyan); }
         .footer-copy { color: var(--text-muted); font-size: 0.8rem; }
 
+        /* Interaction affordances: pointer cursors, visible focus, restrained hover. */
+        a[href], button, summary { cursor: pointer; }
+        a:focus-visible, button:focus-visible, summary:focus-visible {
+            outline: 3px solid var(--cyan);
+            outline-offset: 3px;
+        }
+        .side-dock a { color: var(--cyan); }
+        .side-dock a svg { display: block; }
+        .side-dock a:hover { transform: translateY(-2px); filter: none; }
+        .side-dock a:focus-visible { filter: none; outline-offset: 2px; }
+
         @media (max-width: 900px) { .content-grid { grid-template-columns: 1fr; } .toc-sidebar { display: none; } header { flex-direction: column; gap: 16px; } }
 
     </style>
@@ -136,7 +149,7 @@
     <meta property="og:title" content="Privacy Policy &amp; Terms | Nnotes App">
     <meta property="og:description" content="Local-first notes with transparent, ad-supported data practices. See how Nnotes handles note content on device and what Google's ad SDKs process.">
     <meta property="og:image" content="https://drnitz.com/social_preview.jpg">
-    
+
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="https://drnitz.com/nnotes/privacy/">
@@ -152,40 +165,49 @@
 <body>
     <!-- Bottom Dock -->
     <nav class="side-dock" aria-label="Site navigation dock">
-        <a href="../../index.html" title="Home" aria-label="Home">🏠</a>
-        <a href="../../anraksha/" title="Anraksha" aria-label="Anraksha">📚</a>
-        <a href="index.html#sandbox" title="The Sandbox" aria-label="The Sandbox">🔬</a>
-        <a href="../" title="Nnotes App" aria-label="Nnotes App">📝</a>
-        <a href="https://p2pcompanion.com" target="_blank" rel="noopener noreferrer" title="P2P Terminal" aria-label="P2P Terminal">⚡</a>
+        <a href="../../index.html" title="Home" aria-label="Home">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 10.5 12 3l9 7.5"/><path d="M5.5 9.5V20h13V9.5"/><path d="M9.5 20v-6h5v6"/></svg>
+        </a>
+        <a href="../../anraksha/" title="Anraksha" aria-label="Anraksha">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 6.5c-2.2-1.5-5-1.8-8-1v13c3-.8 5.8-.5 8 1 2.2-1.5 5-1.8 8-1v-13c-3-.8-5.8-.5-8 1Z"/><path d="M12 6.5v13"/></svg>
+        </a>
+        <a href="index.html#work" title="The Sandbox" aria-label="The Sandbox">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M9 3h6"/><path d="M10 3v6l-5 8.5A2 2 0 0 0 6.7 20h10.6a2 2 0 0 0 1.7-2.5L14 9V3"/><path d="M7 15h10"/></svg>
+        </a>
+        <a href="../" title="Nnotes App" aria-label="Nnotes App">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 3h9l5 5v13H5z"/><path d="M14 3v5h5"/><path d="M8.5 12h7"/><path d="M8.5 16h5"/></svg>
+        </a>
+        <a href="https://p2pcompanion.com" target="_blank" rel="noopener noreferrer" title="P2P Terminal" aria-label="P2P Terminal">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="m7 9 3 3-3 3"/><path d="M13 15h4"/></svg>
+        </a>
     </nav>
     <div class="container">
         <header>
             <a href="../" class="logo-wrap">
-                <span class="logo">📝 Nnotes</span>
+                <span class="logo">Nnotes</span>
                 <span class="logo-badge">Privacy & Terms</span>
             </a>
             <nav class="nav-links" aria-label="Page navigation">
                 <a href="../" class="nav-btn">← Nnotes Overview</a>
-                <a href="../../index.html" class="nav-btn">🌐 Portfolio Home</a>
+                <a href="../../index.html" class="nav-btn">Portfolio Home</a>
             </nav>
         </header>
 
         <section class="hero">
             <div class="hero-badge">
-                <span>🛡️</span> Local-First Notes • Ad-Supported • Transparent About Data
+                Local-First Notes • Ad-Supported • Transparent About Data
             </div>
             <h1 class="hero-title">Privacy Policy & Terms of Service</h1>
             <p class="hero-subtitle">
                 Official privacy, data protection, and terms of use for Nnotes — developed by <strong>Harshita</strong> (Lead Developer) and <strong>Dr.N</strong> (Co-Developer).
             </p>
             <div class="meta-pills">
-                <span class="meta-pill">📅 Effective Date: 20 November 2026</span>
-                <span class="meta-pill">🕒 Last updated: 20 November 2026</span>
-                <span class="meta-pill">⚡ Architecture: Kotlin & Jetpack Compose</span>
-                <span class="meta-pill">🔒 Storage: Android Storage Access Framework (SAF)</span>
+                <span class="meta-pill">Effective Date: 20 November 2026</span>
+                <span class="meta-pill">Last updated: 20 November 2026</span>
+                <span class="meta-pill">Architecture: Kotlin & Jetpack Compose</span>
+                <span class="meta-pill">Storage: Android Storage Access Framework (SAF)</span>
             </div>
             <div class="scope-note">
-                <span>📄</span>
                 <span><strong>Scope:</strong> This policy governs the <strong>Nnotes Android app</strong>. For the website at drnitz.com, see the <a href="../../privacy/">Website Privacy Policy</a>.</span>
             </div>
         </section>
@@ -223,7 +245,7 @@
                         Engineered by <strong>Harshita</strong> (Lead Developer) and <strong>Dr.N</strong> (Co-Developer), Nnotes is built around a <strong>local-first</strong> model under the motto <strong>Cure. Code. Create.</strong> Your handwritten notes, diagrams, and ideas stay on your device. This page explains both that local-first design and the ad-supported parts of the app honestly.
                     </p>
                     <div class="highlight-box">
-                        <span style="font-size:1.3rem;">🔒</span>
+                        <span style="color:var(--cyan);"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="5" y="10" width="14" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg></span>
                         <div style="font-size:0.9rem; color:var(--text-secondary);">
                             <strong>No Note Collection & No Account Requirement:</strong> We do not collect or transmit your note content. Note-taking works without an internet connection, and there is no user registration or email sign-up. The app is ad-supported; Google's ad SDKs process advertising identifiers as described below in <a href="#data-collection" style="color:var(--cyan);">Section 2</a>.
                         </div>
@@ -330,7 +352,7 @@
                         Nnotes is inspired by the open-source <strong>Xnote</strong> app by Shardul, which is MIT-licensed upstream (<a href="https://github.com/shardulvs/xnotes-android" target="_blank" rel="noopener noreferrer" style="color:var(--cyan);">github.com/shardulvs/xnotes-android</a>). The MIT License below applies to that upstream project; this page does not license Nnotes itself under the MIT License.
                     </p>
                     <div class="highlight-box">
-                        <span style="font-size:1.3rem;">📜</span>
+                        <span style="color:var(--cyan);"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M6 3h9l4 4v14H6z"/><path d="M14 3v5h5M9 12h7M9 16h7"/></svg></span>
                         <div style="font-size:0.9rem; color:var(--text-secondary);">
                             <strong>Upstream attribution:</strong> Xnote — Copyright (c) 2026 Shardul Vikram Singh. Licensed under the MIT License.
                         </div>
@@ -388,7 +410,7 @@ SOFTWARE.</pre>
                     <h2 style="margin-top:8px;">11. Developer Contact</h2>
                     <p>For questions, privacy requests, or support regarding Nnotes:</p>
                     <div class="highlight-box">
-                        <span style="font-size:1.3rem;">📧</span>
+                        <span style="color:var(--cyan);"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></span>
                         <div style="font-size:0.9rem; color:var(--text-secondary);">
                             <strong>Lead Developer:</strong> Harshita<br>
                             <strong>Co-Developer:</strong> Dr.N<br>

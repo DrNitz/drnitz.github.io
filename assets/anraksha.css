@@ -29,7 +29,10 @@ body {
 
 a { color: var(--teal); text-decoration-thickness: 1px; text-underline-offset: 3px; }
 a:hover { color: var(--teal-dark); }
-a:focus-visible, button:focus-visible {
+a[href], button, select, summary, label[for], input[type="checkbox"], input[type="radio"] { cursor: pointer; }
+button[disabled], a[aria-disabled="true"] { cursor: not-allowed; }
+a:focus-visible, button:focus-visible, select:focus-visible, summary:focus-visible,
+input[type="checkbox"]:focus-visible, input[type="radio"]:focus-visible {
     outline: 3px solid var(--teal);
     outline-offset: 3px;
     border-radius: 4px;
@@ -104,12 +107,16 @@ h1 em { font-style: italic; color: var(--teal-dark); }
 
 /* Facts strip */
 .facts { border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); background: var(--surface); }
-.facts-inner { display: grid; grid-template-columns: repeat(4, 1fr); }
+.facts-inner { display: grid; grid-template-columns: 1.6fr repeat(3, 1fr); }
 .fact { display: flex; gap: 14px; align-items: flex-start; padding: 26px 22px; }
 .fact + .fact { border-left: 1px solid var(--line); }
 .fact .icon { color: var(--teal); margin-top: 2px; }
 .fact strong { display: block; font-size: .92rem; }
 .fact span { display: block; font-size: .8rem; color: var(--ink-soft); line-height: 1.5; margin-top: 2px; }
+.fact-featured { background: var(--wash); }
+.fact-featured .icon { width: 24px; height: 24px; }
+.fact-featured strong { font-family: var(--font-head); font-size: 1.35rem; line-height: 1.2; }
+.fact-featured span { font-size: .84rem; }
 
 /* Sections */
 .section { padding: 88px 0; }
@@ -123,6 +130,10 @@ h2 { font-family: var(--font-head); font-size: clamp(2.1rem, 4vw, 3rem); line-he
     transition: border-color .2s ease, transform .2s ease, box-shadow .2s ease;
 }
 .subject:hover { border-color: var(--teal); transform: translateY(-4px); box-shadow: var(--shadow); }
+.subject-draft { border-top: 2px solid var(--teal); }
+.subject-draft .chip { background: var(--teal); color: #fff; }
+.subject-planned { border-style: dashed; background: transparent; }
+.subject-planned .chip { background: transparent; color: var(--ink-soft); border: 1px solid var(--line); padding: 4px 10px; }
 .subject-top { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
 .subject-no { font-family: var(--font-head); font-size: 1.05rem; color: var(--teal); font-weight: 700; }
 .subject h3 { font-family: var(--font-head); font-size: 1.5rem; line-height: 1.2; margin: 18px 0 8px; }
@@ -137,8 +148,10 @@ h2 { font-family: var(--font-head); font-size: clamp(2.1rem, 4vw, 3rem); line-he
 .step p { font-size: .92rem; color: var(--ink-soft); margin: 0; }
 
 /* About callout */
-.callout { display: grid; grid-template-columns: 1.4fr .6fr; gap: 32px; align-items: center; background: var(--surface); border: 1px solid var(--line); border-left: 4px solid var(--teal); border-radius: 12px; padding: 34px; }
-.callout h2 { font-size: 2rem; margin-top: 8px; }
+.callout { display: grid; grid-template-columns: 1.4fr .6fr; gap: 32px; align-items: center; background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 34px; }
+.callout .section-no { display: flex; align-items: center; gap: 12px; }
+.callout .section-no::before { content: ''; width: 28px; height: 2px; background: var(--teal); }
+.callout h2 { font-size: 2.15rem; margin-top: 8px; }
 .callout p { color: var(--ink-soft); margin: 0; }
 .callout .btn { justify-self: end; }
 
@@ -157,8 +170,9 @@ h2 { font-family: var(--font-head); font-size: clamp(2.1rem, 4vw, 3rem); line-he
     .hero { grid-template-columns: 1fr; gap: 40px; padding-top: 56px; }
     .preview { max-width: 560px; }
     .facts-inner { grid-template-columns: repeat(2, 1fr); }
-    .fact:nth-child(3) { border-left: 0; border-top: 1px solid var(--line); }
-    .fact:nth-child(4) { border-top: 1px solid var(--line); }
+    .fact-featured { grid-column: 1 / -1; }
+    .fact:nth-child(3) { border-top: 1px solid var(--line); }
+    .fact:nth-child(4) { border-left: 0; border-top: 1px solid var(--line); }
     .card-grid, .method-grid { grid-template-columns: repeat(2, 1fr); }
     .callout { grid-template-columns: 1fr; }
     .callout .btn { justify-self: start; }

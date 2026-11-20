@@ -26,117 +26,140 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../assets/base.css">
+    <link rel="icon" href="../image/icon.jpg">
 
     <style>
         :root {
             --bg-color: #0b0c10;
-            --bg-card: rgba(31, 40, 51, 0.6);
-            --bg-glass: rgba(11, 12, 16, 0.7);
-            --text-main: #c5c6c7;
-            --text-muted: #8a8d91;
+            --paper: #e9e6dd;
+            --paper-muted: #b6b2a8;
             --accent-teal: #66FCF1;
-            --accent-blue: #45A29E;
-            --border: rgba(102, 252, 241, 0.1);
-            
-            --font-display: 'Plus Jakarta Sans', sans-serif;
-            --font-body: 'Plus Jakarta Sans', sans-serif;
+            --rule: rgba(233, 230, 221, 0.18);
+            --font-doc: Georgia, 'Iowan Old Style', 'Times New Roman', serif;
+            --font-ui: 'Plus Jakarta Sans', sans-serif;
         }
 
         body {
-            margin: 0;
-            padding: 0;
             background-color: var(--bg-color);
-            color: var(--text-main);
-            font-family: var(--font-body);
-            line-height: 1.6;
+            color: var(--paper);
+            font-family: var(--font-doc);
+            line-height: 1.75;
             -webkit-font-smoothing: antialiased;
         }
 
         .container {
-            max-width: 800px;
+            max-width: 760px;
             margin: 0 auto;
-            padding: 80px 24px;
+            padding: 72px 24px 88px;
         }
 
-        h1 {
-            font-family: var(--font-display);
-            font-size: clamp(2.5rem, 5vw, 3.5rem);
-            font-weight: 800;
-            color: #fff;
-            margin-bottom: 16px;
-            letter-spacing: -1px;
-        }
-
-        h1 span {
+        a {
+            cursor: pointer;
             color: var(--accent-teal);
+            text-decoration: underline;
+            text-decoration-thickness: 1px;
+            text-underline-offset: 3px;
+            text-decoration-color: rgba(102, 252, 241, 0.45);
+            transition: color 0.15s ease, text-decoration-color 0.15s ease;
         }
 
-        h2 {
-            font-family: var(--font-display);
-            font-size: 1.5rem;
-            font-weight: 600;
-            color: #fff;
-            margin-top: 48px;
-            margin-bottom: 16px;
-        }
+        a:hover { text-decoration-color: var(--accent-teal); }
 
-        p {
-            font-size: 1.1rem;
-            color: var(--text-muted);
-            margin-bottom: 24px;
-        }
-
-        .content-box {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: 24px;
-            padding: 40px;
-            backdrop-filter: blur(10px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-            margin-top: 40px;
+        a:focus-visible {
+            outline: 2px solid var(--accent-teal);
+            outline-offset: 4px;
+            border-radius: 1px;
+            text-decoration-color: var(--accent-teal);
         }
 
         .back-link {
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            color: var(--accent-blue);
-            text-decoration: none;
+            min-height: 44px;
+            color: var(--paper);
+            font-family: var(--font-ui);
+            font-size: 0.9375rem;
             font-weight: 600;
-            font-size: 1rem;
-            margin-bottom: 40px;
-            transition: gap 0.3s ease, color 0.3s ease;
+            text-decoration: none;
+            margin-bottom: 44px;
         }
 
-        .back-link:hover {
-            gap: 12px;
-            color: var(--accent-teal);
+        .back-link:hover,
+        .back-link:focus-visible { color: var(--accent-teal); }
+        .back-link svg { flex: none; }
+
+        h1 {
+            font-size: clamp(2rem, 4.5vw, 2.75rem);
+            font-weight: 700;
+            line-height: 1.2;
+            letter-spacing: -0.015em;
+            color: var(--paper);
+            margin-bottom: 14px;
         }
+
+        h1 span { color: var(--accent-teal); }
+
+        .meta {
+            font-family: var(--font-ui);
+            font-size: 0.9375rem;
+            color: var(--paper-muted);
+            line-height: 1.6;
+            margin-bottom: 28px;
+        }
+
+        h2 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            line-height: 1.35;
+            color: var(--paper);
+            border-top: 1px solid var(--rule);
+            padding-top: 28px;
+            margin-top: 36px;
+            margin-bottom: 12px;
+        }
+
+        p {
+            font-size: 1.0625rem;
+            color: var(--paper-muted);
+            max-width: 68ch;
+            margin-bottom: 20px;
+        }
+
+        p strong { color: var(--paper); font-weight: 700; }
 
         footer {
-            margin-top: 80px;
+            margin-top: 72px;
+            border-top: 1px solid var(--rule);
+            padding-top: 28px;
             text-align: center;
-            border-top: 1px solid var(--border);
-            padding-top: 40px;
-            font-size: 0.9rem;
-            color: rgba(255, 255, 255, 0.65);
+            font-family: var(--font-ui);
+            font-size: 0.8125rem;
+            color: var(--paper-muted);
         }
 
         @media (max-width: 768px) {
-            .container { padding: 40px 16px; }
-            .content-box { padding: 24px; }
+            .container { padding: 48px 20px 64px; }
+            h2 { margin-top: 32px; padding-top: 24px; }
+            footer { margin-top: 56px; }
         }
 
+        @media (max-width: 480px) {
+            .container { padding: 36px 16px 56px; }
+            p { font-size: 1rem; }
+            h2 { font-size: 1.125rem; }
+            .back-link { margin-bottom: 32px; }
+        }
     </style>
 </head>
 <body>
     <div class="container">
     <main>
-        <a href="../index.html" class="back-link">← Back to Portfolio</a>
-        
+        <a href="../index.html" class="back-link"><svg aria-hidden="true" width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12.5 8H3.5M7 3.5 3 8l4 4.5"/></svg>Back to Portfolio</a>
+
         <h1>Privacy <span>Policy</span></h1>
-        <p>Effective Date: August 2026 &middot; Last updated: 20 November 2026</p>
-        <p><strong>Scope:</strong> This policy covers the website at drnitz.com. The separate <a href="../nnotes/privacy/" style="color: var(--accent-teal);">Nnotes App Privacy Policy &amp; Terms</a> governs the Nnotes Android application.</p>
+        <p class="meta">Effective Date: August 2026 &middot; Last updated: 20 November 2026</p>
+        <p><strong>Scope:</strong> This policy covers the website at drnitz.com. The separate <a href="../nnotes/privacy/">Nnotes App Privacy Policy &amp; Terms</a> governs the Nnotes Android application.</p>
 
         <div class="content-box">
             <h2>1. Information We Collect</h2>
@@ -152,7 +175,7 @@
             <p>We may update this Privacy Policy from time to time. Any changes will be reflected on this page with an updated effective date.</p>
 
             <h2>5. Contact</h2>
-            <p>If you have any questions about this privacy policy or your experience on the site, email <a href="mailto:drnitz@proton.me" style="color: var(--accent-teal);">drnitz@proton.me</a> or reach out via the linked GitHub profiles or social channels.</p>
+            <p>If you have any questions about this privacy policy or your experience on the site, email <a href="mailto:drnitz@proton.me">drnitz@proton.me</a> or reach out via the linked GitHub profiles or social channels.</p>
         </div>
     </main>
 
