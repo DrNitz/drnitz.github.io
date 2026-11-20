@@ -10,6 +10,7 @@
 
 ### Renamed
 - **MedEdu → Anraksha by Dr.Nitz.** The clinical education initiative is now served from `anraksha/index.html` at the folder-style URL `/anraksha/`, with the tagline *Primum non nocere — First, do no harm.* Page title, wordmark, hero, metadata, sitemap, README, About docs and navigation all use the new name. Old `.html` URLs were deliberately removed rather than redirected; `assets/medu.css` became `assets/anraksha.css`.
+- **All pages now use folder-style URLs:** `/nnotes/`, `/nnotes/privacy/` and `/privacy/` (each is an `index.html` in its own folder). Canonical/OG URLs, the sitemap, all navigation, README, CONTRIBUTING and About doc links were updated. No redirects were left behind. The Nnotes privacy URL in Google Play Console must be updated to `https://drnitz.com/nnotes/privacy/`.
 
 ### Added
 - `LICENSE` with MIT terms for this repo plus third-party attributions.

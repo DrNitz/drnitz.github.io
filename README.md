@@ -40,9 +40,9 @@ Relative links work locally; canonical and social URLs point at the production d
 |---|---|
 | `index.html` | Portfolio landing page — bio, project cards, contact |
 | `anraksha/index.html` | Anraksha by Dr.Nitz — health notes and early signs (in development); served at `/anraksha/` |
-| `nnotes.html` | Nnotes Android app showcase |
-| `nnotes-privacy.html` | Nnotes app privacy policy and terms (linked from Google Play) |
-| `privacy.html` | Privacy policy for this website |
+| `nnotes/index.html` | Nnotes Android app showcase — `/nnotes/` |
+| `nnotes/privacy/index.html` | Nnotes app privacy policy and terms — `/nnotes/privacy/` (linked from Google Play) |
+| `privacy/index.html` | Privacy policy for this website — `/privacy/` |
 
 ### Layout
 
@@ -60,7 +60,7 @@ Pushes to `main` publish automatically through GitHub Pages. When adding or rena
 - [Nnotes documentation index](About/README.md)
 - [User manual](About/USER_MANUAL.md)
 - [Play Store listing copy](About/PLAYSTORE_LISTING.md)
-- [App privacy & terms](nnotes-privacy.html) · [Site privacy](privacy.html)
+- [App privacy & terms](nnotes/privacy/) · [Site privacy](privacy/)
 
 Licensed under the [MIT License](LICENSE) for original site content; third-party attributions are listed there. Contributions are welcome under the [Code of Conduct](CODE_OF_CONDUCT.md).
 
@@ -114,10 +114,10 @@ Licensed under the [MIT License](LICENSE) for original site content; third-party
     <td width="50%" valign="top">
       <h3 align="center">📝 Nnotes</h3>
       <p align="center">
-        <a href="https://drnitz.com/nnotes.html">
+        <a href="https://drnitz.com/nnotes/">
           <img src="https://img.shields.io/badge/✨%20Showcase-66FCF1?style=for-the-badge&logo=appstore&logoColor=white" />
         </a>
-        <a href="https://drnitz.com/nnotes-privacy.html">
+        <a href="https://drnitz.com/nnotes/privacy/">
           <img src="https://img.shields.io/badge/🛡️%20Privacy-45A29E?style=for-the-badge&logo=shield&logoColor=white" />
         </a>
       </p>

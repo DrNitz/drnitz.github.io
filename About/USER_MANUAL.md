@@ -55,4 +55,4 @@ Keep study sessions engaging with 7 profession companions (Student, Doctor, Teac
 ---
 
 ## 7. Storage & Privacy 🔒
-Nnotes uses Android's Storage Access Framework (SAF) to store all your notes locally on your device, and handwriting recognition runs on-device via ML Kit. Your note content is never uploaded or tracked in the cloud. The app is ad-supported, so Google's ad SDKs may process advertising identifiers — see the [Privacy Policy & Terms](../nnotes-privacy.html) for details.
+Nnotes uses Android's Storage Access Framework (SAF) to store all your notes locally on your device, and handwriting recognition runs on-device via ML Kit. Your note content is never uploaded or tracked in the cloud. The app is ad-supported, so Google's ad SDKs may process advertising identifiers — see the [Privacy Policy & Terms](../nnotes/privacy/) for details.

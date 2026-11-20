@@ -17,8 +17,9 @@ Because a custom domain is configured in `CNAME`, relative links work locally bu
 |---|---|
 | `index.html` | Portfolio landing page |
 | `anraksha/index.html` | Anraksha by Dr.Nitz — served at `/anraksha/` (in development) |
-| `nnotes.html`, `nnotes-privacy.html` | Nnotes app showcase and its policy/terms |
-| `privacy.html` | Privacy policy for the website itself |
+| `nnotes/index.html` | Nnotes app showcase — `/nnotes/` |
+| `nnotes/privacy/index.html` | Nnotes policy/terms — `/nnotes/privacy/` |
+| `privacy/index.html` | Website privacy policy — `/privacy/` |
 | `assets/` | Shared CSS used by multiple pages |
 | `About/` | Nnotes documentation, user manual and Play listing copy |
 | `sitemap.xml`, `robots.txt` | Crawler metadata |
@@ -28,7 +29,7 @@ Because a custom domain is configured in `CNAME`, relative links work locally bu
 1. **No build tooling.** Keep pages self-contained apart from the shared files in `assets/`.
 2. **SEO metadata is hand-authored.** Do not reintroduce bulk HTML-injector scripts — earlier versions stripped Open Graph tags and duplicated canonicals on re-run. Edit the `<head>` blocks directly.
 3. **Adding a page** means adding it to `sitemap.xml`, the footer/dock navigation where relevant, and giving it a unique title, description, canonical and OG/Twitter tags.
-4. **Privacy copy must match reality.** The Nnotes policy describes an ad-supported app; keep it consistent with the Play Store Data Safety declaration and avoid absolute "zero telemetry" wording. Changes to the app require a review of `nnotes-privacy.html`, `About/PLAYSTORE_LISTING.md`, `About/USER_MANUAL.md` and `About/README.md`.
+4. **Privacy copy must match reality.** The Nnotes policy describes an ad-supported app; keep it consistent with the Play Store Data Safety declaration and avoid absolute "zero telemetry" wording. Changes to the app require a review of `nnotes/privacy/index.html`, `About/PLAYSTORE_LISTING.md`, `About/USER_MANUAL.md` and `About/README.md`.
 5. **Third-party scripts** must be version-pinned and carry SRI hashes. Do not use `@latest` CDNs.
 6. **Accessibility:** keep one `<main>` per page, label icon-only navigation, include `alt=""` on decorative images, and preserve the reduced-motion rules in `assets/base.css`.
 

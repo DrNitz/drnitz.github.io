@@ -11,7 +11,7 @@ Working copy aligned with the **live listing** for `com.nnote.Drn` as of 20 Nov 
 - **Publisher on Play:** N&Nconnect (developer identity on Play differs from the site credits: Lead Dev **Harshita**, Co-Dev **Dr.N**)
 - **Category:** Productivity
 - **Content:** Contains ads · Rated for 3+
-- **Privacy policy URL used by Play:** https://drnitz.com/nnotes-privacy.html
+- **Privacy policy URL used by Play:** https://drnitz.com/nnotes/privacy/ **(update this in Google Play Console — the old `/nnotes-privacy.html` URL no longer exists)**
 
 Alternative title options (all within 30 characters, if a rename is ever considered):
 
