@@ -39,8 +39,7 @@ Relative links work locally; canonical and social URLs point at the production d
 | File | What it is |
 |---|---|
 | `index.html` | Portfolio landing page — bio, project cards, contact |
-| `anraksha.html` | Anraksha by Dr.Nitz — health notes and early signs (in development) |
-| `mededu.html` | Redirect to `anraksha.html` (keeps old links working) |
+| `anraksha/index.html` | Anraksha by Dr.Nitz — health notes and early signs (in development); served at `/anraksha/` |
 | `nnotes.html` | Nnotes Android app showcase |
 | `nnotes-privacy.html` | Nnotes app privacy policy and terms (linked from Google Play) |
 | `privacy.html` | Privacy policy for this website |
@@ -95,7 +94,7 @@ Licensed under the [MIT License](LICENSE) for original site content; third-party
     <td width="50%" valign="top">
       <h3 align="center">📚 Anraksha</h3>
       <p align="center">
-        <a href="https://drnitz.com/anraksha.html">
+        <a href="https://drnitz.com/anraksha/">
           <img src="https://img.shields.io/badge/🩺%20Anraksha-66FCF1?style=for-the-badge&logo=google-chrome&logoColor=white" />
         </a>
       </p>

@@ -16,8 +16,7 @@ Because a custom domain is configured in `CNAME`, relative links work locally bu
 | Path | Purpose |
 |---|---|
 | `index.html` | Portfolio landing page |
-| `anraksha.html` | Anraksha by Dr.Nitz — health notes and early signs (in development) |
-| `mededu.html` | Redirect stub pointing to `anraksha.html` — keep it so old links work |
+| `anraksha/index.html` | Anraksha by Dr.Nitz — served at `/anraksha/` (in development) |
 | `nnotes.html`, `nnotes-privacy.html` | Nnotes app showcase and its policy/terms |
 | `privacy.html` | Privacy policy for the website itself |
 | `assets/` | Shared CSS used by multiple pages |

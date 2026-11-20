@@ -9,7 +9,7 @@
 - **Tooling:** removed five one-off Python scripts that destroyed OG tags, duplicated canonicals or reversed image processing on re-run; removed the unrelated 3D contribution workflow and junk `help.md`.
 
 ### Renamed
-- **MedEdu → Anraksha by Dr.Nitz.** The clinical education initiative is now `anraksha.html`, with the tagline *Primum non nocere — First, do no harm.* Page title, wordmark, hero, metadata, sitemap, README, About docs and navigation all use the new name. `mededu.html` remains as a noindex redirect stub so existing links and bookmarks keep working; `assets/medu.css` became `assets/anraksha.css`.
+- **MedEdu → Anraksha by Dr.Nitz.** The clinical education initiative is now served from `anraksha/index.html` at the folder-style URL `/anraksha/`, with the tagline *Primum non nocere — First, do no harm.* Page title, wordmark, hero, metadata, sitemap, README, About docs and navigation all use the new name. Old `.html` URLs were deliberately removed rather than redirected; `assets/medu.css` became `assets/anraksha.css`.
 
 ### Added
 - `LICENSE` with MIT terms for this repo plus third-party attributions.
