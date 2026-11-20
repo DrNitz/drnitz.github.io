@@ -1,20 +1,68 @@
-<!-- 3D ANIMATED HEADER -->
+# Dr.N — Portfolio & Clinical Tech Site
+
 <p align="center">
-  <img src="https://raw.githubusercontent.com/drnitz/drnitz/main/medical-animation.svg" width="100%" alt="3D Medical Animation" />
+  <img src="https://drnitz.com/medical-animation.svg" width="100%" alt="3D Medical Animation" />
 </p>
 
-<!-- TYPING ANIMATION -->
 <p align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=Inter&weight=600&size=28&duration=3000&pause=800&color=00D4FF&center=true&vCenter=true&width=700&lines=Cure.+Code.+Create.;Full-time+Medical+Doctor;Residency+%26+AHIMA+CCS+Aspirant;Tech+Enthusiast+%26+AI+Explorer" alt="Typing Animation" />
+  <img src="https://readme-typing-svg.demolab.com?font=Inter&weight=600&size=28&duration=3000&pause=800&color=66FCF1&center=true&vCenter=true&width=700&lines=Cure.+Code.+Create.;Full-time+Medical+Doctor;Residency+%26+AHIMA+CCS+Aspirant;Tech+Enthusiast+%26+AI+Explorer" alt="Typing Animation" />
 </p>
 
-<!-- BADGES ROW -->
 <p align="center">
-  <a href="https://p2pcompanion.com" target="_blank">
-    <img src="https://img.shields.io/badge/🌐_p2pcompanion.com-00D4FF?style=for-the-badge&logo=google-chrome&logoColor=white&labelColor=111010" alt="Website" />
+  <a href="https://drnitz.com" target="_blank" rel="noopener noreferrer">
+    <img src="https://img.shields.io/badge/🌐_drnitz.com-66FCF1?style=for-the-badge&logo=google-chrome&logoColor=white&labelColor=111010" alt="Website" />
   </a>
-  <img src="https://komarev.com/ghpvc/?username=drnitz&label=👁️%20Profile%20Views&color=7B2FF7&style=for-the-badge" alt="Profile Views" />
+  <img src="https://komarev.com/ghpvc/?username=drnitz&label=👁️%20Profile%20Views&color=45A29E&style=for-the-badge" alt="Profile Views" />
 </p>
+
+A static, dependency-free GitHub Pages site for **Dr.N** — a general practitioner who builds tools at the intersection of medicine and technology. Live at **https://drnitz.com/**.
+
+---
+
+## About this repository
+
+There is no build step, package manager or server code. Every page is hand-authored HTML with inline styles plus two shared stylesheets in `assets/`. The custom domain is configured via `CNAME`; `.nojekyll` ensures assets are served verbatim.
+
+### Preview locally
+
+```bash
+git clone https://github.com/DrNitz/drnitz.github.io.git
+cd drnitz.github.io
+python3 -m http.server 8000
+# open http://localhost:8000
+```
+
+Relative links work locally; canonical and social URLs point at the production domain.
+
+### Pages
+
+| File | What it is |
+|---|---|
+| `index.html` | Portfolio landing page — bio, project cards, contact |
+| `mededu.html` | MedEdu Clinic initiative (resources in development) |
+| `nnotes.html` | Nnotes Android app showcase |
+| `nnotes-privacy.html` | Nnotes app privacy policy and terms (linked from Google Play) |
+| `privacy.html` | Privacy policy for this website |
+
+### Layout
+
+- `assets/` — shared CSS (base reset/reduced-motion and the clay dock navigation)
+- `About/` — Nnotes user manual, Play Store listing copy and folder overview
+- `medical-animation.svg`, `image/`, `*.jpg`, `anatomy_bg.png` — site assets
+- `sitemap.xml`, `robots.txt`, `CNAME`, `.nojekyll`, `ads.txt`, `app-ads.txt` — crawler/domain/monetization config
+
+### Deployment
+
+Pushes to `main` publish automatically through GitHub Pages. When adding or renaming a page, update `sitemap.xml`, the navigation/footer links, and the page's title, description, canonical and OG/Twitter tags. See [CONTRIBUTING.md](CONTRIBUTING.md) for the full checklist and [CHANGELOG.md](CHANGELOG.md) for recent changes.
+
+### Documentation & policies
+
+- [Nnotes documentation index](About/README.md)
+- [User manual](About/USER_MANUAL.md)
+- [Play Store listing copy](About/PLAYSTORE_LISTING.md)
+- [App privacy & terms](nnotes-privacy.html) · [Site privacy](privacy.html)
+
+Licensed under the [MIT License](LICENSE) for original site content; third-party attributions are listed there. Contributions are welcome under the [Code of Conduct](CODE_OF_CONDUCT.md).
 
 ---
 
@@ -28,7 +76,7 @@
 📖 goals: Preparing for Medical Residency & AHIMA CCS Certification
 💻 tech_profile: Enthusiast Coder & Part-time AI Explorer
 🌍 location: Earth
-🌐 website: https://p2pcompanion.com
+🌐 website: https://drnitz.com
 🎯 motto: "Cure. Code. Create."
 🔭 flagship_projects:
   - MedEdu Clinic (Free Clinical Knowledge 📚)
@@ -46,34 +94,34 @@
     <td width="50%" valign="top">
       <h3 align="center">📚 MedEdu Clinic</h3>
       <p align="center">
-        <a href="https://drnitz.github.io/mededu.html">
-          <img src="https://img.shields.io/badge/🩺%20Open%20Clinic-00D4FF?style=for-the-badge&logo=google-chrome&logoColor=white" />
+        <a href="https://drnitz.com/mededu.html">
+          <img src="https://img.shields.io/badge/🩺%20Open%20Clinic-66FCF1?style=for-the-badge&logo=google-chrome&logoColor=white" />
         </a>
       </p>
-      <p align="center"><i>A unified clinical education initiative. Free, high-yield clinical notes and video breakdowns on various diseases, bridging the knowledge gap.</i></p>
+      <p align="center"><i>An open clinical education initiative. High-yield clinical notes and video breakdowns are currently being compiled — follow along as the free resource library takes shape.</i></p>
     </td>
     <td width="50%" valign="top">
       <h3 align="center">🌐 p2pcompanion.com</h3>
       <p align="center">
         <a href="https://p2pcompanion.com">
-          <img src="https://img.shields.io/badge/🚀%20LIVE-00D4FF?style=for-the-badge&logo=rocket&logoColor=white" />
+          <img src="https://img.shields.io/badge/🚀%20LIVE-66FCF1?style=for-the-badge&logo=rocket&logoColor=white" />
         </a>
       </p>
-      <p align="center"><i>P2P Companion Terminal — Real-time data terminal aggregating live USDT crypto P2P rates, arbitrage spreads, and OTC trading.</i></p>
+      <p align="center"><i>P2P Companion Terminal — Real-time P2P crypto rates and arbitrage spreads across 6 exchanges and 80+ fiat currencies, with a free tier and a paid API.</i></p>
     </td>
   </tr>
   <tr>
     <td width="50%" valign="top">
       <h3 align="center">📝 Nnotes</h3>
       <p align="center">
-        <a href="https://drnitz.github.io/nnotes.html">
-          <img src="https://img.shields.io/badge/✨%20Showcase-00D4FF?style=for-the-badge&logo=appstore&logoColor=white" />
+        <a href="https://drnitz.com/nnotes.html">
+          <img src="https://img.shields.io/badge/✨%20Showcase-66FCF1?style=for-the-badge&logo=appstore&logoColor=white" />
         </a>
-        <a href="https://drnitz.github.io/nnotes-privacy.html">
-          <img src="https://img.shields.io/badge/🛡️%20Privacy-7B2FF7?style=for-the-badge&logo=shield&logoColor=white" />
+        <a href="https://drnitz.com/nnotes-privacy.html">
+          <img src="https://img.shields.io/badge/🛡️%20Privacy-45A29E?style=for-the-badge&logo=shield&logoColor=white" />
         </a>
       </p>
-      <p align="center"><i>Infinite canvas handwriting, Auto-Beautify, and 3D mascot notebook app. Lead Dev: <b>Harshita</b> | Co-Dev: <b>Dr.N</b>.</i></p>
+      <p align="center"><i>Ad-supported Android handwriting app: infinite canvas, on-device recognition, PDF annotation, vector export and 7 animated companions. Notes stay on your device. Lead Dev: <b>Harshita</b> | Co-Dev: <b>Dr.N</b>.</i></p>
     </td>
     <td width="50%" valign="top">
       <h3 align="center">💊 Med Reminder</h3>
@@ -92,10 +140,10 @@
 ## 🌐 Connect
 
 <p align="center">
-  <a href="https://p2pcompanion.com" target="_blank">
-    <img src="https://img.shields.io/badge/🌐%20p2pcompanion.com-00D4FF?style=for-the-badge&logo=google-chrome&logoColor=white&labelColor=111010" />
+  <a href="https://drnitz.com" target="_blank" rel="noopener noreferrer">
+    <img src="https://img.shields.io/badge/🌐_drnitz.com-66FCF1?style=for-the-badge&logo=google-chrome&logoColor=white&labelColor=111010" />
   </a>
-  <a href="https://github.com/drnitz" target="_blank">
+  <a href="https://github.com/drnitz" target="_blank" rel="noopener noreferrer">
     <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" />
   </a>
 </p>
@@ -103,5 +151,5 @@
 ---
 
 <p align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:111010,50:7B2FF7,100:00D4FF&height=140&section=footer&text=Cure.%20Code.%20Create.&fontSize=24&fontColor=ffffff&animation=twinkling" alt="Footer Wave" />
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:111010,50:45A29E,100:66FCF1&height=140&section=footer&text=Cure.%20Code.%20Create.&fontSize=24&fontColor=ffffff&animation=twinkling" alt="Footer Wave" />
 </p>

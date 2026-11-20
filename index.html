@@ -13,12 +13,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
     <!-- Three.js and Vanta.js (WebGL Backgrounds) -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.net.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js" integrity="sha384-9EQoUIJYrv09/oYhSxnw1VpLcfPw3BM9dE7+D/3wGUPeLLa7F9Z6OAoD+i/M6FK9615601" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanta@0.5.24/dist/vanta.net.min.js" integrity="sha384-L0sjdcIWJ156WmvbxIBHx79j1WrCqANCyw456nl/aPWSYiHNywEU2VIAcbSJeIiX13225" crossorigin="anonymous"></script>
 
     <!-- GSAP (GreenSock) for Premium Scroll Animations -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" integrity="sha384-d+vyQ0dYcymoP8ndq2hW7FGC50nqGdXUEgoOUGxbbkAJwZqL7h+jKN0GGgn9hFDS71520" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" integrity="sha384-poC0r6usQOX2Ayt/VGA+t81H6V3iN9L+Irz9iO8o+s0X20tLpzc9DOOtnKxhaQSE42667" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="assets/base.css">
 
     <style>
         :root {
@@ -33,16 +35,6 @@
             
             --font-display: 'Plus Jakarta Sans', sans-serif;
             --font-body: 'Inter', sans-serif;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
         }
 
         body {
@@ -127,7 +119,7 @@
             height: 38px;
             border-radius: 50%;
             transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            filter: grayscale(80%) opacity(0.6);
+            filter: grayscale(80%) opacity(0.85);
             background: rgba(255,255,255,0.02);
             position: relative;
         }
@@ -613,7 +605,7 @@
 
         .copyright {
             font-size: 0.8rem;
-            color: rgba(255, 255, 255, 0.4);
+            color: rgba(255, 255, 255, 0.65);
         }
 
 
@@ -667,26 +659,27 @@
             
             #anatomy-figure { height: 80vh; opacity: 0.1; }
         }
+
     </style>
     <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "1447bf27ee144931ae324db6be9a9942"}'></script><!-- End Cloudflare Web Analytics -->
     <!-- Open Graph / Social Sharing -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://drnitz.github.io/">
+    <meta property="og:url" content="https://drnitz.com/">
     <meta property="og:title" content="Dr.N | Medicine &amp; Code">
     <meta property="og:description" content="Bridging the gap between clinical medicine and software engineering.">
-    <meta property="og:image" content="https://drnitz.github.io/social_preview.png">
+    <meta property="og:image" content="https://drnitz.com/social_preview.jpg">
     
     <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://drnitz.github.io/">
-    <meta property="twitter:title" content="Dr.N | Medicine &amp; Code">
-    <meta property="twitter:description" content="Bridging the gap between clinical medicine and software engineering.">
-    <meta property="twitter:image" content="https://drnitz.github.io/social_preview.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://drnitz.com/">
+    <meta name="twitter:title" content="Dr.N | Medicine &amp; Code">
+    <meta name="twitter:description" content="Bridging the gap between clinical medicine and software engineering.">
+    <meta name="twitter:image" content="https://drnitz.com/social_preview.jpg">
 
     <!-- SEO Meta Tags -->
     <meta name="description" content="Portfolio of Dr.N - A General Practitioner (GP) and tech enthusiast bridging the gap between clinical medicine and software engineering.">
     <meta name="keywords" content="medical doctor developer, general practitioner software, GP coding, clinical medicine tech, healthcare software, Dr.N portfolio, medical UI designer">
-    <link rel="canonical" href="https://drnitz.github.io/">
+    <link rel="canonical" href="https://drnitz.com/">
 
     <!-- JSON-LD Structured Data -->
     <script type="application/ld+json">
@@ -694,7 +687,7 @@
       "@context": "https://schema.org",
       "@type": "Person",
       "name": "Dr.N",
-      "url": "https://drnitz.github.io/",
+      "url": "https://drnitz.com/",
       "jobTitle": [
         "General Practitioner",
         "Software Developer"
@@ -712,27 +705,28 @@
     <div id="vanta-bg"></div>
 
     <!-- Dynamic Anatomy Figure -->
-    <img src="anatomy_bg.png?v=3" alt="Dynamic Anatomy" id="anatomy-figure">
+    <img src="anatomy_bg.png?v=3" alt="" aria-hidden="true" id="anatomy-figure">
 
     <!-- Interactive Bottom Dock -->
-    <nav class="side-dock">
-        <a href="index.html" title="Home">🏠</a>
-        <a href="mededu.html" title="MedEdu">📚</a>
-        <a href="#philosophy" title="Physiology & Philosophy">🧠</a>
-        <a href="#sandbox" title="The Sandbox">🔬</a>
-        <a href="nnotes.html" title="Nnotes App">📝</a>
-        <a href="https://p2pcompanion.com" target="_blank" title="P2P Terminal">⚡</a>
-        <a href="https://github.com/drnitz" target="_blank" title="GitHub">💻</a>
-        <a href="#contact" title="Contact">📬</a>
+    <nav class="side-dock" aria-label="Main navigation">
+        <a href="index.html" title="Home" aria-label="Home">🏠</a>
+        <a href="mededu.html" title="MedEdu" aria-label="MedEdu">📚</a>
+        <a href="#philosophy" title="Physiology & Philosophy" aria-label="Physiology &amp; Philosophy">🧠</a>
+        <a href="#sandbox" title="The Sandbox" aria-label="The Sandbox">🔬</a>
+        <a href="nnotes.html" title="Nnotes App" aria-label="Nnotes App">📝</a>
+        <a href="https://p2pcompanion.com" target="_blank" rel="noopener noreferrer" title="P2P Terminal" aria-label="P2P Terminal">⚡</a>
+        <a href="https://github.com/drnitz" target="_blank" rel="noopener noreferrer" title="GitHub" aria-label="GitHub">💻</a>
+        <a href="#contact" title="Contact" aria-label="Contact">📬</a>
     </nav>
 
+    <main>
     <!-- Hero Section -->
     <header class="hero container">
         
         <!-- User Requested Boxy Avatar -->
         <div class="hero-avatar-wrapper">
             <div class="boxy-anim"></div>
-            <img src="drn_avatar.png" alt="Dr. N" class="hero-avatar" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48cmVjdCB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgZmlsbD0iIzIyMiIvPjx0ZXh0IHg9IjUwIiB5PSI1NCIgZm9udC1mYW1pbHk9InNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMzAiIGZpbGw9IiM2NkZDRjEiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGFsaWdubWVudC1iYXNlbGluZT0ibWlkZGxlIj5Eck48L3RleHQ+PC9zdmc+'">
+            <img src="drn_avatar.jpg" alt="Dr. N" width="1600" height="1600" class="hero-avatar" data-fallback="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48cmVjdCB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgZmlsbD0iIzIyMiIvPjx0ZXh0IHg9IjUwIiB5PSI1NCIgZm9udC1mYW1pbHk9InNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMzAiIGZpbGw9IiM2NkZDRjEiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGFsaWdubWVudC1iYXNlbGluZT0ibWlkZGxlIj5Eck48L3RleHQ+PC9zdmc+">
         </div>
 
         <!-- User Requested Main Animated Slogan Bar -->
@@ -775,12 +769,12 @@
                 
                 <!-- Nnotes Project -->
                 <a href="nnotes.html" class="project-card">
-                    <img src="image/nnotes_logo.png" alt="Nnotes Logo" class="project-image" onerror="this.style.display='none'">
+                    <img src="image/nnotes_logo.png" alt="Nnotes Logo" class="project-image" data-fallback>
                     <div class="project-header">
                         <h3 class="project-title">Nnotes App</h3>
                     </div>
                     <div class="project-body">
-                        <p>An infinite canvas handwriting and sketching notebook for Android. Features on-device Auto-Beautify handwriting-to-text, a customizable floating toolbar, and 3D profession mascots.</p>
+                        <p>An infinite-canvas handwriting app for Android with on-device recognition, PDF annotation, vector export and 7 animated profession companions. Ad-supported; your notes stay on your device. Lead Dev: Harshita.</p>
                     </div>
                     <div class="project-footer">
                         <div class="tech-stack">
@@ -801,7 +795,7 @@
                         <h3 class="project-title">MedEdu Clinic</h3>
                     </div>
                     <div class="project-body">
-                        <p>A unified clinical education initiative. Free, high-yield clinical notes and video breakdowns on various diseases, bridging the knowledge gap for both doctors and the general public.</p>
+                        <p>An open clinical education initiative. High-yield notes and video breakdowns are currently being compiled — follow along as the free resource library takes shape.</p>
                     </div>
                     <div class="project-footer">
                         <div class="tech-stack">
@@ -815,13 +809,13 @@
                 </a>
 
                 <!-- P2P Companion Project -->
-                <a href="https://p2pcompanion.com" target="_blank" class="project-card">
-                    <img src="image/icon.png" alt="P2P Companion" class="project-image" onerror="this.style.display='none'">
+                <a href="https://p2pcompanion.com" target="_blank" rel="noopener noreferrer" class="project-card">
+                    <img src="image/icon.jpg" alt="P2P Companion" width="1024" height="1024" class="project-image" data-fallback>
                     <div class="project-header">
                         <h3 class="project-title">P2P Companion</h3>
                     </div>
                     <div class="project-body">
-                        <p>A 100% free, real-time data terminal aggregating live USDT peer-to-peer crypto rates, arbitrage spreads, and OTC trading across Binance, OKX, and Bybit for over 50 fiat currencies.</p>
+                        <p>A real-time terminal aggregating P2P crypto rates and arbitrage spreads across 6 exchanges (including Binance, OKX and Bybit) and 80+ fiat currencies, with BTC, ETH and USDC pairs. Free tier available.</p>
                     </div>
                     <div class="project-footer">
                         <div class="tech-stack">
@@ -835,7 +829,7 @@
                 </a>
 
                 <!-- Med Reminder Project -->
-                <a href="https://github.com/drnitz/Med" target="_blank" class="project-card">
+                <a href="https://github.com/drnitz/Med" target="_blank" rel="noopener noreferrer" class="project-card">
                     <div class="project-image fallback-img">⚕️</div>
                     <div class="project-header">
                         <h3 class="project-title">Med Reminder</h3>
@@ -855,7 +849,7 @@
                 </a>
 
                 <!-- P2P Mobile Project -->
-                <a href="https://play.google.com/store/apps/details?id=p2p.mobile" target="_blank" class="project-card">
+                <a href="https://play.google.com/store/apps/details?id=p2p.mobile" target="_blank" rel="noopener noreferrer" class="project-card">
                     <div class="project-image fallback-img">📱</div>
                     <div class="project-header">
                         <h3 class="project-title">P2P Mobile</h3>
@@ -875,7 +869,7 @@
                 </a>
 
                 <!-- Medical Assets Project -->
-                <a href="https://drnitz.com/medical-assets/" target="_blank" class="project-card">
+                <a href="https://drnitz.com/medical-assets/" target="_blank" rel="noopener noreferrer" class="project-card">
                     <div class="project-image fallback-img">🖼️</div>
                     <div class="project-header">
                         <h3 class="project-title">Medical Assets</h3>
@@ -895,7 +889,7 @@
                 </a>
 
                 <!-- Nnotes Assets Project -->
-                <a href="https://drnitz.com/nnotes-assets/" target="_blank" class="project-card">
+                <a href="https://drnitz.com/nnotes-assets/" target="_blank" rel="noopener noreferrer" class="project-card">
                     <div class="project-image fallback-img">📝</div>
                     <div class="project-header">
                         <h3 class="project-title">Nnotes Assets</h3>
@@ -928,15 +922,17 @@
                 <a href="mailto:drnitz@proton.me" class="contact-btn">
                     <span class="contact-icon">📧</span> Email
                 </a>
-                <a href="https://x.com/14itish" target="_blank" class="contact-btn">
+                <a href="https://x.com/14itish" target="_blank" rel="noopener noreferrer" class="contact-btn">
                     <span class="contact-icon">𝕏</span> Twitter
                 </a>
-                <a href="https://t.me/Niti0014" target="_blank" class="contact-btn">
+                <a href="https://t.me/Niti0014" target="_blank" rel="noopener noreferrer" class="contact-btn">
                     <span class="contact-icon">✈️</span> Telegram
                 </a>
             </div>
         </div>
     </section>
+
+    </main>
 
     <!-- Footer -->
     <footer>
@@ -944,9 +940,10 @@
             <div class="footer-logo">Cure. Code. <span>Create.</span></div>
             <div class="footer-links">
                 <a href="nnotes.html">Nnotes</a>
-                <a href="privacy.html">Privacy</a>
-                <a href="https://p2pcompanion.com" target="_blank">P2P Terminal</a>
-                <a href="https://github.com/drnitz" target="_blank">GitHub</a>
+                <a href="nnotes-privacy.html">Nnotes Privacy</a>
+                <a href="privacy.html">Site Privacy</a>
+                <a href="https://p2pcompanion.com" target="_blank" rel="noopener noreferrer">P2P Terminal</a>
+                <a href="https://github.com/drnitz" target="_blank" rel="noopener noreferrer">GitHub</a>
             </div>
             <p class="copyright">&copy; 2026 Dr.N. Built with curiosity.</p>
         </div>
@@ -954,23 +951,40 @@
 
     <!-- Scripts -->
     <script>
-        // 1. Initialize Vanta.js WebGL Background with Strengthened Intensity
-        VANTA.NET({
-          el: "#vanta-bg",
-          mouseControls: true,
-          touchControls: true,
-          gyroControls: false,
-          minHeight: 200.00,
-          minWidth: 200.00,
-          scale: 1.00,
-          scaleMobile: 1.00,
-          color: 0x45a29e,       // Medical Teal
-          backgroundColor: 0x0b0c10, // Dark background
-          points: 12.00,         // Strengthened density
-          maxDistance: 20.00,    // Strengthened connection distance
-          spacing: 16.00,
-          showDots: true
+        // 0. Image fallbacks (no inline handlers)
+        function imgError(img) {
+            if (img.dataset.fallback) {
+                if (img.dataset.fallbackApplied) return;
+                img.dataset.fallbackApplied = 'true';
+                img.src = img.dataset.fallback;
+            } else {
+                img.classList.add('is-hidden');
+            }
+        }
+        document.querySelectorAll('[data-fallback]').forEach(img => {
+            img.addEventListener('error', () => imgError(img));
+            if (img.complete && img.naturalWidth === 0) imgError(img);
         });
+
+        // 1. Initialize Vanta.js WebGL Background with Strengthened Intensity
+        if (window.VANTA) {
+          VANTA.NET({
+            el: "#vanta-bg",
+            mouseControls: true,
+            touchControls: true,
+            gyroControls: false,
+            minHeight: 200.00,
+            minWidth: 200.00,
+            scale: 1.00,
+            scaleMobile: 1.00,
+            color: 0x45a29e,       // Medical Teal
+            backgroundColor: 0x0b0c10, // Dark background
+            points: 12.00,         // Strengthened density
+            maxDistance: 20.00,    // Strengthened connection distance
+            spacing: 16.00,
+            showDots: true
+          });
+        }
 
         // 2. Dynamic Parallax for Anatomy Background
         const anatomyFig = document.getElementById('anatomy-figure');
@@ -1039,6 +1053,8 @@
         setTimeout(type, 1000);
 
         // 5. GSAP ScrollTrigger Animations
+        // Guard both globals so a blocked CDN leaves all reveal targets visible
+        if (window.gsap && window.ScrollTrigger) {
         gsap.registerPlugin(ScrollTrigger);
 
         gsap.set(".hero > *, .manifesto-quote, .section-title, .section-desc, .project-card, footer > *", { 
@@ -1121,17 +1137,23 @@
             stagger: 0.1,
             ease: "power2.out"
         });
+        }
 
         // 6. Auto-hide Dock on Scroll Down
+        const dock = document.querySelector('.side-dock');
         let lastScrollY = window.scrollY;
         window.addEventListener('scroll', () => {
+            if (!window.gsap) return;
             const currentScroll = window.scrollY;
-            
+
             if (currentScroll > lastScrollY && currentScroll > 100) {
                 // Scrolling down -> hide (slide down)
-                gsap.to(".side-dock", { y: 150, duration: 0.4, ease: "power2.out", overwrite: "auto" });
+                dock.style.visibility = 'visible';
+                gsap.to(".side-dock", { y: 150, duration: 0.4, ease: "power2.out", overwrite: "auto",
+                    onComplete: () => { dock.style.visibility = 'hidden'; } });
             } else {
                 // Scrolling up -> show
+                dock.style.visibility = 'visible';
                 gsap.to(".side-dock", { y: 0, duration: 0.4, ease: "power2.out", overwrite: "auto" });
             }
             lastScrollY = currentScroll;

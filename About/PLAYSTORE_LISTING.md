@@ -1,70 +1,72 @@
-# 🚀 Nnotes - Google Play Store Listing Guide
+# Nnotes — Google Play Store Listing
 
-This document contains highly optimized, SEO-rich content designed to maximize organic discovery, conversion rates, and user retention to help Nnotes chart as a Top Free App.
-
----
-
-## 📱 App Name (Title)
-*Limit: 30 characters. Needs to contain the brand name and a high-volume keyword.*
-**Option 1 (Best SEO):** Nnotes: Infinite Notes & Sketch
-**Option 2 (Feature Focus):** Nnotes: Smart Notes & Canvas
-**Option 3 (Brand Focus):** Nnotes - Handwriting & Sketch
-
-## 📝 Short Description
-*Limit: 80 characters. This is the hook. Make it punchy and highlight the unique selling propositions (USPs).*
-**Option 1:** Infinite canvas, auto-beautify handwriting, & 3D mascots for perfect notes!
-**Option 2:** Write, sketch, and beautify your notes on an infinite canvas with 3D mascots.
-**Option 3:** The ultimate infinite canvas app. Convert handwriting to text instantly!
+Working copy aligned with the **live listing** for `com.nnote.Drn` as of 20 Nov 2026. Historical drafts described a different feature set; this document supersedes them.
 
 ---
 
-## 📄 Full Description
-*Limit: 4,000 characters. Uses strategic keywords (handwriting, infinite canvas, sketch, note-taking, productivity, smart notes).*
+## Store metadata
 
-Welcome to **Nnotes**, the ultimate handwriting, sketching, and digital note-taking companion! Developed by Lead Developer **Harshita** and Co-Developer **Dr.N** under the motto **Cure. Code. Create.** Break free from the limitations of traditional pages with our infinite canvas, and experience a note-taking app that actively helps you stay productive, focused, and creative.
+- **Package name:** `com.nnote.Drn`
+- **Live title:** "Nnotes - Stylus Handwriting" (26 characters — within the 30-character limit)
+- **Publisher on Play:** N&Nconnect (developer identity on Play differs from the site credits: Lead Dev **Harshita**, Co-Dev **Dr.N**)
+- **Category:** Productivity
+- **Content:** Contains ads · Rated for 3+
+- **Privacy policy URL used by Play:** https://drnitz.com/nnotes-privacy.html
 
-Whether you are a student taking lecture notes, a designer sketching wireframes, or a professional brainstorming ideas, Nnotes provides the perfect limitless workspace.
+Alternative title options (all within 30 characters, if a rename is ever considered):
 
-**✨ MAGICAL AUTO-BEAUTIFY**
-Tired of messy handwriting? Nnotes features intelligent Auto-Beautify engine. Write naturally with your stylus or finger, and watch as your strokes are magically transformed into perfectly styled digital text. Prefer to write first and edit later? Just use our Lasso tool to select a block of text and beautify it with a single tap!
+| Option | Title | Characters |
+|---|---|---|
+| A | Nnotes: Infinite Notes & Sketch | 31 ❌ over limit |
+| B | Nnotes: Smart Notes & Canvas | 28 ✅ |
+| C | Nnotes - Handwriting & Sketch | 29 ✅ |
 
-**🌌 INFINITE CANVAS**
-Never run out of space again. Pan and zoom across a completely limitless canvas. Brainstorm without boundaries, create massive mind maps, and structure your thoughts exactly how you visualize them.
+## Short description (max 80 characters)
 
-**🎨 STUNNING CLAYMORPHISM UI**
-Experience a beautifully crafted, soft 3D 'Claymorphism' interface that is easy on the eyes and deeply satisfying to use. Customize your workspace with Dark Mode, Light Mode, and various background grids (Dots, Ruled, Graph).
+> Infinite canvas, on-device handwriting recognition, PDF annotation and 7 animated companions.
 
-**🧰 FULLY CUSTOMIZABLE FLOATING TOOLBAR**
-Your tools, your way. Our floating toolbar can be dragged anywhere on the screen. Long-press and rearrange your tools, or switch between vertical and horizontal layouts.
+## Full description
 
-**✏️ PROFESSIONAL DRAWING TOOLS**
-- **Calligraphy Pen:** Add elegance to your handwriting.
-- **Speed & Taper Pens:** Dynamic strokes that adjust to your speed for a natural brush feel.
-- **Highlighter:** Smart translucent highlighting that stays behind your ink.
-- **Shape Tool:** Draw rough circles, squares, or lines, and Nnotes will snap them into perfect geometry.
-- **Lasso & Bounding Select:** Effortlessly select, move, and edit multiple items.
+Welcome to **Nnotes** — a zero-latency canvas for stylus and finger input. Whether you are a student capturing lecture notes, a doctor organizing patient charts, a teacher preparing lessons, an engineer sketching diagrams, or a designer drafting ideas, Nnotes gives you a premium workspace that stays out of your way.
 
-**🤖 3D INTERACTIVE MASCOTS**
-Stay motivated and focused with your own personal 3D companion! Choose a mascot that matches your profession (Student, Doctor, Engineer, Artist, and more). Drag them around your canvas, and tap them anytime for an interactive burst of motivation!
+**✍️ NATURAL HANDWRITING & SMART DIGITAL INK**
+Ultra-responsive stroke rendering with pressure sensitivity and smoothing. Custom pens, erasers, highlighters and lasso selection. Instant Smart Recognition turns handwriting and hand-drawn shapes into crisp digital text and vectors using on-device ML Kit — nothing is sent to a server.
 
-Download **Nnotes** today and experience the future of smart, infinite digital note-taking!
+**📄 PDF ANNOTATION & DIGITAL PLANNER**
+Import, read and annotate PDFs. Organize notebooks with folders. Fast vector rendering keeps panning and zooming smooth on large multi-page documents.
 
----
+**🐱 7 MOTIVATIONAL COMPANIONS**
+Choose from Student, Doctor, Teacher, Engineer, Designer, Lawyer or the N-notes Mascot. Animated companions provide playful quotes to keep you focused.
 
-## 🏷️ Keywords & Search Tags
-*Use these when selecting your category and tags in the Google Play Console.*
-- Note taking, Handwriting, Infinite Canvas, Sketching, Drawing App, Mind Mapping
-- Productivity, Student Notes, Auto-beautify, Handwriting to Text, Digital Journal
-- Calligraphy, 3D UI, Focus, Study Planner, GoodNotes Alternative, Notability Alternative
+**🎨 MODERN PREMIUM DESIGN**
+A glassmorphism theme with 3D clay elements, vibrant accents, smooth rounded selection boxes, and fully customizable floating or dockable toolbars.
 
-## 📂 Play Store Categorization
-- **App Category:** Productivity (Primary) or Art & Design (Secondary)
-- **Tags:** Note-taking, Drawing, Productivity, Education
+**📤 EXPORT & SHARE FREELY**
+Export notes as crisp vector PDFs or high-resolution PNGs. Share a whole notebook or a single page in one tap.
 
-## 💡 ASO (App Store Optimization) Tips for Top Free App
-1. **Screenshots:** Use the first 3 screenshots to show off your biggest USPs:
-   - *Screenshot 1:* The Infinite Canvas in action.
-   - *Screenshot 2:* Before/After of the "Auto-Beautify" feature.
-   - *Screenshot 3:* The 3D Mascot hanging on the floating toolbar.
-2. **Video Trailer:** Record a 15-second screen recording showing a user writing messy text and tapping the ✨ icon to instantly beautify it. This 'wow' factor drives massive conversion rates.
-3. **Icon:** Make sure the Nnotes logo stands out. Since the UI is Claymorphism, ensure the app icon also has a soft 3D, tactile feel.
+**🔒 PRIVATE BY DESIGN**
+Your documents stay on your device. Handwriting recognition runs completely offline. The app is ad-supported; see the Privacy Policy for how ad providers handle advertising identifiers.
+
+**Acknowledgements:** Inspired by the open-source Xnote project by Shardul (MIT). Anatomical images courtesy of Stanford University School of Medicine and the Lane Medical Library, under CC BY-SA 4.0.
+
+*Developed by Lead Developer Harshita and Co-Developer Dr.N · Cure. Code. Create.*
+
+## What's new (current release, 19 Nov 2026)
+
+- Multi-language Auto-Beautify and app translations (Arabic, Hindi, Spanish, French, German, Japanese, Russian and more)
+- Interactive mind maps with branching and formatting
+- Open and import `.nnote` files directly from WhatsApp
+- Focus and streak tracker on the dashboard
+- Shape and study tools: color, fill, neon, sticky notes and study tape
+- Android 15 support and bug fixes
+
+## Keywords & search tags
+
+Note taking · Handwriting · Infinite Canvas · Sketching · Drawing App · Mind Mapping · Productivity · Student Notes · Handwriting to Text · PDF Annotation · Digital Journal · Calligraphy · Study Planner · GoodNotes Alternative · Notability Alternative
+
+## ASO notes
+
+1. Screenshot 1: infinite canvas with vector ink; 2: before/after Smart Recognition; 3: a companion on the toolbar; 4: PDF annotation; 5: vector PDF / PNG export.
+2. Trailer: 15 seconds showing messy handwriting → on-device recognition → export.
+3. Icon: keep the soft-3D Nnotes logo; avoid tiny text.
+4. Keep the Play Data Safety declaration aligned with the privacy policy — ad identifiers are collected, note content is not.

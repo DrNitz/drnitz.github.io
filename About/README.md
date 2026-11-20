@@ -17,8 +17,9 @@ Welcome to the documentation folder for **Nnotes**, an advanced Android handwrit
 ## ⚡ Core USPs & Architecture
 
 - **Infinite Canvas**: Unlimited workspace with pan, pinch-zoom, and plain/ruled/graph/dot grids.
-- **Magical Auto-Beautify**: Converts messy handwriting to styled digital text in real-time or via Lasso selection.
-- **Claymorphism 3D UI**: Tactile soft 3D design system with light & dark themes.
-- **3D Mascots**: Interactive profession companions providing study motivation.
-- **Local-First Privacy**: Uses Android Storage Access Framework (SAF) with zero telemetry.
-- **Licensing**: Inspired by Xnote under the **MIT License**.
+- **Smart Auto-Beautify**: On-device ML Kit recognition converts handwriting and rough shapes into clean digital text and vectors, with multi-language support.
+- **PDF & Planner**: Import and annotate PDFs, organize notebooks in folders, and export as vector PDF or high-resolution PNG.
+- **Glassmorphism + 3D Clay UI**: A glassmorphism theme with soft 3D clay elements and customizable floating or docked toolbars.
+- **7 Animated Mascots**: Student, Doctor, Teacher, Engineer, Designer, Lawyer and the N-notes Mascot provide study motivation.
+- **Local-First Notes**: Android Storage Access Framework (SAF) keeps note content on the device; recognition runs on-device. The app is ad-supported — see [Privacy & Terms](../nnotes-privacy.html).
+- **Licensing**: Inspired by upstream Xnote (MIT). This repo's own license is in the root [LICENSE](../LICENSE); upstream attribution is recorded there.

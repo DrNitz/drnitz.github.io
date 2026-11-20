@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://drnitz.github.io/sitemap.xml
+Sitemap: https://drnitz.com/sitemap.xml

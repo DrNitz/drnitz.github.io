@@ -3,31 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Privacy Policy | Nnotes App</title>
+    <title>Privacy Policy &amp; Terms | Nnotes App</title>
     
     <!-- Meta & Social tags -->
                 
     <!-- Fonts -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" integrity="sha384-d+vyQ0dYcymoP8ndq2hW7FGC50nqGdXUEgoOUGxbbkAJwZqL7h+jKN0GGgn9hFDS71520" crossorigin="anonymous"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="assets/base.css">
+    <link rel="stylesheet" href="assets/dock.css">
 
     <style>
         :root {
             --bg-deep: #E0E5EC;
             --clay-base: #E0E5EC;
             --clay-light: #F4F7FB;
-            --cyan: #00B4D8;
+            --cyan: #006A94;
             --purple: #9D4EDD;
             --text: #2D3748;
-            --text-secondary: #718096;
-            --text-muted: #A0AEC0;
+            --text-secondary: #4A5568;
+            --text-muted: #52606D;
             --font-body: 'Plus Jakarta Sans', sans-serif;
             --font-mono: 'JetBrains Mono', monospace;
         }
-
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        html { scroll-behavior: smooth; }
 
         body {
             font-family: var(--font-body);
@@ -99,6 +99,27 @@
 
         .highlight-box { padding: 18px 24px; border-radius: 16px; background: var(--clay-light); border: 2px solid rgba(255,255,255,0.5); margin: 20px 0; display: flex; gap: 14px; align-items: flex-start; box-shadow: inset 3px 3px 6px rgba(163,177,198,0.3), inset -3px -3px 6px rgba(255,255,255,0.8); }
 
+        .scope-note {
+            margin: 0 auto 28px; max-width: 680px; padding: 14px 20px; border-radius: 16px; text-align: left;
+            background: var(--clay-light); border: 2px solid rgba(255,255,255,0.6); color: var(--text-secondary); font-size: 0.9rem;
+            box-shadow: 4px 4px 10px rgba(163,177,198,0.3), -2px -2px 8px rgba(255,255,255,0.8);
+        }
+        .scope-note a { color: var(--cyan); font-weight: 700; }
+
+        .data-table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 0.9rem; }
+        .data-table th, .data-table td { text-align: left; padding: 12px 14px; border-bottom: 2px solid rgba(255,255,255,0.5); vertical-align: top; }
+        .data-table th { font-family: var(--font-mono); color: var(--cyan); font-size: 0.78rem; text-transform: uppercase; }
+        .data-table td { color: var(--text-secondary); }
+
+        .license-details { margin-top: 16px; }
+        .license-details summary { cursor: pointer; color: var(--cyan); font-weight: 700; font-size: 0.9rem; }
+        .license-details pre {
+            margin-top: 14px; padding: 18px; border-radius: 14px; overflow-x: auto;
+            background: var(--clay-light); border: 2px solid rgba(255,255,255,0.5);
+            font-family: var(--font-mono); font-size: 0.78rem; line-height: 1.6; color: var(--text-secondary);
+            box-shadow: inset 3px 3px 6px rgba(163,177,198,0.3), inset -3px -3px 6px rgba(255,255,255,0.8);
+        }
+
         footer { padding: 60px 0; border-top: 2px solid rgba(255, 255, 255, 0.5); text-align: center; }
         .footer-nav { display: flex; justify-content: center; gap: 24px; margin-bottom: 24px; flex-wrap: wrap; }
         .footer-link { color: var(--text-secondary); text-decoration: none; font-size: 0.9rem; font-weight: 600; }
@@ -107,65 +128,35 @@
 
         @media (max-width: 900px) { .content-grid { grid-template-columns: 1fr; } .toc-sidebar { display: none; } header { flex-direction: column; gap: 16px; } }
 
-        /* --- Bottom Dock Navigation (Clay Style) --- */
-        .side-dock {
-            position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%); z-index: 100;
-            display: flex; flex-direction: row; gap: 12px;
-            background: var(--clay-base); padding: 8px 12px; border-radius: 100px;
-            border: 2px solid rgba(255,255,255,0.5);
-            box-shadow: 10px 10px 20px rgba(163,177,198,0.5), -5px -5px 15px rgba(255,255,255,0.8);
-            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        }
-        .side-dock a {
-            text-decoration: none; font-size: 1.2rem; display: flex; align-items: center; justify-content: center;
-            width: 38px; height: 38px; border-radius: 50%; filter: grayscale(80%) opacity(0.6);
-            background: var(--clay-base); position: relative; transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            box-shadow: inset 2px 2px 5px rgba(255,255,255,0.8), inset -2px -2px 5px rgba(163,177,198,0.4);
-            border: 1px solid rgba(255,255,255,0.4);
-        }
-        .side-dock a:hover {
-            transform: scale(1.15) translateY(-4px); filter: grayscale(0%) opacity(1);
-            background: var(--clay-light); z-index: 2;
-            box-shadow: 6px 6px 15px rgba(163,177,198,0.4), -4px -4px 10px rgba(255,255,255,0.8);
-        }
-        .side-dock a::after {
-            content: attr(title); position: absolute; top: -45px; left: 50%; transform: translateX(-50%) translateY(10px);
-            background: var(--clay-base); color: var(--text); padding: 4px 12px; border-radius: 6px;
-            font-size: 0.8rem; font-weight: 600; border: 2px solid rgba(255,255,255,0.4); opacity: 0; pointer-events: none;
-            box-shadow: 4px 4px 10px rgba(163,177,198,0.3);
-            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); white-space: nowrap;
-        }
-        .side-dock a:hover::after { opacity: 1; transform: translateX(-50%) translateY(0); }
-        @media (max-width: 768px) { .side-dock a::after { display: none; } }
     </style>
     <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "1447bf27ee144931ae324db6be9a9942"}'></script><!-- End Cloudflare Web Analytics -->
     <!-- Open Graph / Social Sharing -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://drnitz.github.io/">
-    <meta property="og:title" content="Dr.N | Medicine &amp; Code">
-    <meta property="og:description" content="Bridging the gap between clinical medicine and software engineering.">
-    <meta property="og:image" content="https://drnitz.github.io/social_preview.png">
+    <meta property="og:url" content="https://drnitz.com/nnotes-privacy.html">
+    <meta property="og:title" content="Privacy Policy &amp; Terms | Nnotes App">
+    <meta property="og:description" content="Local-first notes with transparent, ad-supported data practices. See how Nnotes handles note content on device and what Google's ad SDKs process.">
+    <meta property="og:image" content="https://drnitz.com/social_preview.jpg">
     
     <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://drnitz.github.io/">
-    <meta property="twitter:title" content="Dr.N | Medicine &amp; Code">
-    <meta property="twitter:description" content="Bridging the gap between clinical medicine and software engineering.">
-    <meta property="twitter:image" content="https://drnitz.github.io/social_preview.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://drnitz.com/nnotes-privacy.html">
+    <meta name="twitter:title" content="Privacy Policy &amp; Terms | Nnotes App">
+    <meta name="twitter:description" content="Local-first notes with transparent, ad-supported data practices. See how Nnotes handles note content on device and what Google's ad SDKs process.">
+    <meta name="twitter:image" content="https://drnitz.com/social_preview.jpg">
 
     <!-- SEO Meta Tags -->
-    <meta name="description" content="Official Privacy Policy and Terms of Service for the Nnotes Android application. Transparent, local-first data storage policies.">
+    <meta name="description" content="Official Privacy Policy and Terms for the Nnotes Android app: local-first note storage, on-device handwriting recognition, and transparent ad-supported data practices.">
     <meta name="keywords" content="nnotes privacy policy, nnotes terms of service">
-    <link rel="canonical" href="https://drnitz.github.io/nnotes-privacy.html">
+    <link rel="canonical" href="https://drnitz.com/nnotes-privacy.html">
 </head>
 <body>
     <!-- Bottom Dock -->
-    <nav class="side-dock">
-        <a href="index.html" title="Home">🏠</a>
-        <a href="mededu.html" title="MedEdu">📚</a>
-        <a href="index.html#sandbox" title="The Sandbox">🔬</a>
-        <a href="nnotes.html" title="Nnotes App">📝</a>
-        <a href="https://p2pcompanion.com" target="_blank" title="P2P Terminal">⚡</a>
+    <nav class="side-dock" aria-label="Site navigation dock">
+        <a href="index.html" title="Home" aria-label="Home">🏠</a>
+        <a href="mededu.html" title="MedEdu" aria-label="MedEdu">📚</a>
+        <a href="index.html#sandbox" title="The Sandbox" aria-label="The Sandbox">🔬</a>
+        <a href="nnotes.html" title="Nnotes App" aria-label="Nnotes App">📝</a>
+        <a href="https://p2pcompanion.com" target="_blank" rel="noopener noreferrer" title="P2P Terminal" aria-label="P2P Terminal">⚡</a>
     </nav>
     <div class="container">
         <header>
@@ -173,7 +164,7 @@
                 <span class="logo">📝 Nnotes</span>
                 <span class="logo-badge">Privacy & Terms</span>
             </a>
-            <nav class="nav-links">
+            <nav class="nav-links" aria-label="Page navigation">
                 <a href="nnotes.html" class="nav-btn">← Nnotes Overview</a>
                 <a href="index.html" class="nav-btn">🌐 Portfolio Home</a>
             </nav>
@@ -181,23 +172,28 @@
 
         <section class="hero">
             <div class="hero-badge">
-                <span>🛡️</span> Private Notes • Local Storage • Ad-Supported
+                <span>🛡️</span> Local-First Notes • Ad-Supported • Transparent About Data
             </div>
             <h1 class="hero-title">Privacy Policy & Terms of Service</h1>
             <p class="hero-subtitle">
                 Official privacy, data protection, and terms of use for Nnotes — developed by <strong>Harshita</strong> (Lead Developer) and <strong>Dr.N</strong> (Co-Developer).
             </p>
             <div class="meta-pills">
-                <span class="meta-pill">📅 Effective Date: July 2026</span>
+                <span class="meta-pill">📅 Effective Date: 20 November 2026</span>
+                <span class="meta-pill">🕒 Last updated: 20 November 2026</span>
                 <span class="meta-pill">⚡ Architecture: Kotlin & Jetpack Compose</span>
                 <span class="meta-pill">🔒 Storage: Android Storage Access Framework (SAF)</span>
             </div>
+            <div class="scope-note">
+                <span>📄</span>
+                <span><strong>Scope:</strong> This policy governs the <strong>Nnotes Android app</strong>. For the website at drnitz.com, see the <a href="privacy.html">Website Privacy Policy</a>.</span>
+            </div>
         </section>
 
-        <div class="tab-switcher">
-            <button class="tab-btn active" onclick="switchTab('all')">All Documentation</button>
-            <button class="tab-btn" onclick="switchTab('privacy')">Privacy Policy</button>
-            <button class="tab-btn" onclick="switchTab('terms')">Terms of Service</button>
+        <div class="tab-switcher" role="tablist">
+            <button type="button" class="tab-btn active" role="tab" aria-selected="true" onclick="switchTab('all', this)">All Documentation</button>
+            <button type="button" class="tab-btn" role="tab" aria-selected="false" onclick="switchTab('privacy', this)">Privacy Policy</button>
+            <button type="button" class="tab-btn" role="tab" aria-selected="false" onclick="switchTab('terms', this)">Terms of Service</button>
         </div>
 
         <div class="content-grid">
@@ -205,14 +201,16 @@
                 <div class="toc-title">Table of Contents</div>
                 <ul class="toc-list">
                     <li><a href="#privacy-overview" class="toc-link">1. Privacy Philosophy</a></li>
-                    <li><a href="#data-collection" class="toc-link">2. Data Collection & Ad Integration</a></li>
-                    <li><a href="#autobeautify-privacy" class="toc-link">3. Auto-Beautify On-Device Processing</a></li>
-                    <li><a href="#storage-saf" class="toc-link">4. Local File Storage & SAF</a></li>
-                    <li><a href="#mascot-assets" class="toc-link">5. 3D Mascots & Offline Assets</a></li>
-                    <li><a href="#mit-license" class="toc-link">6. Open Source License Notice</a></li>
-                    <li><a href="#terms-use" class="toc-link">7. Commercial Terms of Use</a></li>
-                    <li><a href="#disclaimer" class="toc-link">8. Disclaimer & Liability</a></li>
-                    <li><a href="#contact" class="toc-link">9. Developer Contact</a></li>
+                    <li><a href="#data-collection" class="toc-link">2. Data Collection, Ads & Play Data Safety</a></li>
+                    <li><a href="#children" class="toc-link">3. Children</a></li>
+                    <li><a href="#data-retention" class="toc-link">4. Retention, Deletion & Choices</a></li>
+                    <li><a href="#autobeautify-privacy" class="toc-link">5. Auto-Beautify On-Device Processing</a></li>
+                    <li><a href="#storage-saf" class="toc-link">6. Local File Storage & SAF</a></li>
+                    <li><a href="#mascot-assets" class="toc-link">7. 3D Mascots & Offline Assets</a></li>
+                    <li><a href="#mit-license" class="toc-link">8. Open Source & Image Credits</a></li>
+                    <li><a href="#terms-use" class="toc-link">9. Commercial Terms of Use</a></li>
+                    <li><a href="#disclaimer" class="toc-link">10. Disclaimer & Liability</a></li>
+                    <li><a href="#contact" class="toc-link">11. Developer Contact</a></li>
                 </ul>
             </aside>
 
@@ -222,34 +220,79 @@
                     <span style="color:var(--cyan); font-family:var(--font-mono); font-size:0.75rem; text-transform:uppercase;">Privacy Policy • Section 1</span>
                     <h2 style="margin-top:8px;">1. Privacy Philosophy & Local-First Design</h2>
                     <p>
-                        Engineered by <strong>Harshita</strong> (Lead Developer) and <strong>Dr.N</strong> (Co-Developer), Nnotes is built around a strict <strong>local-first, private-by-default</strong> model under the motto <strong>Cure. Code. Create.</strong> We believe your handwritten notes, diagrams, and ideas belong exclusively to you.
+                        Engineered by <strong>Harshita</strong> (Lead Developer) and <strong>Dr.N</strong> (Co-Developer), Nnotes is built around a <strong>local-first</strong> model under the motto <strong>Cure. Code. Create.</strong> Your handwritten notes, diagrams, and ideas stay on your device. This page explains both that local-first design and the ad-supported parts of the app honestly.
                     </p>
                     <div class="highlight-box">
                         <span style="font-size:1.3rem;">🔒</span>
                         <div style="font-size:0.9rem; color:var(--text-secondary);">
-                            <strong>Zero Note Tracking & No Account Requirement:</strong> You can use Nnotes completely offline. No user registration, no email sign-ups, and zero note tracking frameworks are embedded in the app.
+                            <strong>No Note Collection & No Account Requirement:</strong> We do not collect or transmit your note content. Note-taking works without an internet connection, and there is no user registration or email sign-up. The app is ad-supported; Google's ad SDKs process advertising identifiers as described below in <a href="#data-collection" style="color:var(--cyan);">Section 2</a>.
                         </div>
                     </div>
+                    <p>
+                        Handwriting recognition runs on your device using on-device ML Kit; note content is never uploaded. "Offline" here refers to note creation and recognition — ad delivery and measurement require a connection and are handled by Google's ad SDKs under their own policies.
+                    </p>
                 </article>
 
                 <!-- Section 2 -->
                 <article id="data-collection" class="legal-card clay-card privacy-doc">
                     <span style="color:var(--cyan); font-family:var(--font-mono); font-size:0.75rem; text-transform:uppercase;">Privacy Policy • Section 2</span>
-                    <h2 style="margin-top:8px;">2. Data Collection & Advertising Integration (AdSense & AdMob)</h2>
-                    <p>While your notes and drawings remain completely private and stored locally on your device, Nnotes utilizes third-party advertising services to support the continued development of the application:</p>
+                    <h2 style="margin-top:8px;">2. Data Collection, Ads & Play Data Safety</h2>
+                    <p>
+                        Your notes and drawings stay on your device. Nnotes is ad-supported: it integrates Google AdMob and AdSense SDKs to keep the app free. Those SDKs process advertising-related data under <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" style="color:var(--cyan);">Google's Privacy Policy</a>. This section matches the app's Google Play Data Safety declaration.
+                    </p>
                     <ul>
-                        <li><strong>Google AdMob & AdSense:</strong> We integrate Google's advertising networks to serve relevant ads. These services may collect and process device identifiers, IP addresses, and generalized location data to provide personalized advertising.</li>
-                        <li><strong>Ad Personalization:</strong> Depending on your device settings and region (such as GDPR/CCPA consent forms), Google may use cookies or mobile ad identifiers (like Android Advertising ID) to track your interaction with ads.</li>
-                        <li><strong>Strict Separation:</strong> Advertising SDKs <strong>do not</strong> have access to your handwritten notes, canvas data, or files saved via the Storage Access Framework.</li>
+                        <li><strong>Ad delivery and measurement:</strong> Google's ad SDKs may process device identifiers, IP addresses, generalized location data and the Android Advertising ID to select ads, measure campaigns and — where your settings and region allow — personalize advertising.</li>
+                        <li><strong>Strict separation from note content:</strong> Advertising SDKs <strong>do not</strong> receive access to your handwritten notes, canvas data, or files saved through the Storage Access Framework. We do not sell or upload your note content.</li>
+                        <li><strong>Developer vs. service providers:</strong> The developer does not sell or share note data with third parties. Ad providers process ad-related data as independent services under their own policies. That is separate from your notes, which are never shared.</li>
                     </ul>
+
+                    <h3 style="font-size:1.05rem; font-weight:700; color:var(--text); margin:24px 0 8px;">What the Play Data Safety listing declares</h3>
+                    <table class="data-table">
+                        <thead>
+                            <tr><th>Data type (as declared on Google Play)</th><th>Why it is processed</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>App activity</td><td>Ad delivery and measurement (for example, interactions with ads) and basic app performance diagnostics.</td></tr>
+                            <tr><td>App info and performance</td><td>Crash and performance diagnostics so the app can be kept stable and improved.</td></tr>
+                            <tr><td>Device or other IDs</td><td>Advertising identifiers such as the Android Advertising ID, used by Google's ad SDKs for ad selection, personalization (where permitted) and measurement.</td></tr>
+                        </tbody>
+                    </table>
+                    <p>
+                        <strong>Encryption in transit:</strong> data handled by these services is encrypted in transit. <strong>Data can't be deleted by us:</strong> the developer cannot delete ad or technical identifiers held by Google. Your note content is different — it lives only on your device and is deleted there (see <a href="#data-retention" style="color:var(--cyan);">Section 4</a>). Identifiers controlled by Google can be reset or opted out through Android settings.
+                    </p>
                 </article>
 
                 <!-- Section 3 -->
-                <article id="autobeautify-privacy" class="legal-card clay-card privacy-doc">
+                <article id="children" class="legal-card clay-card privacy-doc">
                     <span style="color:var(--cyan); font-family:var(--font-mono); font-size:0.75rem; text-transform:uppercase;">Privacy Policy • Section 3</span>
-                    <h2 style="margin-top:8px;">3. On-Device Auto-Beautify Engine</h2>
+                    <h2 style="margin-top:8px;">3. Children</h2>
                     <p>
-                        Nnotes' flagship **Magical Auto-Beautify** feature converts messy handwriting into styled digital text:
+                        Nnotes is rated for ages 3+ on Google Play, but it is not directed at children under 13. We do not knowingly collect personal information from children under 13. If you believe a child has provided personal information through the app, contact us using the details in <a href="#contact" style="color:var(--cyan);">Section 11</a> and we will address it.
+                    </p>
+                    <p>
+                        Where required for child-directed audiences, non-personalized ads are used instead of personalized ads. Parents or guardians can contact <a href="mailto:drnitz@proton.me" style="color:var(--cyan);">drnitz@proton.me</a> with privacy questions or requests concerning a child.
+                    </p>
+                </article>
+
+                <!-- Section 4 -->
+                <article id="data-retention" class="legal-card clay-card privacy-doc">
+                    <span style="color:var(--cyan); font-family:var(--font-mono); font-size:0.75rem; text-transform:uppercase;">Privacy Policy • Section 4</span>
+                    <h2 style="margin-top:8px;">4. Data Retention, Deletion & Your Choices</h2>
+                    <ul>
+                        <li><strong>Notes and drawings:</strong> stored only on your device. Delete them inside the app, or remove the app (and its app data) to clear them from the device. We hold no copy to retain or delete.</li>
+                        <li><strong>Ad and technical identifiers:</strong> retained and processed by Google under its policies, not by the developer. As stated in the Play Data Safety listing, this data can't be deleted by us.</li>
+                        <li><strong>Reset your Android Advertising ID:</strong> open Android <strong>Settings → Google → Ads</strong> (or Google Settings → Ads) and choose to reset the advertising ID.</li>
+                        <li><strong>Opt out of personalized ads:</strong> in the same Android ads settings, enable <strong>Delete advertising ID</strong> or turn off ad personalization. You can also control ad settings in your Google account.</li>
+                        <li><strong>Requests and questions:</strong> email <a href="mailto:drnitz@proton.me" style="color:var(--cyan);">drnitz@proton.me</a>. We can help with questions about this policy and with locally stored note data, but cannot delete identifiers held by Google.</li>
+                    </ul>
+                </article>
+
+                <!-- Section 5 -->
+                <article id="autobeautify-privacy" class="legal-card clay-card privacy-doc">
+                    <span style="color:var(--cyan); font-family:var(--font-mono); font-size:0.75rem; text-transform:uppercase;">Privacy Policy • Section 5</span>
+                    <h2 style="margin-top:8px;">5. On-Device Auto-Beautify Engine</h2>
+                    <p>
+                        Nnotes' flagship <strong>Magical Auto-Beautify</strong> feature converts messy handwriting into styled digital text:
                     </p>
                     <ul>
                         <li><strong>100% On-Device Parsing:</strong> All stroke analysis and handwriting-to-text recognition are performed locally on your device CPU/GPU.</li>
@@ -257,73 +300,101 @@
                     </ul>
                 </article>
 
-                <!-- Section 4 -->
+                <!-- Section 6 -->
                 <article id="storage-saf" class="legal-card clay-card privacy-doc">
-                    <span style="color:var(--cyan); font-family:var(--font-mono); font-size:0.75rem; text-transform:uppercase;">Privacy Policy • Section 4</span>
-                    <h2 style="margin-top:8px;">4. Local File Storage & Storage Access Framework (SAF)</h2>
+                    <span style="color:var(--cyan); font-family:var(--font-mono); font-size:0.75rem; text-transform:uppercase;">Privacy Policy • Section 6</span>
+                    <h2 style="margin-top:8px;">6. Local File Storage & Storage Access Framework (SAF)</h2>
                     <p>
-                        Nnotes integrates with Android's native **Storage Access Framework (SAF)**:
+                        Nnotes integrates with Android's native <strong>Storage Access Framework (SAF)</strong>:
                     </p>
                     <ul>
-                        <li><strong>No Broad File Access Needed:</strong> Nnotes does not ask for broad `READ_EXTERNAL_STORAGE` or `WRITE_EXTERNAL_STORAGE` permissions to access your photos or files.</li>
+                        <li><strong>No Broad File Access Needed:</strong> Nnotes does not ask for broad <code>READ_EXTERNAL_STORAGE</code> or <code>WRITE_EXTERNAL_STORAGE</code> permissions to access your photos or files.</li>
                         <li><strong>Isolated Directory Access:</strong> Files are read and written strictly in folders you grant access to via the system document picker.</li>
                     </ul>
                 </article>
 
-                <!-- Section 5 -->
+                <!-- Section 7 -->
                 <article id="mascot-assets" class="legal-card clay-card privacy-doc">
-                    <span style="color:var(--cyan); font-family:var(--font-mono); font-size:0.75rem; text-transform:uppercase;">Privacy Policy • Section 5</span>
-                    <h2 style="margin-top:8px;">5. 3D Companion Mascots & Local Assets</h2>
+                    <span style="color:var(--cyan); font-family:var(--font-mono); font-size:0.75rem; text-transform:uppercase;">Privacy Policy • Section 7</span>
+                    <h2 style="margin-top:8px;">7. 3D Companion Mascots & Local Assets</h2>
                     <p>
                         Our interactive 3D profession companions (Doctor, Student, Engineer, Artist) are bundled locally within the app installation package. No external servers or network connections are established when choosing or interacting with your companion.
                     </p>
                 </article>
 
-                <!-- Section 6 -->
+                <!-- Section 8 -->
                 <article id="mit-license" class="legal-card clay-card terms-doc">
-                    <span style="color:var(--purple); font-family:var(--font-mono); font-size:0.75rem; text-transform:uppercase;">Terms of Service • Section 6</span>
-                    <h2 style="margin-top:8px;">6. Open Source License Notice (MIT License)</h2>
+                    <span style="color:var(--purple); font-family:var(--font-mono); font-size:0.75rem; text-transform:uppercase;">Terms of Service • Section 8</span>
+                    <h2 style="margin-top:8px;">8. Open Source & Image Credits</h2>
                     <p>
-                        Nnotes is inspired by the open-source **Xnote** app (repository: `https://github.com/shardulvs/xnotes-android`) and licensed under the **MIT License**.
+                        Nnotes is inspired by the open-source <strong>Xnote</strong> app by Shardul, which is MIT-licensed upstream (<a href="https://github.com/shardulvs/xnotes-android" target="_blank" rel="noopener noreferrer" style="color:var(--cyan);">github.com/shardulvs/xnotes-android</a>). The MIT License below applies to that upstream project; this page does not license Nnotes itself under the MIT License.
                     </p>
                     <div class="highlight-box">
                         <span style="font-size:1.3rem;">📜</span>
                         <div style="font-size:0.9rem; color:var(--text-secondary);">
-                            <strong>MIT License Permission:</strong> Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files, to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software.
+                            <strong>Upstream attribution:</strong> Xnote — Copyright (c) 2026 Shardul Vikram Singh. Licensed under the MIT License.
                         </div>
                     </div>
+                    <details class="license-details">
+                        <summary>View the upstream MIT License text</summary>
+                        <pre>MIT License
+
+Copyright (c) 2026 Shardul Vikram Singh
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.</pre>
+                    </details>
+                    <p style="margin-top:20px;">
+                        <strong>Anatomical imagery credit:</strong> Anatomical images in the app are credited to Stanford University School of Medicine / Lane Medical Library and used under the <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener noreferrer" style="color:var(--cyan);">Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)</a> license.
+                    </p>
                 </article>
 
-                <!-- Section 7 -->
+                <!-- Section 9 -->
                 <article id="terms-use" class="legal-card clay-card terms-doc">
-                    <span style="color:var(--purple); font-family:var(--font-mono); font-size:0.75rem; text-transform:uppercase;">Terms of Service • Section 7</span>
-                    <h2 style="margin-top:8px;">7. Commercial Use & Intellectual Property</h2>
+                    <span style="color:var(--purple); font-family:var(--font-mono); font-size:0.75rem; text-transform:uppercase;">Terms of Service • Section 9</span>
+                    <h2 style="margin-top:8px;">9. Commercial Use & Intellectual Property</h2>
                     <p>
                         You retain 100% full ownership over all handwritten notes, sketches, and converted text created using Nnotes. Nnotes claims zero ownership over your personal creations.
                     </p>
                 </article>
 
-                <!-- Section 8 -->
+                <!-- Section 10 -->
                 <article id="disclaimer" class="legal-card clay-card terms-doc">
-                    <span style="color:var(--purple); font-family:var(--font-mono); font-size:0.75rem; text-transform:uppercase;">Terms of Service • Section 8</span>
-                    <h2 style="margin-top:8px;">8. Disclaimers & Limitation of Liability</h2>
+                    <span style="color:var(--purple); font-family:var(--font-mono); font-size:0.75rem; text-transform:uppercase;">Terms of Service • Section 10</span>
+                    <h2 style="margin-top:8px;">10. Disclaimers & Limitation of Liability</h2>
                     <p>
                         Nnotes is provided "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED. THE DEVELOPERS SHALL NOT BE LIABLE FOR ANY CLAIM, LOSS OF DATA, OR DAMAGES ARISING FROM DEVICE HARDWARE FAILURE OR SYSTEM CORRUPTION.
                     </p>
                 </article>
 
-                <!-- Section 9 -->
+                <!-- Section 11 -->
                 <article id="contact" class="legal-card clay-card privacy-doc terms-doc">
-                    <span style="color:var(--cyan); font-family:var(--font-mono); font-size:0.75rem; text-transform:uppercase;">Contact & Support • Section 9</span>
-                    <h2 style="margin-top:8px;">9. Developer Contact</h2>
-                    <p>For questions or support regarding Nnotes:</p>
+                    <span style="color:var(--cyan); font-family:var(--font-mono); font-size:0.75rem; text-transform:uppercase;">Contact & Support • Section 11</span>
+                    <h2 style="margin-top:8px;">11. Developer Contact</h2>
+                    <p>For questions, privacy requests, or support regarding Nnotes:</p>
                     <div class="highlight-box">
                         <span style="font-size:1.3rem;">📧</span>
                         <div style="font-size:0.9rem; color:var(--text-secondary);">
                             <strong>Lead Developer:</strong> Harshita<br>
                             <strong>Co-Developer:</strong> Dr.N<br>
-                            <strong>GitHub:</strong> <a href="https://github.com/drnitz" target="_blank" style="color:var(--cyan);">github.com/drnitz</a><br>
-                            <strong>Website:</strong> <a href="index.html" style="color:var(--cyan);">drnitz.github.io</a>
+                            <strong>Policy contact:</strong> <a href="mailto:drnitz@proton.me" style="color:var(--cyan);">drnitz@proton.me</a><br>
+                            <strong>GitHub:</strong> <a href="https://github.com/drnitz" target="_blank" rel="noopener noreferrer" style="color:var(--cyan);">github.com/drnitz</a><br>
+                            <strong>Website:</strong> <a href="https://drnitz.com/" style="color:var(--cyan);">Portfolio home</a>
                         </div>
                     </div>
                 </article>
@@ -334,7 +405,7 @@
             <div class="footer-nav">
                 <a href="nnotes.html" class="footer-link">Nnotes Showcase</a>
                 <a href="index.html" class="footer-link">Portfolio Home</a>
-                <a href="https://github.com/drnitz" target="_blank" class="footer-link">GitHub Profile</a>
+                <a href="https://github.com/drnitz" target="_blank" rel="noopener noreferrer" class="footer-link">GitHub Profile</a>
             </div>
             <div style="font-size: 1.3rem; font-weight: 800; color: var(--cyan); margin-bottom: 8px;">Cure. Code. Create.</div>
             <div class="footer-copy">
@@ -344,38 +415,50 @@
     </div>
 
     <script>
-        function switchTab(tab) {
+        function switchTab(tab, btn) {
             const buttons = document.querySelectorAll('.tab-btn');
-            buttons.forEach(btn => btn.classList.remove('active'));
+            buttons.forEach(b => {
+                b.classList.remove('active');
+                b.setAttribute('aria-selected', 'false');
+            });
 
             const privacyDocs = document.querySelectorAll('.privacy-doc');
             const termsDocs = document.querySelectorAll('.terms-doc');
 
             if (tab === 'all') {
-                event.target.classList.add('active');
                 privacyDocs.forEach(el => el.style.display = 'block');
                 termsDocs.forEach(el => el.style.display = 'block');
             } else if (tab === 'privacy') {
-                event.target.classList.add('active');
                 privacyDocs.forEach(el => el.style.display = 'block');
                 termsDocs.forEach(el => {
                     if (!el.classList.contains('privacy-doc')) el.style.display = 'none';
                 });
             } else if (tab === 'terms') {
-                event.target.classList.add('active');
                 termsDocs.forEach(el => el.style.display = 'block');
                 privacyDocs.forEach(el => {
                     if (!el.classList.contains('terms-doc')) el.style.display = 'none';
                 });
             }
+
+            if (btn) {
+                btn.classList.add('active');
+                btn.setAttribute('aria-selected', 'true');
+            }
         }
 
         let lastScrollY = window.scrollY;
         window.addEventListener('scroll', () => {
-            if (window.scrollY > lastScrollY && window.scrollY > 100) {
-                gsap.to(".side-dock", { y: 150, duration: 0.4, ease: "power2.out", overwrite: "auto" });
-            } else {
-                gsap.to(".side-dock", { y: 0, duration: 0.4, ease: "power2.out", overwrite: "auto" });
+            if (window.gsap) {
+                const dock = document.querySelector('.side-dock');
+                if (window.scrollY > lastScrollY && window.scrollY > 100) {
+                    gsap.to(".side-dock", {
+                        y: 150, duration: 0.4, ease: "power2.out", overwrite: "auto",
+                        onComplete: () => { if (dock) dock.style.visibility = 'hidden'; }
+                    });
+                } else {
+                    if (dock) dock.style.visibility = 'visible';
+                    gsap.to(".side-dock", { y: 0, duration: 0.4, ease: "power2.out", overwrite: "auto" });
+                }
             }
             lastScrollY = window.scrollY;
         });

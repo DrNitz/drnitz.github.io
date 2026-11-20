@@ -1,0 +1,18 @@
+# OS / editor noise
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+.idea/
+.vscode/
+
+# Python (any future local utilities)
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Local preview / build artifacts
+node_modules/
+dist/
+*.log

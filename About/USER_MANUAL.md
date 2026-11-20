@@ -50,9 +50,9 @@ Transform messy handwriting into neat digital text effortlessly!
 ---
 
 ## 6. 3D Companion Mascots 🤖
-Keep study sessions engaging with 3D profession companions (Doctor, Student, Engineer, Artist). Mascots hang on your canvas or toolbar and provide motivational quotes when tapped!
+Keep study sessions engaging with 7 profession companions (Student, Doctor, Teacher, Engineer, Designer, Lawyer and the N-notes Mascot). Mascots hang on your canvas or toolbar and provide motivational quotes when tapped!
 
 ---
 
 ## 7. Storage & Privacy 🔒
-Nnotes uses Android's Storage Access Framework (SAF) to store all your notes locally on your device. Your data stays 100% private without cloud tracking or external telemetry.
+Nnotes uses Android's Storage Access Framework (SAF) to store all your notes locally on your device, and handwriting recognition runs on-device via ML Kit. Your note content is never uploaded or tracked in the cloud. The app is ad-supported, so Google's ad SDKs may process advertising identifiers — see the [Privacy Policy & Terms](../nnotes-privacy.html) for details.

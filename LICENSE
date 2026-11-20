@@ -1,0 +1,56 @@
+===============================================================================
+LICENSE FOR ORIGINAL CONTENT AND SOURCE OF THE drnitz.github.io SITE
+===============================================================================
+
+Copyright (c) 2026 Dr.N
+
+This license applies to the original content and source code of the
+drnitz.github.io site only. It does not apply to any third-party assets,
+libraries, or services referenced below, which remain under their own
+respective licenses.
+
+-------------------------------------------------------------------------------
+MIT LICENSE
+-------------------------------------------------------------------------------
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+===============================================================================
+THIRD-PARTY NOTICES / ATTRIBUTIONS
+===============================================================================
+
+Nnotes is inspired by the open-source Xnote project by Shardul, licensed under
+the MIT License: https://github.com/shardulvs/xnotes-android
+
+The upstream MIT copyright in Xnote belongs to Shardul. This project does NOT
+claim ownership of Xnote or of any upstream Xnote code or assets.
+
+-------------------------------------------------------------------------------
+
+Anatomical/cadaveric imagery credited to Stanford University School of Medicine
+and the Lane Medical Library is used under CC BY-SA 4.0:
+https://creativecommons.org/licenses/by-sa/4.0/
+
+Attribution for this imagery also appears in the Nnotes Play listing.
+
+-------------------------------------------------------------------------------
+
+Third-party runtime dependencies loaded from CDNs (Google Fonts, Three.js, GSAP,
+Vanta, and Cloudflare Web Analytics) remain under their own licenses. No
+ownership or relicensing of these third-party components is claimed here.
