@@ -39,7 +39,8 @@ Relative links work locally; canonical and social URLs point at the production d
 | File | What it is |
 |---|---|
 | `index.html` | Portfolio landing page — bio, project cards, contact |
-| `mededu.html` | MedEdu Clinic initiative (resources in development) |
+| `anraksha.html` | Anraksha by Dr.Nitz — health notes and early signs (in development) |
+| `mededu.html` | Redirect to `anraksha.html` (keeps old links working) |
 | `nnotes.html` | Nnotes Android app showcase |
 | `nnotes-privacy.html` | Nnotes app privacy policy and terms (linked from Google Play) |
 | `privacy.html` | Privacy policy for this website |
@@ -79,7 +80,7 @@ Licensed under the [MIT License](LICENSE) for original site content; third-party
 🌐 website: https://drnitz.com
 🎯 motto: "Cure. Code. Create."
 🔭 flagship_projects:
-  - MedEdu Clinic (Free Clinical Knowledge 📚)
+  - Anraksha (Health Notes & Early Signs 📚)
   - Nnotes (Lead Dev: Harshita | Co-Dev: Dr.N 🚀)
   - p2pcompanion.com (Live Terminal ⚡)
   - Med Reminder (In Development 💊)
@@ -92,13 +93,13 @@ Licensed under the [MIT License](LICENSE) for original site content; third-party
 <table>
   <tr>
     <td width="50%" valign="top">
-      <h3 align="center">📚 MedEdu Clinic</h3>
+      <h3 align="center">📚 Anraksha</h3>
       <p align="center">
-        <a href="https://drnitz.com/mededu.html">
-          <img src="https://img.shields.io/badge/🩺%20Open%20Clinic-66FCF1?style=for-the-badge&logo=google-chrome&logoColor=white" />
+        <a href="https://drnitz.com/anraksha.html">
+          <img src="https://img.shields.io/badge/🩺%20Anraksha-66FCF1?style=for-the-badge&logo=google-chrome&logoColor=white" />
         </a>
       </p>
-      <p align="center"><i>An open clinical education initiative. High-yield clinical notes and video breakdowns are currently being compiled — follow along as the free resource library takes shape.</i></p>
+      <p align="center"><i>by Dr.Nitz — Primum non nocere, "First, do no harm." Plain-language health notes and early-warning guidance for patients, with clinical detail for doctors.</i></p>
     </td>
     <td width="50%" valign="top">
       <h3 align="center">🌐 p2pcompanion.com</h3>

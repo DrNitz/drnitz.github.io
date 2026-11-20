@@ -5,8 +5,11 @@
 ### Fixed / reworked
 - **Privacy & legal:** rewrote the Nnotes policy to be truthful about ad-supported data processing; added Play Data Safety categories, children/COPPA section, retention/deletion/opt-out and a compliant upstream MIT notice with Stanford/Lane CC BY-SA 4.0 credit. Removed literal Markdown artifacts from the live policy.
 - **Canonicalization:** moved all canonical, OG/Twitter, sitemap and robots URLs from `drnitz.github.io` to the live custom domain `https://drnitz.com/`; added the previously missing site policy page to the sitemap.
-- **Product copy:** reconciled the Nnotes and MedEdu descriptions with the shipped Play app and the "in development" status of MedEdu; refreshed P2P Companion stats; fixed mislabeled GitHub links.
+- **Product copy:** reconciled the Nnotes and Anraksha descriptions with the shipped Play app and the "in development" status of Anraksha; refreshed P2P Companion stats; fixed mislabeled GitHub links.
 - **Tooling:** removed five one-off Python scripts that destroyed OG tags, duplicated canonicals or reversed image processing on re-run; removed the unrelated 3D contribution workflow and junk `help.md`.
+
+### Renamed
+- **MedEdu → Anraksha by Dr.Nitz.** The clinical education initiative is now `anraksha.html`, with the tagline *Primum non nocere — First, do no harm.* Page title, wordmark, hero, metadata, sitemap, README, About docs and navigation all use the new name. `mededu.html` remains as a noindex redirect stub so existing links and bookmarks keep working; `assets/medu.css` became `assets/anraksha.css`.
 
 ### Added
 - `LICENSE` with MIT terms for this repo plus third-party attributions.
@@ -20,5 +23,5 @@
 - Documentation: site README now covers setup and deployment; Play listing doc aligned with the live app.
 
 ### Notes
-- Changes are uncommitted at the time of writing. Deployment requires a commit/push.
+- Changes have been committed and pushed to `main`; GitHub Pages deploys automatically.
 - HTTPS enforcement on the custom domain and Search Console verification remain manual GitHub/Google settings.

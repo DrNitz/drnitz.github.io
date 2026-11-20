@@ -1,4 +1,4 @@
-/* MedEdu — editorial clinical education design */
+/* Anraksha by Dr.Nitz — editorial clinical education design */
 
 :root {
     --paper: #F7F6F2;
@@ -63,8 +63,9 @@ a:focus-visible, button:focus-visible {
 .hero { display: grid; grid-template-columns: 1.05fr .95fr; gap: 72px; align-items: center; padding: 88px 0 72px; }
 .kicker { display: flex; align-items: center; gap: 12px; color: var(--teal); font-size: .75rem; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; }
 .kicker::before { content: ''; width: 28px; height: 2px; background: var(--teal); }
-h1 { font-family: var(--font-head); font-size: clamp(3.1rem, 6.4vw, 5.1rem); line-height: 1.02; letter-spacing: -.025em; font-weight: 700; margin: 22px 0 20px; }
+h1 { font-family: var(--font-head); font-size: clamp(2.6rem, 5vw, 4rem); line-height: 1.06; letter-spacing: -.025em; font-weight: 700; margin: 22px 0 4px; }
 h1 em { font-style: italic; color: var(--teal-dark); }
+.hero-english { font-family: var(--font-head); font-style: italic; font-size: clamp(1.35rem, 3vw, 2rem); color: var(--teal-dark); line-height: 1.2; margin: 0 0 20px; }
 .deck { font-size: 1.1rem; color: var(--ink-soft); max-width: 36ch; line-height: 1.75; }
 .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 32px; }
 .btn {
