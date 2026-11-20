@@ -76,41 +76,41 @@
         .site-nav a.primary { color: var(--accent); border: 1px solid rgba(102, 252, 241, 0.28); }
 
         /* Hero */
-        .hero { min-height: 100vh; display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 72px; align-items: center; padding-top: 110px; padding-bottom: 70px; }
+        .hero { min-height: auto; display: grid; grid-template-columns: 220px 1fr; gap: 44px; align-items: center; padding-top: 116px; padding-bottom: 48px; }
         .eyebrow { display: flex; align-items: center; gap: 12px; color: var(--accent); font-size: 0.74rem; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; }
         .eyebrow::before { content: ''; width: 28px; height: 1px; background: var(--accent); }
-        h1 { font-family: var(--font-display); font-size: clamp(3.2rem, 7vw, 5.4rem); line-height: 1.02; letter-spacing: -0.045em; margin: 20px 0 12px; font-weight: 700; }
-        .hero-sub { font-family: var(--font-display); font-size: clamp(1.3rem, 2.6vw, 1.9rem); font-weight: 500; color: var(--accent); min-height: 1.5em; letter-spacing: -0.02em; }
-        .hero-text { color: var(--muted); max-width: 48ch; font-size: 1.02rem; margin: 22px 0 28px; }
+        h1 { font-family: var(--font-display); font-size: clamp(2.7rem, 5vw, 4.2rem); line-height: 1.03; letter-spacing: -0.04em; margin: 14px 0 6px; font-weight: 700; }
+        .hero-sub { font-family: var(--font-display); font-size: clamp(1.1rem, 2.2vw, 1.5rem); font-weight: 500; color: var(--accent); min-height: 1.5em; letter-spacing: -0.02em; }
+        .hero-text { color: var(--muted); max-width: 52ch; font-size: 0.98rem; margin: 16px 0 20px; }
         .status { display: inline-flex; align-items: center; gap: 9px; font-size: 0.78rem; color: var(--muted); border: 1px solid var(--border); background: var(--surface); padding: 7px 13px; border-radius: 100px; }
         .status-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--accent-deep); box-shadow: 0 0 0 4px rgba(69, 162, 158, 0.16); }
-        .actions { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 30px; }
+        .actions { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 20px; }
         .btn { display: inline-flex; align-items: center; gap: 10px; min-height: 46px; padding: 11px 20px; border-radius: 8px; font: inherit; font-size: 0.9rem; font-weight: 600; border: 1px solid transparent; transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease; cursor: pointer; }
         .btn:hover { transform: translateY(-2px); }
         .btn-solid { background: var(--accent); color: #06171a; }
         .btn-outline { border-color: var(--border); color: var(--text); background: var(--surface); }
         .btn-outline:hover { border-color: var(--accent-deep); }
 
-        .portrait { position: relative; max-width: 300px; border: 1px solid var(--border); border-radius: 14px; padding: 10px; background: var(--surface); }
-        .portrait img { display: block; width: 100%; aspect-ratio: 1 / 1; object-fit: cover; border-radius: 8px; }
-        .portrait figcaption { display: flex; justify-content: space-between; gap: 12px; padding: 14px 4px 2px; font-size: 0.78rem; color: var(--muted); letter-spacing: 0.02em; }
+        .portrait { position: relative; order: -1; max-width: 220px; border: 1px solid var(--border); border-radius: 12px; padding: 8px; background: var(--surface); }
+        .portrait img { display: block; width: 100%; aspect-ratio: 1 / 1; object-fit: cover; border-radius: 7px; }
+        .portrait figcaption { display: flex; justify-content: space-between; gap: 8px; padding: 10px 2px 0; font-size: 0.7rem; color: var(--muted); letter-spacing: 0.02em; }
         .portrait figcaption strong { color: var(--text); font-weight: 600; }
 
         /* Sections */
-        .section { padding: 96px 0; border-top: 1px solid var(--border); }
+        .section { padding: 64px 0; border-top: 1px solid var(--border); }
         .section-label { color: var(--accent-deep); font-size: 0.74rem; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; }
         h2 { font-family: var(--font-display); font-size: clamp(2rem, 4vw, 2.8rem); line-height: 1.12; letter-spacing: -0.035em; margin: 12px 0 16px; }
         .lead { color: var(--muted); max-width: 62ch; font-size: 1.02rem; }
-        .quote-grid { display: grid; grid-template-columns: 0.8fr 1.2fr; gap: 64px; align-items: start; margin-top: 36px; }
+        .quote-grid { display: grid; grid-template-columns: 0.8fr 1.2fr; gap: 40px; align-items: start; margin-top: 24px; }
         blockquote { margin: 0; padding: 4px 0 4px 28px; border-left: 2px solid var(--accent-deep); font-size: 1.08rem; color: var(--text); }
         .quote-grid ul { list-style: none; padding: 0; margin: 26px 0 0; }
         .quote-grid li { display: flex; align-items: center; gap: 10px; padding: 11px 0; border-bottom: 1px solid var(--border); color: var(--muted); font-size: 0.92rem; }
         .quote-grid li .icon { color: var(--accent-deep); width: 17px; height: 17px; }
 
-        .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 40px; }
+        .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 28px; }
         .card {
-            position: relative; display: flex; flex-direction: column; min-height: 290px;
-            background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 24px;
+            position: relative; display: flex; flex-direction: column; min-height: 250px;
+            background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 20px;
             transition: transform 0.25s ease, border-color 0.25s ease, background 0.25s ease, box-shadow 0.25s ease;
             text-align: left; color: inherit;
         }
@@ -139,8 +139,8 @@
         .copyright { width: 100%; margin-top: 28px; padding-top: 20px; border-top: 1px solid var(--border); font-size: 0.8rem; color: var(--muted); }
 
         @media (max-width: 960px) {
-            .hero { grid-template-columns: 1fr; gap: 44px; padding-top: 120px; }
-            .portrait { max-width: 360px; }
+            .hero { grid-template-columns: 1fr; gap: 24px; padding-top: 108px; }
+            .portrait { max-width: 180px; }
             .grid { grid-template-columns: repeat(2, 1fr); }
             .quote-grid { grid-template-columns: 1fr; gap: 24px; }
             .contact { grid-template-columns: 1fr; gap: 24px; }
@@ -150,7 +150,7 @@
             .site-nav a { padding: 8px 10px; font-size: 0.82rem; }
             .site-nav a.primary { display: none; }
             .grid { grid-template-columns: 1fr; }
-            .section { padding: 68px 0; }
+            .section { padding: 52px 0; }
         }
     </style>
 
