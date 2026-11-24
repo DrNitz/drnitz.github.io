@@ -1,0 +1,157 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="76" y1="58" x2="440" y2="456" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#3B6BF0"/>
+      <stop offset="0.5" stop-color="#4A55D6"/>
+      <stop offset="1" stop-color="#7A3FC9"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.3" cy="0.25" r="0.9">
+      <stop stop-color="#7CA8FF" stop-opacity="0.6"/>
+      <stop offset="1" stop-color="#7CA8FF" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="page" x1="154" y1="116" x2="374" y2="393" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFFFFF"/>
+      <stop offset="1" stop-color="#EDF2FF"/>
+    </linearGradient>
+    <linearGradient id="fold" x1="303" y1="111" x2="375" y2="183" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#DCE6FF"/>
+      <stop offset="1" stop-color="#B8C9FF"/>
+    </linearGradient>
+    <linearGradient id="letter" x1="182" y1="198" x2="326" y2="334" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFE082"/>
+      <stop offset="0.35" stop-color="#FFB347"/>
+      <stop offset="0.7" stop-color="#FF7A59"/>
+      <stop offset="1" stop-color="#C026D3"/>
+    </linearGradient>
+    <linearGradient id="gradSoftA" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#BAE6FD"/>
+      <stop offset="0.55" stop-color="#93C5FD"/>
+      <stop offset="1" stop-color="#A78BFA"/>
+    </linearGradient>
+    <linearGradient id="gradSoftB" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#C4B5FD"/>
+      <stop offset="0.45" stop-color="#93C5FD"/>
+      <stop offset="1" stop-color="#7DD3FC"/>
+    </linearGradient>
+    <linearGradient id="sheen" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0"    stop-color="#FFFFFF" stop-opacity="0"/>
+      <stop offset="0.5"  stop-color="#FFFFFF" stop-opacity="0.45"/>
+      <stop offset="1"    stop-color="#FFFFFF" stop-opacity="0"/>
+    </linearGradient>
+    <clipPath id="iconClip">
+      <rect x="24" y="24" width="464" height="464" rx="116"/>
+    </clipPath>
+    <filter id="shadow" x="-15%" y="-15%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="8" stdDeviation="10" flood-color="#1A2A66" flood-opacity="0.35"/>
+    </filter>
+    <filter id="nShadow" x="-25%" y="-25%" width="150%" height="150%">
+      <feDropShadow dx="0" dy="6" stdDeviation="8" flood-color="#7A1F4A" flood-opacity="0.32"/>
+    </filter>
+    <filter id="letterGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="iconGlow" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="2.5" result="b"/>
+      <feMerge>
+        <feMergeNode in="b"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  <rect x="24" y="24" width="464" height="464" rx="116" fill="url(#bg)"/>
+  <rect x="24" y="24" width="464" height="464" rx="116" fill="url(#glow)"/>
+  <circle cx="90"  cy="190" r="3"   fill="#BAE6FD" fill-opacity="0.25"/>
+  <circle cx="420" cy="200" r="4"   fill="#C4B5FD" fill-opacity="0.20"/>
+  <circle cx="110" cy="320" r="2.5" fill="#BAE6FD" fill-opacity="0.25"/>
+  <circle cx="415" cy="380" r="3"   fill="#A5B4FC" fill-opacity="0.22"/>
+  <circle cx="240" cy="60"  r="2.5" fill="#BAE6FD" fill-opacity="0.20"/>
+  <circle cx="300" cy="462" r="3"   fill="#C4B5FD" fill-opacity="0.20"/>
+  <g>
+    <g>
+      <g transform="translate(115 230) rotate(-14)" filter="url(#iconGlow)" opacity="0.62">
+        <path d="M-12 -8 L12 -8 M0 -12 L0 12 M-10 12 L0 -2 M10 12 L0 -2"
+              stroke="url(#gradSoftB)" stroke-width="3.2" fill="none"
+              stroke-linecap="round" stroke-linejoin="round"/>
+      </g>
+    </g>
+  </g>
+  <g>
+    <g>
+      <g transform="translate(378 285) rotate(38) scale(1.25) translate(-16 -16)"
+         filter="url(#iconGlow)" opacity="0.65">
+        <path d="M30.75 7.002V7a.75.75 0 0 0-.219-.531l-5-5a.75.75 0 0 0-1.062 0L3.47 22.468a.76.76 0 0 0-.189.321l-.001.005-2 7a.75.75 0 0 0 .719.955h.005a.7.7 0 0 0 .214-.033l-.005.001 6.788-2a.74.74 0 0 0 .315-.186l21.212-21A.74.74 0 0 0 30.751 7zM8.395 27.334l-5.299 1.561 1.572-5.502L20.003 8.058l3.931 3.892zM25 10.895l-3.937-3.898L25 3.06l3.938 3.937z" fill="url(#gradSoftA)"/>
+      </g>
+    </g>
+  </g>
+  <g>
+    <g filter="url(#shadow)">
+      <path d="M157 111H303L375 183V367C375 385.225 360.225 400 342 400H157C138.775 400 124 385.225 124 367V144C124 125.775 138.775 111 157 111Z" fill="url(#page)"/>
+    </g>
+  </g>
+  <g>
+    <path d="M303 111V166C303 175.389 310.611 183 320 183H375L303 111Z" fill="url(#fold)"/>
+    <path d="M303 111V166C303 175.389 310.611 183 320 183H375" stroke="#A9BEFF" stroke-width="1.5" stroke-linejoin="round"/>
+  </g>
+  <g>
+    <g filter="url(#nShadow)">
+      <path d="M182 198H214L292 290V198H326V334H294L216 242V334H182V198Z"
+            fill="url(#letter)" stroke="url(#letter)" stroke-width="16"
+            stroke-linejoin="round" stroke-linecap="round" filter="url(#letterGlow)"/>
+    </g>
+  </g>
+  <rect x="182" y="354" width="122" height="8" rx="4" fill="url(#gradSoftA)" opacity="0.85"/>
+  <rect x="182" y="370" width="86"  height="8" rx="4" fill="url(#gradSoftB)" opacity="0.72"/>
+  <g>
+    <g transform="translate(290 374) scale(0.5) translate(-12 -12)" filter="url(#iconGlow)">
+      <path d="M12 0 C12.5 7 17 11.5 24 12 C17 12.5 12.5 17 12 24 C11.5 17 7 12.5 0 12 C7 11.5 11.5 7 12 0 Z" fill="url(#gradSoftA)"/>
+    </g>
+  </g>
+  <g>
+    <g>
+      <g transform="translate(110 78) rotate(-10)" filter="url(#iconGlow)" opacity="0.85">
+        <rect x="-14" y="-4"  width="4" height="8"  rx="1" fill="url(#gradSoftA)"/>
+        <rect x="-8"  y="-9"  width="4" height="18" rx="1" fill="url(#gradSoftA)"/>
+        <rect x="-2"  y="-12" width="4" height="24" rx="1" fill="url(#gradSoftA)"/>
+        <rect x="4"   y="-9"  width="4" height="18" rx="1" fill="url(#gradSoftA)"/>
+        <rect x="10"  y="-4"  width="4" height="8"  rx="1" fill="url(#gradSoftA)"/>
+      </g>
+    </g>
+  </g>
+  <g>
+    <g>
+      <g transform="translate(398 88) rotate(12) scale(1.15)" filter="url(#iconGlow)" opacity="0.82">
+        <path d="M-12 -12 L12 -12 L0 0 L12 12 L-12 12"
+              stroke="url(#gradSoftB)" stroke-width="3.4" fill="none"
+              stroke-linejoin="round" stroke-linecap="round"/>
+      </g>
+    </g>
+  </g>
+  <g>
+    <g>
+      <g transform="translate(150 452) rotate(-6) scale(1.1)" filter="url(#iconGlow)" opacity="0.82">
+        <path d="M-13 -6 C-8 -9 -4 -9 0 -6 L0 8 C-4 5 -8 5 -13 8 Z
+                 M13 -6 C8 -9 4 -9 0 -6 L0 8 C4 5 8 5 13 8 Z"
+              fill="url(#gradSoftA)"/>
+      </g>
+    </g>
+  </g>
+  <g>
+    <g>
+      <g transform="translate(386 452) rotate(14)" filter="url(#iconGlow)" opacity="0.82">
+        <circle cx="-9" cy="0" r="5" fill="url(#gradSoftB)"/>
+        <rect x="-3" y="-4.5" width="9" height="9" rx="2" fill="url(#gradSoftB)"/>
+        <path d="M6 5 L14 5 L10 -5 Z" fill="url(#gradSoftB)"/>
+      </g>
+    </g>
+  </g>
+  <g clip-path="url(#iconClip)" opacity="0.55">
+    <g transform="rotate(20 256 256)">
+      <rect y="-200" width="90" height="900" x="210" fill="url(#sheen)"/>
+    </g>
+  </g>
+  <rect x="26" y="26" width="460" height="460" rx="114" fill="none" stroke="#FFFFFF" stroke-opacity="0.08" stroke-width="2"/>
+</svg>
