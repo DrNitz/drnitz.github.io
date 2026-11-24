@@ -23,6 +23,7 @@
             --clay-light: #F4F7FB;
             --cyan: #006A94;
             --purple: #9D4EDD;
+            --emerald: #059669;
             --text: #2D3748;
             --text-secondary: #4A5568;
             --text-muted: #52606D;
@@ -77,7 +78,7 @@
         .hero-title { font-size: clamp(2.2rem, 5vw, 3.8rem); font-weight: 800; line-height: 1.15; margin-bottom: 16px; color: var(--text); letter-spacing: -1.5px; }
         .hero-subtitle { font-size: 1.1rem; color: var(--text-secondary); max-width: 680px; margin: 0 auto 30px; }
 
-        .meta-pills { display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; margin-bottom: 40px; }
+        .meta-pills { display: flex; justify-content: center; gap: 14px; flex-wrap: wrap; margin-bottom: 40px; }
         .meta-pill { padding: 6px 14px; border-radius: 100px; font-size: 0.75rem; font-family: var(--font-mono); background: var(--clay-light); border: 2px solid rgba(255,255,255,0.5); color: var(--text-secondary); box-shadow: 4px 4px 8px rgba(163,177,198,0.3), -2px -2px 6px rgba(255,255,255,0.6); }
 
         .tab-switcher { display: flex; justify-content: center; gap: 12px; margin-bottom: 50px; flex-wrap: wrap; }
@@ -147,19 +148,19 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://drnitz.com/nnotes/privacy/">
     <meta property="og:title" content="Privacy Policy &amp; Terms | Nnotes App">
-    <meta property="og:description" content="Local-first notes with transparent, ad-supported data practices. See how Nnotes handles note content on device and what Google's ad SDKs process.">
+    <meta property="og:description" content="Local-first notes with transparent, ad-supported and Pro subscription data practices. 100% on-device handwriting & Whisper speech recognition.">
     <meta property="og:image" content="https://drnitz.com/social_preview.jpg">
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="https://drnitz.com/nnotes/privacy/">
     <meta name="twitter:title" content="Privacy Policy &amp; Terms | Nnotes App">
-    <meta name="twitter:description" content="Local-first notes with transparent, ad-supported data practices. See how Nnotes handles note content on device and what Google's ad SDKs process.">
+    <meta name="twitter:description" content="Local-first notes with transparent, ad-supported and Pro subscription data practices. 100% on-device handwriting & Whisper speech recognition.">
     <meta name="twitter:image" content="https://drnitz.com/social_preview.jpg">
 
     <!-- SEO Meta Tags -->
-    <meta name="description" content="Official Privacy Policy and Terms for the Nnotes Android app: local-first note storage, on-device handwriting recognition, and transparent ad-supported data practices.">
-    <meta name="keywords" content="nnotes privacy policy, nnotes terms of service">
+    <meta name="description" content="Official Privacy Policy and Terms for the Nnotes Android app: local-first note storage, on-device handwriting & Whisper speech recognition, and transparent Google Play Billing & AdMob data safety practices.">
+    <meta name="keywords" content="nnotes privacy policy, nnotes terms of service, nnotes play store privacy">
     <link rel="canonical" href="https://drnitz.com/nnotes/privacy/">
 </head>
 <body>
@@ -185,7 +186,7 @@
         <header>
             <a href="../" class="logo-wrap">
                 <span class="logo">Nnotes</span>
-                <span class="logo-badge">Privacy & Terms</span>
+                <span class="logo-badge">Privacy &amp; Terms</span>
             </a>
             <nav class="nav-links" aria-label="Page navigation">
                 <a href="../" class="nav-btn">← Nnotes Overview</a>
@@ -195,20 +196,20 @@
 
         <section class="hero">
             <div class="hero-badge">
-                Local-First Notes • Ad-Supported • Transparent About Data
+                Local-First Notes • 100% Offline AI • Ad-Supported &amp; Pro
             </div>
-            <h1 class="hero-title">Privacy Policy & Terms of Service</h1>
+            <h1 class="hero-title">Privacy Policy &amp; Terms of Service</h1>
             <p class="hero-subtitle">
-                Official privacy, data protection, and terms of use for Nnotes — developed by <strong>Harshita</strong> (Lead Developer) and <strong>Dr.N</strong> (Co-Developer).
+                Official privacy, on-device data safety, and terms of service for Nnotes — engineered by <strong>Harshita</strong> (Lead Developer) and <strong>Dr.N</strong> (Co-Developer).
             </p>
             <div class="meta-pills">
-                <span class="meta-pill">Effective Date: 20 November 2026</span>
-                <span class="meta-pill">Last updated: 20 November 2026</span>
-                <span class="meta-pill">Architecture: Kotlin & Jetpack Compose</span>
+                <span class="meta-pill">Version: 1.4.0 (Build 59)</span>
+                <span class="meta-pill">Effective Date: 24 November 2026</span>
+                <span class="meta-pill">Target: Android 15 &amp; 16 (16 KB Page-Size Aligned)</span>
                 <span class="meta-pill">Storage: Android Storage Access Framework (SAF)</span>
             </div>
             <div class="scope-note">
-                <span><strong>Scope:</strong> This policy governs the <strong>Nnotes Android app</strong>. For the website at drnitz.com, see the <a href="../../privacy/">Website Privacy Policy</a>.</span>
+                <span><strong>Scope:</strong> This policy governs the <strong>Nnotes Android app</strong> (Package: <code>com.nnote.Drn</code>). For the website at drnitz.com, see the <a href="../../privacy/">Website Privacy Policy</a>.</span>
             </div>
         </section>
 
@@ -223,16 +224,19 @@
                 <div class="toc-title">Table of Contents</div>
                 <ul class="toc-list">
                     <li><a href="#privacy-overview" class="toc-link">1. Privacy Philosophy</a></li>
-                    <li><a href="#data-collection" class="toc-link">2. Data Collection, Ads & Play Data Safety</a></li>
-                    <li><a href="#children" class="toc-link">3. Children</a></li>
-                    <li><a href="#data-retention" class="toc-link">4. Retention, Deletion & Choices</a></li>
-                    <li><a href="#autobeautify-privacy" class="toc-link">5. Auto-Beautify On-Device Processing</a></li>
-                    <li><a href="#storage-saf" class="toc-link">6. Local File Storage & SAF</a></li>
-                    <li><a href="#mascot-assets" class="toc-link">7. 3D Mascots & Offline Assets</a></li>
-                    <li><a href="#mit-license" class="toc-link">8. Open Source & Image Credits</a></li>
-                    <li><a href="#terms-use" class="toc-link">9. Commercial Terms of Use</a></li>
-                    <li><a href="#disclaimer" class="toc-link">10. Disclaimer & Liability</a></li>
-                    <li><a href="#contact" class="toc-link">11. Developer Contact</a></li>
+                    <li><a href="#data-collection" class="toc-link">2. Data Collection &amp; Safety</a></li>
+                    <li><a href="#children" class="toc-link">3. Children's Privacy</a></li>
+                    <li><a href="#data-retention" class="toc-link">4. Retention &amp; User Choices</a></li>
+                    <li><a href="#on-device-ai" class="toc-link">5. On-Device AI &amp; Audio</a></li>
+                    <li><a href="#storage-saf" class="toc-link">6. Storage &amp; System Pickers</a></li>
+                    <li><a href="#screen-record" class="toc-link">7. Screen Recording &amp; Stream</a></li>
+                    <li><a href="#mascot-assets" class="toc-link">8. Offline Mascots &amp; Assets</a></li>
+                    <li><a href="#nnotes-pro" class="toc-link">9. Pro Subscriptions &amp; Billing</a></li>
+                    <li><a href="#ad-passes" class="toc-link">10. Ad Transparency &amp; Passes</a></li>
+                    <li><a href="#mit-license" class="toc-link">11. Open Source Credits</a></li>
+                    <li><a href="#terms-use" class="toc-link">12. Commercial Ownership</a></li>
+                    <li><a href="#disclaimer" class="toc-link">13. Disclaimers &amp; Liability</a></li>
+                    <li><a href="#contact" class="toc-link">14. Developer Contact</a></li>
                 </ul>
             </aside>
 
@@ -240,114 +244,188 @@
                 <!-- Section 1 -->
                 <article id="privacy-overview" class="legal-card clay-card privacy-doc">
                     <span style="color:var(--cyan); font-family:var(--font-mono); font-size:0.75rem; text-transform:uppercase;">Privacy Policy • Section 1</span>
-                    <h2 style="margin-top:8px;">1. Privacy Philosophy & Local-First Design</h2>
+                    <h2 style="margin-top:8px;">1. Privacy Philosophy &amp; Local-First Design</h2>
                     <p>
-                        Engineered by <strong>Harshita</strong> (Lead Developer) and <strong>Dr.N</strong> (Co-Developer), Nnotes is built around a <strong>local-first</strong> model under the motto <strong>Cure. Code. Create.</strong> Your handwritten notes, diagrams, and ideas stay on your device. This page explains both that local-first design and the ad-supported parts of the app honestly.
+                        Engineered by <strong>Harshita</strong> (Lead Developer) and <strong>Dr.N</strong> (Co-Developer), Nnotes is built around a strict <strong>local-first</strong> model under the motto <strong>Cure. Code. Create.</strong> Your handwritten notes, sketches, diagrams, voice recordings, and files stay on your physical device.
                     </p>
                     <div class="highlight-box">
                         <span style="color:var(--cyan);"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="5" y="10" width="14" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg></span>
                         <div style="font-size:0.9rem; color:var(--text-secondary);">
-                            <strong>No Note Collection & No Account Requirement:</strong> We do not collect or transmit your note content. Note-taking works without an internet connection, and there is no user registration or email sign-up. The app is ad-supported; Google's ad SDKs process advertising identifiers as described below in <a href="#data-collection" style="color:var(--cyan);">Section 2</a>.
+                            <strong>Zero Cloud Telemetry &amp; No Account Mandatory:</strong> We do not operate remote servers that collect, store, or profile your note content. Nnotes requires no user registration, no email signup, and no personal account to create, edit, and organize notes. Note creation and editing operate 100% offline.
                         </div>
                     </div>
                     <p>
-                        Handwriting recognition runs on your device using on-device ML Kit; note content is never uploaded. "Offline" here refers to note creation and recognition — ad delivery and measurement require a connection and are handled by Google's ad SDKs under their own policies.
+                        Both free and Pro tiers share the exact same core privacy standard: your personal thoughts and documents never leave your phone or tablet without your direct manual action (such as exporting a PDF or sharing a file).
                     </p>
                 </article>
 
                 <!-- Section 2 -->
                 <article id="data-collection" class="legal-card clay-card privacy-doc">
                     <span style="color:var(--cyan); font-family:var(--font-mono); font-size:0.75rem; text-transform:uppercase;">Privacy Policy • Section 2</span>
-                    <h2 style="margin-top:8px;">2. Data Collection, Ads & Play Data Safety</h2>
+                    <h2 style="margin-top:8px;">2. Data Collection, Advertising &amp; Play Data Safety</h2>
                     <p>
-                        Your notes and drawings stay on your device. Nnotes is ad-supported: it integrates Google AdMob and AdSense SDKs to keep the app free. Those SDKs process advertising-related data under <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" style="color:var(--cyan);">Google's Privacy Policy</a>. This section matches the app's Google Play Data Safety declaration.
+                        Nnotes is free to download. To fund ongoing development, caffeine, and maintenance, the free tier displays ads powered by Google AdMob. Google's advertising SDKs process telemetry under <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" style="color:var(--cyan);">Google's Privacy Policy</a>. This section matches our Google Play Console Data Safety declaration:
                     </p>
                     <ul>
-                        <li><strong>Ad delivery and measurement:</strong> Google's ad SDKs may process device identifiers, IP addresses, generalized location data and the Android Advertising ID to select ads, measure campaigns and — where your settings and region allow — personalize advertising.</li>
-                        <li><strong>Strict separation from note content:</strong> Advertising SDKs <strong>do not</strong> receive access to your handwritten notes, canvas data, or files saved through the Storage Access Framework. We do not sell or upload your note content.</li>
-                        <li><strong>Developer vs. service providers:</strong> The developer does not sell or share note data with third parties. Ad providers process ad-related data as independent services under their own policies. That is separate from your notes, which are never shared.</li>
+                        <li><strong>Ad delivery &amp; diagnostics:</strong> Google's ad SDKs may process device identifiers, IP addresses, general non-precise location (network level), and the Android Advertising ID to serve ads, measure impressions, prevent click fraud, and diagnose network crashes.</li>
+                        <li><strong>Complete isolation from note content:</strong> Ad SDKs run in a separate sandboxed layer and <strong>never</strong> have access to your inking canvas, handwritten notes, voice notes, PDFs, or files opened through the Storage Access Framework.</li>
+                        <li><strong>No Sale of Data:</strong> The developers do not sell, rent, broker, or trade personal data or note content with third parties.</li>
                     </ul>
 
-                    <h3 style="font-size:1.05rem; font-weight:700; color:var(--text); margin:24px 0 8px;">What the Play Data Safety listing declares</h3>
+                    <h3 style="font-size:1.05rem; font-weight:700; color:var(--text); margin:24px 0 8px;">Google Play Data Safety Breakdown</h3>
                     <table class="data-table">
                         <thead>
-                            <tr><th>Data type (as declared on Google Play)</th><th>Why it is processed</th></tr>
+                            <tr><th>Data Type</th><th>Purpose &amp; Processing</th><th>Handling</th></tr>
                         </thead>
                         <tbody>
-                            <tr><td>App activity</td><td>Ad delivery and measurement (for example, interactions with ads) and basic app performance diagnostics.</td></tr>
-                            <tr><td>App info and performance</td><td>Crash and performance diagnostics so the app can be kept stable and improved.</td></tr>
-                            <tr><td>Device or other IDs</td><td>Advertising identifiers such as the Android Advertising ID, used by Google's ad SDKs for ad selection, personalization (where permitted) and measurement.</td></tr>
+                            <tr>
+                                <td><strong>Device or other IDs</strong> (Android Advertising ID)</td>
+                                <td>Used exclusively by Google Mobile Ads SDK for ad serving, frequency capping, and ad analytics.</td>
+                                <td>Encrypted in transit by Google. Can be reset in Android Settings.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>App activity &amp; interactions</strong></td>
+                                <td>Interaction with banner, native, and rewarded ad units.</td>
+                                <td>Processed directly by Google AdMob.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Diagnostics &amp; Crash logs</strong></td>
+                                <td>Google Play Vitals diagnostic metrics to maintain stability on Android 15/16.</td>
+                                <td>Aggregated &amp; anonymized.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Voice &amp; Audio Recordings</strong></td>
+                                <td>Recorded solely for on-device voice notes and Whisper transcription.</td>
+                                <td><strong>Not Collected.</strong> Processed 100% locally on-device. Zero upload.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Files &amp; Documents</strong></td>
+                                <td>User notes (.nnote, .xnote), PDF textbooks, and inserted images.</td>
+                                <td><strong>Not Collected.</strong> Stored strictly in local device storage.</td>
+                            </tr>
                         </tbody>
                     </table>
-                    <p>
-                        <strong>Encryption in transit:</strong> data handled by these services is encrypted in transit. <strong>Data can't be deleted by us:</strong> the developer cannot delete ad or technical identifiers held by Google. Your note content is different — it lives only on your device and is deleted there (see <a href="#data-retention" style="color:var(--cyan);">Section 4</a>). Identifiers controlled by Google can be reset or opted out through Android settings.
-                    </p>
                 </article>
 
                 <!-- Section 3 -->
                 <article id="children" class="legal-card clay-card privacy-doc">
                     <span style="color:var(--cyan); font-family:var(--font-mono); font-size:0.75rem; text-transform:uppercase;">Privacy Policy • Section 3</span>
-                    <h2 style="margin-top:8px;">3. Children</h2>
+                    <h2 style="margin-top:8px;">3. Children's Privacy</h2>
                     <p>
-                        Nnotes is rated for ages 3+ on Google Play, but it is not directed at children under 13. We do not knowingly collect personal information from children under 13. If you believe a child has provided personal information through the app, contact us using the details in <a href="#contact" style="color:var(--cyan);">Section 11</a> and we will address it.
-                    </p>
-                    <p>
-                        Where required for child-directed audiences, non-personalized ads are used instead of personalized ads. Parents or guardians can contact <a href="mailto:drnitz@proton.me" style="color:var(--cyan);">drnitz@proton.me</a> with privacy questions or requests concerning a child.
+                        Nnotes is a general-purpose study and note-taking tool rated for ages 3+ on Google Play. It is not directed at children under the age of 13. We do not knowingly collect personal identifiable information from children. If a parent or guardian becomes aware that a child has provided personal information, please contact us at <a href="mailto:contact@drnitz.com" style="color:var(--cyan);">contact@drnitz.com</a> and we will take prompt corrective action.
                     </p>
                 </article>
 
                 <!-- Section 4 -->
                 <article id="data-retention" class="legal-card clay-card privacy-doc">
                     <span style="color:var(--cyan); font-family:var(--font-mono); font-size:0.75rem; text-transform:uppercase;">Privacy Policy • Section 4</span>
-                    <h2 style="margin-top:8px;">4. Data Retention, Deletion & Your Choices</h2>
+                    <h2 style="margin-top:8px;">4. Data Retention, Deletion &amp; Your Choices</h2>
                     <ul>
-                        <li><strong>Notes and drawings:</strong> stored only on your device. Delete them inside the app, or remove the app (and its app data) to clear them from the device. We hold no copy to retain or delete.</li>
-                        <li><strong>Ad and technical identifiers:</strong> retained and processed by Google under its policies, not by the developer. As stated in the Play Data Safety listing, this data can't be deleted by us.</li>
-                        <li><strong>Reset your Android Advertising ID:</strong> open Android <strong>Settings → Google → Ads</strong> (or Google Settings → Ads) and choose to reset the advertising ID.</li>
-                        <li><strong>Opt out of personalized ads:</strong> in the same Android ads settings, enable <strong>Delete advertising ID</strong> or turn off ad personalization. You can also control ad settings in your Google account.</li>
-                        <li><strong>Requests and questions:</strong> email <a href="mailto:drnitz@proton.me" style="color:var(--cyan);">drnitz@proton.me</a>. We can help with questions about this policy and with locally stored note data, but cannot delete identifiers held by Google.</li>
+                        <li><strong>Notes and documents:</strong> Stored locally in your device's app storage or chosen SAF folder. Deleting a note inside Nnotes permanently removes it from your device. Uninstalling the app clears all local sandbox data. We retain zero remote backups.</li>
+                        <li><strong>Resetting Advertising ID:</strong> You can reset or delete your Android Advertising ID at any time in Android <strong>Settings → Google → Ads</strong>.</li>
+                        <li><strong>Opting Out of Personalized Ads:</strong> In Android Ads Settings, toggle "Delete advertising ID" or "Opt out of Ads Personalization". AdMob will serve only contextual, non-personalized ads.</li>
+                        <li><strong>Ad-Free Experience:</strong> Subscribing to <strong>Nnotes Pro</strong> completely disables Google AdMob SDK initialization, providing a zero-ad workspace.</li>
                     </ul>
                 </article>
 
                 <!-- Section 5 -->
-                <article id="autobeautify-privacy" class="legal-card clay-card privacy-doc">
+                <article id="on-device-ai" class="legal-card clay-card privacy-doc">
                     <span style="color:var(--cyan); font-family:var(--font-mono); font-size:0.75rem; text-transform:uppercase;">Privacy Policy • Section 5</span>
-                    <h2 style="margin-top:8px;">5. On-Device Auto-Beautify Engine</h2>
+                    <h2 style="margin-top:8px;">5. On-Device AI: Handwriting Auto-Beautify &amp; Whisper Audio Transcription</h2>
                     <p>
-                        Nnotes' flagship <strong>Magical Auto-Beautify</strong> feature converts messy handwriting into styled digital text:
+                        Nnotes provides advanced on-device artificial intelligence features that respect your privacy by architecture:
                     </p>
+                    <div class="highlight-box">
+                        <span style="color:var(--emerald);"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="22"/></svg></span>
+                        <div style="font-size:0.9rem; color:var(--text-secondary);">
+                            <strong>Microphone Permission (<code>android.permission.RECORD_AUDIO</code>):</strong> Required solely when you actively tap the Record button to capture a voice note. Audio is never recorded in the background or when the app is minimized.
+                        </div>
+                    </div>
                     <ul>
-                        <li><strong>100% On-Device Parsing:</strong> All stroke analysis and handwriting-to-text recognition are performed locally on your device CPU/GPU.</li>
-                        <li><strong>No Cloud Uploads:</strong> Your handwritten text is never sent to external AI servers or remote recognition APIs.</li>
+                        <li><strong>On-Device Whisper Speech-to-Text:</strong> Audio transcription is powered by on-device Whisper models running natively on your hardware (CPU/NPU). Audio samples are processed strictly in local RAM and are <strong>never uploaded to external cloud AI APIs, remote speech servers, or third parties</strong>.</li>
+                        <li><strong>Handwriting Auto-Beautify:</strong> Real-time handwriting recognition and stroke beautification for 80+ world languages run entirely on-device via local ML Kit models. Vector ink data never leaves your device.</li>
+                        <li><strong>Smart Math Calculation:</strong> Ink equation solving and math calculations are evaluated locally using on-device math parsers with zero network transmission.</li>
                     </ul>
                 </article>
 
                 <!-- Section 6 -->
                 <article id="storage-saf" class="legal-card clay-card privacy-doc">
                     <span style="color:var(--cyan); font-family:var(--font-mono); font-size:0.75rem; text-transform:uppercase;">Privacy Policy • Section 6</span>
-                    <h2 style="margin-top:8px;">6. Local File Storage & Storage Access Framework (SAF)</h2>
+                    <h2 style="margin-top:8px;">6. Local File Storage, Storage Access Framework &amp; System Pickers</h2>
                     <p>
-                        Nnotes integrates with Android's native <strong>Storage Access Framework (SAF)</strong>:
+                        In strict compliance with Google Play's <strong>Photo and Video Permissions Policy</strong> and modern Android scoped storage:
                     </p>
                     <ul>
-                        <li><strong>No Broad File Access Needed:</strong> Nnotes does not ask for broad <code>READ_EXTERNAL_STORAGE</code> or <code>WRITE_EXTERNAL_STORAGE</code> permissions to access your photos or files.</li>
-                        <li><strong>Isolated Directory Access:</strong> Files are read and written strictly in folders you grant access to via the system document picker.</li>
+                        <li><strong>Zero Broad Media Permissions:</strong> Nnotes does not declare or request broad <code>READ_MEDIA_VIDEO</code>, <code>READ_MEDIA_IMAGES</code>, or general shared storage permissions.</li>
+                        <li><strong>System Document &amp; Photo Pickers:</strong> When inserting an image onto a note, opening a PDF textbook, or selecting a local video file for the floating picture-in-picture player, Nnotes launches Android's native system file picker (<code>ActivityResultContracts.OpenDocument</code> / <code>GetContent</code>). Access is strictly limited to the individual file deliberately chosen by the user.</li>
+                        <li><strong>Direct Document Provider:</strong> Nnotes implements a secure <code>DocumentsProvider</code> allowing you to save notes directly to a folder of your choice on your device or SD card.</li>
                     </ul>
                 </article>
 
                 <!-- Section 7 -->
-                <article id="mascot-assets" class="legal-card clay-card privacy-doc">
+                <article id="screen-record" class="legal-card clay-card privacy-doc">
                     <span style="color:var(--cyan); font-family:var(--font-mono); font-size:0.75rem; text-transform:uppercase;">Privacy Policy • Section 7</span>
-                    <h2 style="margin-top:8px;">7. 3D Companion Mascots & Local Assets</h2>
+                    <h2 style="margin-top:8px;">7. Screen Recording, MediaProjection &amp; Live Streaming</h2>
                     <p>
-                        Our interactive 3D profession companions (Doctor, Student, Engineer, Artist) are bundled locally within the app installation package. No external servers or network connections are established when choosing or interacting with your companion.
+                        Nnotes includes a built-in lecture presentation, screen recording, and live-streaming tool:
                     </p>
+                    <ul>
+                        <li><strong>Explicit User Consent:</strong> Screen recording utilizes Android's <code>MediaProjection</code> API (service type: <code>mediaProjection</code>). Recording can only be started by deliberate user interaction, which triggers the mandatory Android system prompt ("Start recording or casting?").</li>
+                        <li><strong>Local Video Output:</strong> Captured video and internal audio are encoded directly into MP4 files stored locally in your device's <code>Movies/Nnotes/</code> directory.</li>
+                        <li><strong>Zero-Cost Live Streaming:</strong> When streaming, the video feed connects directly to your chosen streaming server or audience QR code endpoint via standard RTMP/WebRTC protocols. The developers operate no intermediate surveillance servers.</li>
+                    </ul>
                 </article>
 
                 <!-- Section 8 -->
+                <article id="mascot-assets" class="legal-card clay-card privacy-doc">
+                    <span style="color:var(--cyan); font-family:var(--font-mono); font-size:0.75rem; text-transform:uppercase;">Privacy Policy • Section 8</span>
+                    <h2 style="margin-top:8px;">8. 3D Companions &amp; Local Offline Assets</h2>
+                    <p>
+                        All 10 interactive companion mascots (Doki the Doctor, Lesso the Student, Torque the Engineer, Vector the Artist, Clause the Lawyer, Inky the Octopus, Shelly the Turtle, Serena &amp; Cat, Mochi the Kawaii Cat, and Beacon the Guard) are bundled locally as vector graphics and offline 3D models inside the APK. No network queries or background connections occur when switching or animating companions.
+                    </p>
+                </article>
+
+                <!-- Section 9 -->
+                <article id="nnotes-pro" class="legal-card clay-card terms-doc">
+                    <span style="color:var(--purple); font-family:var(--font-mono); font-size:0.75rem; text-transform:uppercase;">Terms of Service • Section 9</span>
+                    <h2 style="margin-top:8px;">9. Nnotes Pro Subscriptions &amp; Google Play Billing Terms</h2>
+                    <p>
+                        Nnotes offers an optional <strong>Nnotes Pro</strong> subscription tier that unlocks an ad-free workspace, unlimited floating multitasking, and unlimited Whisper AI voice note transcriptions.
+                    </p>
+                    <ul>
+                        <li><strong>Subscription Plans:</strong>
+                            <ul>
+                                <li><strong>Monthly Plan:</strong> $0.99 USD / month (auto-renewing).</li>
+                                <li><strong>Bi-Monthly Plan:</strong> $1.50 USD / 2 months (auto-renewing, save 24%).</li>
+                                <li><strong>Annual Plan:</strong> $7.00 USD / year (auto-renewing, save 41%) with a <strong>7-Day Free Trial</strong> for eligible new subscribers.</li>
+                            </ul>
+                        </li>
+                        <li><strong>Secure Payment Processing:</strong> All transactions, tax calculations, and currency conversions are handled directly and exclusively by <strong>Google Play Billing</strong>. The developers never see, collect, or store your credit card details, bank information, or billing address.</li>
+                        <li><strong>Auto-Renewal &amp; Cancellation:</strong> Subscriptions automatically renew unless cancelled at least 24 hours prior to the end of the current billing cycle. You may cancel, pause, or change your subscription at any time via <strong>Google Play Store → Profile → Payments &amp; subscriptions → Subscriptions</strong>. Cancellation prevents future billing while retaining Pro access until the current cycle expires.</li>
+                        <li><strong>7-Day Free Trial:</strong> If eligible, you will not be charged during the 7-day trial period. Cancel anytime before the trial ends to avoid being billed.</li>
+                        <li><strong>Refunds:</strong> All refund requests are governed by <a href="https://support.google.com/googleplay/answer/2479637" target="_blank" rel="noopener noreferrer" style="color:var(--cyan);">Google Play's Refund Policies</a>.</li>
+                    </ul>
+                </article>
+
+                <!-- Section 10 -->
+                <article id="ad-passes" class="legal-card clay-card privacy-doc terms-doc">
+                    <span style="color:var(--cyan); font-family:var(--font-mono); font-size:0.75rem; text-transform:uppercase;">Privacy &amp; Terms • Section 10</span>
+                    <h2 style="margin-top:8px;">10. Rewarded Ad Passes &amp; Ad Transparency</h2>
+                    <p>
+                        For users who do not have Nnotes Pro, optional rewarded video ads provide free temporary access to premium tools:
+                    </p>
+                    <ul>
+                        <li><strong>Floating Window Pass:</strong> Watching one short rewarded ad unlocks 2 hours of floating video and browser multitasking.</li>
+                        <li><strong>Voice Note Credits:</strong> Watching one short rewarded ad grants 2 transcription credits.</li>
+                        <li><strong>Companion Unlocks:</strong> Watching a rewarded interstitial unlocks companion switching. In compliance with AdMob policies, an introductory opt-out screen is always displayed before playback begins, allowing you to skip without penalty.</li>
+                        <li><strong>Honest Purpose:</strong> As stated inside the app: <em>"Nobody likes ads, including us. But they pay for our caffeine so Nnotes stays 100% free for everyone."</em></li>
+                    </ul>
+                </article>
+
+                <!-- Section 11 -->
                 <article id="mit-license" class="legal-card clay-card terms-doc">
-                    <span style="color:var(--purple); font-family:var(--font-mono); font-size:0.75rem; text-transform:uppercase;">Terms of Service • Section 8</span>
-                    <h2 style="margin-top:8px;">8. Open Source & Image Credits</h2>
+                    <span style="color:var(--purple); font-family:var(--font-mono); font-size:0.75rem; text-transform:uppercase;">Terms of Service • Section 11</span>
+                    <h2 style="margin-top:8px;">11. Open Source &amp; Image Credits</h2>
                     <p>
                         Nnotes is inspired by the open-source <strong>Xnote</strong> app by Shardul, which is MIT-licensed upstream (<a href="https://github.com/shardulvs/xnotes-android" target="_blank" rel="noopener noreferrer" style="color:var(--cyan);">github.com/shardulvs/xnotes-android</a>). The MIT License below applies to that upstream project; this page does not license Nnotes itself under the MIT License.
                     </p>
@@ -382,41 +460,42 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.</pre>
                     </details>
                     <p style="margin-top:20px;">
-                        <strong>Anatomical imagery credit:</strong> Anatomical images in the app are credited to Stanford University School of Medicine / Lane Medical Library and used under the <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener noreferrer" style="color:var(--cyan);">Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)</a> license.
+                        <strong>Anatomical imagery credit:</strong> Anatomical plates and clinical dissection images in the app are credited to Stanford University School of Medicine / Lane Medical Library and used under the <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener noreferrer" style="color:var(--cyan);">Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)</a> license.
                     </p>
                 </article>
 
-                <!-- Section 9 -->
+                <!-- Section 12 -->
                 <article id="terms-use" class="legal-card clay-card terms-doc">
-                    <span style="color:var(--purple); font-family:var(--font-mono); font-size:0.75rem; text-transform:uppercase;">Terms of Service • Section 9</span>
-                    <h2 style="margin-top:8px;">9. Commercial Use & Intellectual Property</h2>
+                    <span style="color:var(--purple); font-family:var(--font-mono); font-size:0.75rem; text-transform:uppercase;">Terms of Service • Section 12</span>
+                    <h2 style="margin-top:8px;">12. Commercial Ownership &amp; User Intellectual Property</h2>
                     <p>
-                        You retain 100% full ownership over all handwritten notes, sketches, and converted text created using Nnotes. Nnotes claims zero ownership over your personal creations.
+                        You retain <strong>100% full, exclusive ownership</strong> over all notes, vector handwriting, sketches, audio recordings, transcriptions, and exported PDF documents you create or import with Nnotes. The developers claim zero intellectual property rights, licenses, or ownership over your content.
                     </p>
                 </article>
 
-                <!-- Section 10 -->
+                <!-- Section 13 -->
                 <article id="disclaimer" class="legal-card clay-card terms-doc">
-                    <span style="color:var(--purple); font-family:var(--font-mono); font-size:0.75rem; text-transform:uppercase;">Terms of Service • Section 10</span>
-                    <h2 style="margin-top:8px;">10. Disclaimers & Limitation of Liability</h2>
+                    <span style="color:var(--purple); font-family:var(--font-mono); font-size:0.75rem; text-transform:uppercase;">Terms of Service • Section 13</span>
+                    <h2 style="margin-top:8px;">13. Disclaimers &amp; Limitation of Liability</h2>
                     <p>
-                        Nnotes is provided "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED. THE DEVELOPERS SHALL NOT BE LIABLE FOR ANY CLAIM, LOSS OF DATA, OR DAMAGES ARISING FROM DEVICE HARDWARE FAILURE OR SYSTEM CORRUPTION.
+                        Nnotes is provided "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED. While we perform extensive testing across phone, foldable, and tablet devices, the developers shall not be held liable for any loss of data, hardware damage, or system corruption. Users are encouraged to maintain independent backups of critical study files and notes.
                     </p>
                 </article>
 
-                <!-- Section 11 -->
+                <!-- Section 14 -->
                 <article id="contact" class="legal-card clay-card privacy-doc terms-doc">
-                    <span style="color:var(--cyan); font-family:var(--font-mono); font-size:0.75rem; text-transform:uppercase;">Contact & Support • Section 11</span>
-                    <h2 style="margin-top:8px;">11. Developer Contact</h2>
-                    <p>For questions, privacy requests, or support regarding Nnotes:</p>
+                    <span style="color:var(--cyan); font-family:var(--font-mono); font-size:0.75rem; text-transform:uppercase;">Contact &amp; Support • Section 14</span>
+                    <h2 style="margin-top:8px;">14. Developer Contact &amp; Privacy Inquiries</h2>
+                    <p>For questions, support, or privacy requests regarding Nnotes:</p>
                     <div class="highlight-box">
                         <span style="color:var(--cyan);"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></span>
                         <div style="font-size:0.9rem; color:var(--text-secondary);">
                             <strong>Lead Developer:</strong> Harshita<br>
                             <strong>Co-Developer:</strong> Dr.N<br>
-                            <strong>Policy contact:</strong> <a href="mailto:drnitz@proton.me" style="color:var(--cyan);">drnitz@proton.me</a><br>
-                            <strong>GitHub:</strong> <a href="https://github.com/drnitz" target="_blank" rel="noopener noreferrer" style="color:var(--cyan);">github.com/drnitz</a><br>
-                            <strong>Website:</strong> <a href="https://drnitz.com/" style="color:var(--cyan);">Portfolio home</a>
+                            <strong>Direct Support &amp; Privacy Email:</strong> <a href="mailto:contact@drnitz.com" style="color:var(--cyan); font-weight:700;">contact@drnitz.com</a><br>
+                            <strong>Alternate Contact:</strong> <a href="mailto:drnitz@proton.me" style="color:var(--cyan);">drnitz@proton.me</a><br>
+                            <strong>GitHub Project:</strong> <a href="https://github.com/drnitz" target="_blank" rel="noopener noreferrer" style="color:var(--cyan);">github.com/drnitz</a><br>
+                            <strong>Official Website:</strong> <a href="https://drnitz.com/" style="color:var(--cyan);">drnitz.com</a>
                         </div>
                     </div>
                 </article>
@@ -431,7 +510,7 @@ SOFTWARE.</pre>
             </div>
             <div style="font-size: 1.3rem; font-weight: 800; color: var(--cyan); margin-bottom: 8px;">Cure. Code. Create.</div>
             <div class="footer-copy">
-                © 2026 Nnotes • Developed by Lead Developer Harshita & Co-Developer Dr.N.
+                © 2026 Nnotes • Developed by Lead Developer Harshita &amp; Co-Developer Dr.N.
             </div>
         </footer>
     </div>
