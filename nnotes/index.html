@@ -17,7 +17,7 @@
     <meta name="twitter:image" content="https://drnitz.com/social_preview.jpg">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="../assets/base.css">
     <link rel="stylesheet" href="../assets/dock.css">
@@ -25,57 +25,33 @@
 
     <style>
         :root {
-            /* Palette */
-            --bg-page: #0A0E17;
-            --bg-surface: #121824;
-            --bg-surface-alt: #172032;
-            --bg-surface-elevated: #1D283E;
-            --border-default: rgba(255, 255, 255, 0.08);
-            --border-highlight: rgba(56, 189, 248, 0.3);
-
-            --brand-blue: #0369A1;
-            --brand-blue-hover: #075985;
-            --brand-cyan: #38BDF8;
-            --brand-emerald: #10B981;
-            --brand-amber: #F59E0B;
-
-            --text-primary: #F8FAFC;
-            --text-secondary: #94A3B8;
-            --text-muted: #8292A6;
-
-            --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            /* Claymorphism Palette matching Privacy Page */
+            --bg-deep: #E0E5EC;
+            --clay-base: #E0E5EC;
+            --clay-light: #F4F7FB;
+            --cyan: #006A94;
+            --purple: #9D4EDD;
+            --emerald: #065F46;
+            --text: #2D3748;
+            --text-secondary: #4A5568;
+            --text-muted: #52606D;
+            --font-body: 'Plus Jakarta Sans', sans-serif;
             --font-mono: 'JetBrains Mono', monospace;
 
-            /* Soft Corner System */
-            --radius-sm: 8px;
-            --radius-btn: 10px;
-            --radius-input: 12px;
-            --radius-box: 14px;
-            --radius-card: 20px;
-            --radius-panel: 24px;
-
-            /* Uniform Spacing System */
-            --space-xs: 8px;
-            --space-sm: 12px;
-            --space-md: 20px;
-            --space-lg: 32px;
-            --space-xl: 48px;
-            --space-2xl: 72px;
+            /* Soft Corner Hierarchy */
+            --radius-btn: 14px;
+            --radius-box: 16px;
+            --radius-card: 24px;
+            --radius-pill: 100px;
         }
 
         body {
-            font-family: var(--font-sans);
-            background-color: var(--bg-page);
-            background-image: 
-                radial-gradient(1200px circle at 50% -5%, rgba(3, 105, 161, 0.16) 0%, transparent 60%),
-                radial-gradient(900px circle at 85% 25%, rgba(99, 102, 241, 0.10) 0%, transparent 55%),
-                radial-gradient(1000px circle at 15% 65%, rgba(16, 185, 129, 0.08) 0%, transparent 60%),
-                linear-gradient(180deg, #090D15 0%, #0E1422 35%, #0B0F19 100%);
-            background-attachment: fixed;
-            color: var(--text-primary);
+            font-family: var(--font-body);
+            background: var(--bg-deep);
+            color: var(--text);
             min-height: 100vh;
             overflow-x: hidden;
-            line-height: 1.65;
+            line-height: 1.7;
             margin: 0;
             padding: 0;
         }
@@ -85,183 +61,212 @@
             margin: 0 auto;
             padding: 0 24px;
             position: relative;
-            z-index: 1;
+            z-index: 10;
         }
 
-        /* Top Navigation */
+        /* --- CLAYMORPHISM CORE CLASSES --- */
+        .clay-card {
+            background: var(--clay-base);
+            border-radius: var(--radius-card);
+            box-shadow:
+                15px 15px 35px rgba(163, 177, 198, 0.5),
+                -10px -10px 25px rgba(255, 255, 255, 0.8),
+                inset 4px 4px 10px rgba(255, 255, 255, 0.9),
+                inset -4px -4px 10px rgba(163, 177, 198, 0.4);
+            border: 2px solid rgba(255, 255, 255, 0.4);
+            transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+        .clay-card:hover {
+            transform: translateY(-2px);
+            box-shadow:
+                17px 17px 38px rgba(163, 177, 198, 0.55),
+                -12px -12px 28px rgba(255, 255, 255, 0.85),
+                inset 4px 4px 10px rgba(255, 255, 255, 0.95),
+                inset -4px -4px 10px rgba(163, 177, 198, 0.45);
+            border-color: rgba(255, 255, 255, 0.75);
+        }
+
+        .clay-inset {
+            background: var(--clay-light);
+            border-radius: var(--radius-box);
+            border: 2px solid rgba(255, 255, 255, 0.5);
+            box-shadow:
+                inset 3px 3px 6px rgba(163, 177, 198, 0.3),
+                inset -3px -3px 6px rgba(255, 255, 255, 0.8);
+        }
+
+        .clay-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 12px 24px;
+            border-radius: var(--radius-btn);
+            font-weight: 700;
+            font-size: 0.92rem;
+            text-decoration: none;
+            cursor: pointer;
+            border: 2px solid rgba(255, 255, 255, 0.5);
+            background: var(--clay-base);
+            color: var(--text);
+            font-family: var(--font-body);
+            box-shadow:
+                6px 6px 15px rgba(163, 177, 198, 0.5),
+                -4px -4px 12px rgba(255, 255, 255, 0.8),
+                inset 2px 2px 5px rgba(255, 255, 255, 0.8),
+                inset -2px -2px 5px rgba(163, 177, 198, 0.4);
+            transition: all 0.2s ease;
+        }
+        .clay-btn:hover {
+            color: var(--cyan);
+            background: var(--clay-light);
+            transform: translateY(-2px);
+            box-shadow:
+                8px 8px 18px rgba(163, 177, 198, 0.55),
+                -5px -5px 14px rgba(255, 255, 255, 0.9),
+                inset 2px 2px 6px rgba(255, 255, 255, 0.9),
+                inset -2px -2px 6px rgba(163, 177, 198, 0.35);
+        }
+        .clay-btn:active, .clay-btn.active {
+            transform: translateY(1px);
+            box-shadow:
+                inset 4px 4px 10px rgba(163, 177, 198, 0.6),
+                inset -4px -4px 10px rgba(255, 255, 255, 0.8);
+            color: var(--cyan);
+        }
+
+        .clay-btn-primary {
+            background: var(--cyan);
+            color: #FFFFFF;
+            border: 2px solid rgba(255, 255, 255, 0.4);
+            box-shadow:
+                6px 6px 15px rgba(163, 177, 198, 0.5),
+                -4px -4px 12px rgba(255, 255, 255, 0.8),
+                inset 2px 2px 5px rgba(255, 255, 255, 0.3),
+                inset -3px -3px 8px rgba(0, 0, 0, 0.15);
+        }
+        .clay-btn-primary:hover {
+            background: #00567A;
+            color: #FFFFFF;
+            transform: translateY(-2px);
+            box-shadow:
+                8px 8px 18px rgba(163, 177, 198, 0.6),
+                -5px -5px 14px rgba(255, 255, 255, 0.9);
+        }
+
+        .clay-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 6px 16px;
+            border-radius: var(--radius-pill);
+            font-size: 0.78rem;
+            font-family: var(--font-mono);
+            font-weight: 600;
+            background: var(--clay-base);
+            border: 2px solid rgba(255, 255, 255, 0.5);
+            color: var(--text-secondary);
+            box-shadow: 4px 4px 10px rgba(163, 177, 198, 0.4), -2px -2px 8px rgba(255, 255, 255, 0.8);
+        }
+        .badge-dot {
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: var(--emerald);
+        }
+
+        /* Header */
         header {
             display: flex;
             justify-content: space-between;
             align-items: center;
             padding: 24px 0;
-            border-bottom: 1px solid var(--border-default);
-            margin-bottom: var(--space-lg);
+            border-bottom: 2px solid rgba(255, 255, 255, 0.5);
+            margin-bottom: 36px;
         }
-        .brand-link {
+        .logo-wrap {
             display: flex;
             align-items: center;
             gap: 12px;
             text-decoration: none;
-            color: var(--text-primary);
+            color: var(--text);
         }
-        .brand-avatar {
-            width: 38px;
-            height: 38px;
-            border-radius: var(--radius-btn);
+        .logo-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 12px;
             overflow: hidden;
-            background: var(--brand-blue);
             display: flex;
             align-items: center;
             justify-content: center;
-            box-shadow: 0 4px 12px rgba(3, 105, 161, 0.3);
+            background: var(--clay-base);
+            border: 2px solid rgba(255, 255, 255, 0.6);
+            box-shadow: 4px 4px 10px rgba(163, 177, 198, 0.4), -2px -2px 8px rgba(255, 255, 255, 0.8);
         }
-        .brand-avatar img {
+        .logo-avatar img {
             width: 100%;
             height: 100%;
             object-fit: cover;
         }
-        .brand-name {
-            font-size: 1.45rem;
+        .logo-title {
+            font-size: 1.6rem;
             font-weight: 800;
-            letter-spacing: -0.5px;
+            color: var(--text);
         }
-        .brand-version {
-            font-size: 0.72rem;
+        .logo-tag {
+            font-size: 0.68rem;
+            padding: 4px 10px;
+            border-radius: var(--radius-pill);
+            background: rgba(0, 106, 148, 0.08);
+            color: var(--cyan);
+            border: 2px solid rgba(255, 255, 255, 0.5);
             font-family: var(--font-mono);
-            background: rgba(56, 189, 248, 0.1);
-            color: var(--brand-cyan);
-            padding: 3px 8px;
-            border-radius: 6px;
-            border: 1px solid rgba(56, 189, 248, 0.25);
-            font-weight: 600;
+            font-weight: 700;
+            box-shadow: 2px 2px 6px rgba(163, 177, 198, 0.3), -2px -2px 6px rgba(255, 255, 255, 0.6);
         }
-        .nav-actions {
+        .header-actions {
             display: flex;
             gap: 12px;
             align-items: center;
         }
-        .nav-btn {
-            font-size: 0.85rem;
-            font-weight: 600;
-            color: var(--text-secondary);
-            text-decoration: none;
-            padding: 8px 16px;
-            border-radius: var(--radius-btn);
-            background: linear-gradient(180deg, var(--bg-surface-alt), var(--bg-surface));
-            border: 1px solid var(--border-default);
-            transition: all 0.15s ease;
-        }
-        .nav-btn:hover {
-            color: var(--text-primary);
-            border-color: var(--border-highlight);
-            background: var(--bg-surface-elevated);
-            transform: translateY(-1px);
-        }
 
-        /* Hero Section */
-        .hero-section {
-            padding: 30px 0 50px;
+        /* Hero */
+        .hero {
             text-align: center;
+            padding: 30px 0 45px;
             max-width: 840px;
             margin: 0 auto;
         }
-        .hero-label {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            font-family: var(--font-mono);
-            font-size: 0.8rem;
-            font-weight: 600;
-            color: var(--brand-cyan);
-            background: linear-gradient(135deg, rgba(20, 28, 44, 0.8), rgba(14, 20, 32, 0.8));
-            border: 1px solid var(--border-default);
-            padding: 6px 16px;
-            border-radius: var(--radius-box);
-            margin-bottom: 22px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
-        }
-        .hero-label-indicator {
-            width: 7px;
-            height: 7px;
-            border-radius: 50%;
-            background: var(--brand-emerald);
-            box-shadow: 0 0 8px var(--brand-emerald);
-        }
-        .hero-headline {
-            font-size: clamp(2.4rem, 5vw, 3.8rem);
+        .hero-title {
+            font-size: clamp(2.3rem, 5vw, 3.8rem);
             font-weight: 800;
             line-height: 1.15;
             letter-spacing: -1.5px;
-            color: #FFFFFF;
-            margin: 0 0 20px;
+            color: var(--text);
+            margin: 18px 0 16px;
         }
-        .hero-summary {
-            font-size: 1.15rem;
-            line-height: 1.7;
+        .hero-subtitle {
+            font-size: 1.12rem;
             color: var(--text-secondary);
-            margin: 0 0 34px;
+            margin: 0 auto 32px;
+            line-height: 1.7;
         }
-        .hero-summary strong {
-            color: var(--text-primary);
-        }
-
-        /* Action Buttons */
         .hero-ctas {
             display: flex;
             justify-content: center;
             gap: 14px;
             flex-wrap: wrap;
-            margin-bottom: 40px;
-        }
-        .btn-action {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-            padding: 13px 26px;
-            border-radius: var(--radius-btn);
-            font-weight: 600;
-            font-size: 0.95rem;
-            text-decoration: none;
-            cursor: pointer;
-            transition: all 0.18s ease;
-            font-family: var(--font-sans);
-            border: 1px solid transparent;
-        }
-        .btn-primary {
-            background: linear-gradient(180deg, #0284C7 0%, #0369A1 100%);
-            color: #FFFFFF;
-            border-color: rgba(255, 255, 255, 0.15);
-            box-shadow: 0 4px 16px rgba(3, 105, 161, 0.4);
-        }
-        .btn-primary:hover {
-            background: linear-gradient(180deg, #0369A1 0%, #075985 100%);
-            transform: translateY(-1px);
-            box-shadow: 0 6px 20px rgba(3, 105, 161, 0.55);
-        }
-        .btn-secondary {
-            background: linear-gradient(180deg, rgba(24, 33, 52, 0.9), rgba(16, 23, 36, 0.9));
-            color: var(--text-primary);
-            border-color: var(--border-default);
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-        }
-        .btn-secondary:hover {
-            background: linear-gradient(180deg, rgba(30, 42, 66, 0.95), rgba(20, 29, 46, 0.95));
-            border-color: var(--border-highlight);
-            transform: translateY(-1px);
+            margin-bottom: 36px;
         }
 
-        /* Hard Facts Bar with Gradient & Soft Corners */
-        .facts-bar {
+        /* Facts Strip */
+        .facts-strip {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 14px;
-            background: linear-gradient(180deg, rgba(20, 28, 44, 0.85) 0%, rgba(14, 20, 32, 0.95) 100%);
-            border: 1px solid var(--border-default);
+            padding: 18px 24px;
             border-radius: var(--radius-card);
-            padding: 16px 24px;
-            text-align: left;
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+            margin-bottom: 20px;
         }
         .fact-item {
             display: flex;
@@ -271,136 +276,129 @@
             color: var(--text-secondary);
         }
         .fact-item strong {
-            color: var(--text-primary);
+            color: var(--cyan);
             font-family: var(--font-mono);
         }
         .fact-icon {
-            color: var(--brand-cyan);
+            color: var(--cyan);
             flex-shrink: 0;
         }
 
-        /* Interactive Canvas Simulator Section */
+        /* Interactive Canvas Simulator */
         .demo-section {
-            margin: var(--space-xl) 0 var(--space-2xl);
+            margin: 40px 0 70px;
         }
-        .demo-canvas-wrapper {
-            background: linear-gradient(180deg, rgba(20, 28, 44, 0.95) 0%, rgba(14, 20, 32, 0.98) 100%);
-            border: 1px solid var(--border-default);
-            border-radius: var(--radius-panel);
+        .demo-window {
+            border-radius: 32px;
+            padding: 0;
             overflow: hidden;
-            box-shadow: 0 20px 48px -8px rgba(0, 0, 0, 0.7);
         }
-        .demo-header-bar {
-            background: rgba(10, 14, 23, 0.75);
+        .demo-bar {
             padding: 14px 22px;
             display: flex;
             align-items: center;
             justify-content: space-between;
-            border-bottom: 1px solid var(--border-default);
-            font-size: 0.8rem;
-            color: var(--text-muted);
+            border-bottom: 2px solid rgba(255, 255, 255, 0.5);
             font-family: var(--font-mono);
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: var(--text-secondary);
         }
-        .demo-dot-group {
+        .demo-cam-group {
             display: flex;
-            gap: 6px;
+            align-items: center;
+            gap: 8px;
         }
-        .demo-dot {
+        .demo-cam {
             width: 10px;
             height: 10px;
             border-radius: 50%;
-            background: #25334A;
+            background: #A3B1C6;
+            box-shadow: inset 1px 1px 2px rgba(0,0,0,0.4);
         }
-
         .demo-canvas-body {
             position: relative;
-            min-height: 460px;
-            background-color: #080C14;
-            background-size: 26px 26px;
-            background-image: radial-gradient(circle, #1E293B 1.2px, transparent 1.2px);
+            min-height: 440px;
             padding: 24px;
+            background-size: 26px 26px;
+            background-image: radial-gradient(circle, rgba(163, 177, 198, 0.35) 1.5px, transparent 1.5px);
             display: flex;
             flex-direction: column;
             justify-content: space-between;
         }
 
-        /* Floating Tool Bar with Soft Corners & Gradient */
+        /* Clay Floating Toolbar */
         .canvas-toolbar {
             display: inline-flex;
             gap: 8px;
-            background: linear-gradient(135deg, rgba(24, 33, 52, 0.95), rgba(15, 22, 36, 0.95));
-            border: 1px solid var(--border-default);
+            padding: 8px 12px;
             border-radius: var(--radius-box);
-            padding: 8px 10px;
             align-self: flex-start;
             flex-wrap: wrap;
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
         }
-        .tool-icon-btn {
+        .tool-btn {
             width: 40px;
             height: 40px;
-            border-radius: var(--radius-sm);
-            border: 1px solid transparent;
-            background: rgba(255, 255, 255, 0.04);
-            color: var(--text-secondary);
-            font-size: 1rem;
+            border-radius: 12px;
+            border: 2px solid rgba(255, 255, 255, 0.5);
+            background: var(--clay-base);
+            color: var(--text);
+            font-size: 1.1rem;
             display: flex;
             align-items: center;
             justify-content: center;
             cursor: pointer;
-            transition: all 0.15s ease;
+            transition: all 0.2s;
+            box-shadow:
+                4px 4px 8px rgba(163, 177, 198, 0.45),
+                -2px -2px 6px rgba(255, 255, 255, 0.8);
         }
-        .tool-icon-btn:hover {
-            background: rgba(255, 255, 255, 0.1);
-            color: var(--text-primary);
+        .tool-btn:hover {
+            color: var(--cyan);
+            background: var(--clay-light);
+            transform: translateY(-2px);
         }
-        .tool-icon-btn.active {
-            background: var(--brand-blue);
-            color: #FFFFFF;
-            border-color: rgba(255, 255, 255, 0.2);
-            box-shadow: 0 3px 10px rgba(3, 105, 161, 0.4);
+        .tool-btn.active {
+            color: var(--cyan);
+            box-shadow:
+                inset 3px 3px 6px rgba(163, 177, 198, 0.6),
+                inset -2px -2px 5px rgba(255, 255, 255, 0.8);
+            transform: translateY(1px);
         }
 
-        /* Interactive Canvas Display Card */
-        .canvas-active-preview {
+        /* Interactive Centerpiece */
+        .canvas-preview-card {
             max-width: 600px;
-            margin: 32px auto;
+            margin: 28px auto;
             width: 100%;
-            background: linear-gradient(180deg, rgba(22, 31, 49, 0.95), rgba(15, 22, 36, 0.95));
-            border: 1px solid var(--border-default);
-            border-radius: var(--radius-card);
             padding: 26px;
             text-align: center;
-            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.5);
         }
-        .canvas-tab-switcher {
+        .tab-switcher {
             display: flex;
             justify-content: center;
             gap: 8px;
             margin-bottom: 20px;
             flex-wrap: wrap;
         }
-        .canvas-tab {
-            font-family: var(--font-mono);
-            font-size: 0.75rem;
-            font-weight: 600;
+        .tab-pill {
             padding: 6px 14px;
             border-radius: var(--radius-btn);
-            background: var(--bg-surface-alt);
-            border: 1px solid var(--border-default);
+            font-size: 0.78rem;
+            font-family: var(--font-mono);
+            font-weight: 700;
+            border: 2px solid rgba(255, 255, 255, 0.5);
+            background: var(--clay-base);
             color: var(--text-secondary);
             cursor: pointer;
-            transition: all 0.15s ease;
+            box-shadow: 3px 3px 8px rgba(163, 177, 198, 0.4), -2px -2px 6px rgba(255, 255, 255, 0.8);
+            transition: all 0.2s;
         }
-        .canvas-tab.active {
-            background: rgba(56, 189, 248, 0.15);
-            border-color: var(--brand-cyan);
-            color: var(--brand-cyan);
+        .tab-pill.active {
+            color: var(--cyan);
+            box-shadow: inset 3px 3px 6px rgba(163, 177, 198, 0.5), inset -3px -3px 6px rgba(255, 255, 255, 0.8);
         }
-        .preview-content-box {
-            background: #090D17;
-            border: 1px solid var(--border-default);
-            border-radius: var(--radius-input);
+        .preview-box {
             padding: 18px;
             min-height: 85px;
             display: flex;
@@ -410,42 +408,20 @@
             margin-bottom: 16px;
         }
         .preview-lead {
-            font-size: 1.15rem;
+            font-size: 1.2rem;
             font-weight: 700;
-            color: var(--text-primary);
-            transition: color 0.2s;
+            color: var(--text);
+            transition: all 0.2s;
         }
         .preview-sub {
             font-size: 0.82rem;
-            color: var(--text-muted);
+            color: var(--text-secondary);
             margin-top: 6px;
         }
-        .preview-action-btn {
-            background: var(--brand-blue);
-            color: #FFFFFF;
-            border: none;
-            padding: 10px 22px;
-            border-radius: var(--radius-btn);
-            font-weight: 600;
-            font-size: 0.85rem;
-            cursor: pointer;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            transition: all 0.15s;
-            box-shadow: 0 4px 14px rgba(3, 105, 161, 0.4);
-        }
-        .preview-action-btn:hover {
-            background: var(--brand-blue-hover);
-            transform: translateY(-1px);
-        }
 
-        /* Companion Dock with Soft Corners & Gradient */
-        .companion-bar {
-            background: linear-gradient(135deg, rgba(24, 33, 52, 0.95), rgba(15, 22, 36, 0.95));
-            border: 1px solid rgba(56, 189, 248, 0.25);
-            border-radius: var(--radius-box);
-            padding: 12px 16px;
+        /* Companion Card */
+        .companion-card {
+            padding: 12px 18px;
             align-self: flex-end;
             display: flex;
             align-items: center;
@@ -454,118 +430,109 @@
             text-align: left;
             max-width: 440px;
             margin-top: 10px;
-            transition: all 0.2s ease;
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
         }
-        .companion-bar:hover {
-            border-color: var(--brand-cyan);
-            background: linear-gradient(135deg, rgba(28, 39, 62, 0.98), rgba(18, 26, 42, 0.98));
+        .companion-card:hover {
             transform: translateY(-2px);
         }
         .companion-face {
-            font-size: 1.7rem;
+            font-size: 1.8rem;
             line-height: 1;
         }
         .companion-text-col {
             display: flex;
             flex-direction: column;
         }
-        .companion-title-row {
+        .companion-name-row {
             display: flex;
             align-items: center;
             gap: 8px;
         }
         .companion-name {
-            font-size: 0.88rem;
-            font-weight: 700;
-            color: var(--text-primary);
+            font-size: 0.9rem;
+            font-weight: 800;
+            color: var(--text);
         }
-        .companion-discipline {
+        .companion-role {
             font-size: 0.68rem;
             font-family: var(--font-mono);
-            color: var(--brand-cyan);
-            background: rgba(56, 189, 248, 0.12);
-            padding: 2px 7px;
-            border-radius: 4px;
+            color: var(--cyan);
+            font-weight: 700;
         }
-        .companion-quote {
+        .companion-speech {
             font-size: 0.8rem;
             color: var(--text-secondary);
             font-style: italic;
-            margin-top: 3px;
+            margin-top: 2px;
         }
-        .companion-stepper {
+        .companion-counter {
             font-size: 0.7rem;
             color: var(--text-muted);
             font-family: var(--font-mono);
-            margin-top: 3px;
+            margin-top: 2px;
         }
 
-        /* Features Sections with Uniform Spacing */
-        .section-block {
-            padding: var(--space-2xl) 0;
-            border-top: 1px solid var(--border-default);
+        /* Features Sections */
+        .section {
+            padding: 60px 0;
+            border-top: 2px solid rgba(255, 255, 255, 0.5);
         }
         .section-header {
-            margin-bottom: var(--space-lg);
+            margin-bottom: 32px;
         }
         .section-tag {
             font-family: var(--font-mono);
-            font-size: 0.75rem;
+            font-size: 0.78rem;
             font-weight: 700;
-            color: var(--brand-cyan);
+            color: var(--cyan);
             text-transform: uppercase;
             letter-spacing: 0.8px;
             display: block;
-            margin-bottom: 8px;
+            margin-bottom: 6px;
         }
         .section-title {
-            font-size: clamp(1.8rem, 3.5vw, 2.4rem);
+            font-size: clamp(1.8rem, 3.5vw, 2.5rem);
             font-weight: 800;
-            color: var(--text-primary);
+            color: var(--text);
             letter-spacing: -0.8px;
-            margin: 0 0 12px;
+            margin: 0 0 10px;
         }
         .section-desc {
             font-size: 1.05rem;
             color: var(--text-secondary);
             max-width: 680px;
             margin: 0;
-            line-height: 1.6;
+            line-height: 1.65;
         }
 
-        /* Feature Showcase Box with Soft Corners & Gradients */
-        .feature-showcase-box {
-            background: linear-gradient(180deg, rgba(20, 28, 44, 0.85) 0%, rgba(14, 20, 32, 0.95) 100%);
-            border: 1px solid var(--border-default);
-            border-radius: var(--radius-card);
-            padding: var(--space-lg);
+        /* Feature Blocks */
+        .feature-block {
+            padding: 32px;
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 36px;
             align-items: center;
-            box-shadow: 0 10px 28px -6px rgba(0, 0, 0, 0.45);
+            margin-bottom: 24px;
         }
         @media (max-width: 800px) {
-            .feature-showcase-box {
+            .feature-block {
                 grid-template-columns: 1fr;
                 gap: 20px;
                 padding: 24px;
             }
         }
-        .feature-lead-title {
+        .feature-block-title {
             font-size: 1.4rem;
             font-weight: 800;
-            color: var(--text-primary);
+            color: var(--text);
             margin: 0 0 12px;
         }
-        .feature-lead-text {
+        .feature-block-text {
             color: var(--text-secondary);
             font-size: 0.95rem;
-            line-height: 1.65;
+            line-height: 1.7;
             margin: 0 0 18px;
         }
-        .feature-specs-list {
+        .specs-list {
             list-style: none;
             padding: 0;
             margin: 0;
@@ -573,166 +540,128 @@
             flex-direction: column;
             gap: 10px;
         }
-        .feature-spec-item {
+        .spec-item {
             display: flex;
             align-items: center;
             gap: 10px;
             font-size: 0.88rem;
             color: var(--text-secondary);
         }
-        .feature-spec-item svg {
-            color: var(--brand-emerald);
+        .spec-item svg {
+            color: var(--emerald);
             flex-shrink: 0;
         }
 
-        .terminal-block {
-            background: #080C14;
-            border: 1px solid var(--border-default);
-            border-radius: var(--radius-input);
-            padding: 22px;
-            font-family: var(--font-mono);
-            font-size: 0.8rem;
-            color: var(--text-secondary);
-            line-height: 1.65;
-            box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.5);
-        }
-        .terminal-line-success {
-            color: var(--brand-emerald);
-        }
-        .terminal-line-highlight {
-            color: var(--brand-cyan);
-        }
-
-        /* 3-Column Tool Cards with Uniform Spacing */
+        /* 3-Column Grid Cards */
         .cards-grid-3 {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
+            gap: 22px;
         }
-        .tool-card {
-            background: linear-gradient(180deg, rgba(20, 28, 44, 0.85) 0%, rgba(14, 20, 32, 0.95) 100%);
-            border: 1px solid var(--border-default);
-            border-radius: var(--radius-card);
+        .feature-card {
             padding: 28px;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
-            transition: all 0.2s ease;
         }
-        .tool-card:hover {
-            border-color: var(--border-highlight);
-            transform: translateY(-2px);
-        }
-        .tool-card-title {
+        .feature-card-title {
             font-size: 1.15rem;
-            font-weight: 700;
-            color: var(--text-primary);
-            margin: 0 0 8px;
+            font-weight: 800;
+            color: var(--text);
+            margin: 0 0 10px;
         }
-        .tool-card-desc {
-            font-size: 0.9rem;
+        .feature-card-desc {
+            font-size: 0.92rem;
             color: var(--text-secondary);
-            line-height: 1.6;
+            line-height: 1.65;
             margin: 0 0 16px;
         }
-        .tool-card-meta {
+        .feature-card-meta {
             font-family: var(--font-mono);
             font-size: 0.75rem;
-            color: var(--brand-cyan);
-            border-top: 1px solid var(--border-default);
+            color: var(--cyan);
+            border-top: 2px solid rgba(255, 255, 255, 0.5);
             padding-top: 14px;
+            font-weight: 600;
         }
 
         /* 10 Companions Roster Grid */
-        .companions-roster {
+        .companions-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(185px, 1fr));
-            gap: 14px;
+            gap: 16px;
             margin-top: 24px;
         }
-        .roster-cell {
-            background: linear-gradient(180deg, rgba(20, 28, 44, 0.8) 0%, rgba(14, 20, 32, 0.9) 100%);
-            border: 1px solid var(--border-default);
-            border-radius: var(--radius-box);
-            padding: 16px;
+        .roster-card {
+            padding: 18px 14px;
             text-align: center;
-            transition: all 0.2s ease;
         }
-        .roster-cell:hover {
-            border-color: var(--border-highlight);
-            transform: translateY(-2px);
-        }
-        .roster-icon {
-            font-size: 1.8rem;
+        .roster-avatar {
+            font-size: 2rem;
             margin-bottom: 8px;
         }
-        .roster-char-name {
-            font-size: 0.92rem;
-            font-weight: 700;
-            color: var(--text-primary);
+        .roster-name {
+            font-size: 0.95rem;
+            font-weight: 800;
+            color: var(--text);
         }
-        .roster-char-role {
+        .roster-role {
             font-size: 0.72rem;
             font-family: var(--font-mono);
-            color: var(--brand-cyan);
+            color: var(--cyan);
+            font-weight: 700;
             margin-bottom: 6px;
         }
-        .roster-char-line {
-            font-size: 0.74rem;
+        .roster-quote {
+            font-size: 0.76rem;
             color: var(--text-secondary);
             font-style: italic;
-            line-height: 1.35;
+            line-height: 1.4;
         }
 
-        /* Honest Pricing Deck with Soft Corners & Gradients */
-        .pricing-deck {
+        /* Pricing Section */
+        .pricing-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
-            gap: 22px;
-            max-width: 780px;
+            gap: 24px;
+            max-width: 800px;
             margin: 0 auto;
         }
-        .pricing-tier {
-            background: linear-gradient(180deg, rgba(20, 28, 44, 0.85) 0%, rgba(14, 20, 32, 0.95) 100%);
-            border: 1px solid var(--border-default);
-            border-radius: var(--radius-card);
-            padding: 30px;
+        .pricing-card {
+            padding: 32px;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
         }
-        .pricing-tier--featured {
-            border-color: rgba(56, 189, 248, 0.4);
-            background: linear-gradient(180deg, rgba(24, 34, 54, 0.95) 0%, rgba(16, 24, 38, 0.98) 100%);
-            box-shadow: 0 12px 36px -4px rgba(3, 105, 161, 0.3);
+        .pricing-card--featured {
+            border-color: rgba(0, 106, 148, 0.4);
+            background: var(--clay-light);
         }
-        .tier-label {
-            font-size: 1.2rem;
+        .pricing-tier-name {
+            font-size: 1.25rem;
             font-weight: 800;
-            color: var(--text-primary);
+            color: var(--text);
             margin: 0 0 6px;
         }
-        .tier-desc {
-            font-size: 0.85rem;
+        .pricing-tier-desc {
+            font-size: 0.88rem;
             color: var(--text-secondary);
-            margin: 0 0 18px;
+            margin: 0 0 16px;
         }
-        .tier-price-row {
+        .pricing-price-box {
             font-family: var(--font-mono);
             margin-bottom: 22px;
         }
-        .tier-cost {
-            font-size: 2.3rem;
+        .pricing-val {
+            font-size: 2.4rem;
             font-weight: 800;
-            color: var(--text-primary);
+            color: var(--text);
         }
-        .tier-period {
+        .pricing-period {
             font-size: 0.85rem;
             color: var(--text-muted);
         }
-        .tier-perks {
+        .pricing-perks {
             list-style: none;
             padding: 0;
             margin: 0 0 28px;
@@ -740,95 +669,93 @@
             flex-direction: column;
             gap: 12px;
         }
-        .tier-perk {
+        .pricing-perk {
             display: flex;
             align-items: center;
             gap: 10px;
-            font-size: 0.88rem;
+            font-size: 0.9rem;
             color: var(--text-secondary);
         }
-        .tier-perk svg {
-            color: var(--brand-emerald);
+        .pricing-perk svg {
+            color: var(--emerald);
             flex-shrink: 0;
         }
 
-        /* Attribution & Authorship Panel */
-        .authorship-panel {
-            background: linear-gradient(180deg, rgba(20, 28, 44, 0.85) 0%, rgba(14, 20, 32, 0.95) 100%);
-            border: 1px solid var(--border-default);
-            border-radius: var(--radius-card);
-            padding: 30px;
-            margin: var(--space-xl) 0;
+        /* Authorship & Credits */
+        .authorship-box {
+            padding: 32px;
+            margin: 50px 0;
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 28px;
             align-items: center;
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
         }
         @media (max-width: 700px) {
-            .authorship-panel {
+            .authorship-box {
                 grid-template-columns: 1fr;
             }
         }
-        .team-lead {
-            font-size: 1.15rem;
+        .authorship-lead {
+            font-size: 1.2rem;
             font-weight: 800;
-            color: var(--text-primary);
+            color: var(--text);
             margin-bottom: 6px;
         }
-        .team-sub {
-            font-size: 0.85rem;
+        .authorship-sub {
+            font-size: 0.88rem;
             color: var(--text-secondary);
-            line-height: 1.55;
+            line-height: 1.6;
         }
-        .license-notice {
+        .authorship-license {
             font-size: 0.82rem;
             color: var(--text-muted);
             line-height: 1.6;
-            border-left: 2px solid var(--border-default);
+            border-left: 3px solid rgba(255, 255, 255, 0.6);
             padding-left: 18px;
         }
 
         /* Footer */
         footer {
-            padding: 45px 0 70px;
-            border-top: 1px solid var(--border-default);
+            padding: 50px 0 70px;
+            border-top: 2px solid rgba(255, 255, 255, 0.5);
             text-align: center;
         }
-        .footer-nav {
+        .footer-links {
             display: flex;
             justify-content: center;
-            gap: 22px;
+            gap: 24px;
             margin-bottom: 22px;
             flex-wrap: wrap;
         }
-        .footer-nav a {
+        .footer-link {
             color: var(--text-secondary);
             text-decoration: none;
-            font-size: 0.85rem;
-            transition: color 0.15s;
+            font-size: 0.9rem;
+            font-weight: 600;
+            transition: color 0.2s;
         }
-        .footer-nav a:hover {
-            color: var(--brand-cyan);
+        .footer-link:hover {
+            color: var(--cyan);
         }
-        .footer-caffeine-note {
-            font-size: 0.88rem;
-            color: var(--text-secondary);
+        .footer-phrase {
+            font-size: 0.92rem;
+            color: var(--text);
             margin-bottom: 14px;
-            max-width: 620px;
+            max-width: 640px;
             margin-left: auto;
             margin-right: auto;
-            line-height: 1.55;
+            line-height: 1.6;
         }
-        .footer-legal-copy {
-            font-size: 0.8rem;
+        .footer-copy {
+            font-size: 0.82rem;
             color: var(--text-muted);
         }
 
-        /* Accessibility Focus */
-        a:focus-visible, button:focus-visible {
-            outline: 2px solid var(--brand-cyan);
-            outline-offset: 2px;
+        /* Accessibility Focus Indicators */
+        a[href], button, summary { cursor: pointer; }
+        a:focus-visible, button:focus-visible, summary:focus-visible {
+            outline: 3px solid var(--cyan);
+            outline-offset: 3px;
         }
     </style>
 
@@ -843,7 +770,7 @@
       "name": "Nnotes",
       "applicationVersion": "1.4.0",
       "url": "https://drnitz.com/nnotes/",
-      "image": "https://drnitz.com/social_preview.jpg",
+      "image": "https://drnitz.com/image/Nnotes-static.svg",
       "operatingSystem": "Android",
       "applicationCategory": "ProductivityApplication",
       "author": [
@@ -856,157 +783,156 @@
     </script>
 </head>
 <body>
-    <!-- Side Dock Navigation (Bottom Toolbar) -->
+    <!-- Side Dock Navigation (Bottom Claymorphism Dock) -->
     <nav class="side-dock" aria-label="Site navigation dock">
         <a href="../index.html" title="Home" aria-label="Home">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 10.5 12 3l9 7.5"/><path d="M5.5 9.5V20h13V9.5"/><path d="M9.5 20v-6h5v6"/></svg>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 10.5 12 3l9 7.5"/><path d="M5.5 9.5V20h13V9.5"/><path d="M9.5 20v-6h5v6"/></svg>
         </a>
         <a href="../anraksha/" title="Anraksha" aria-label="Anraksha">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 6.5c-2.2-1.5-5-1.8-8-1v13c3-.8 5.8-.5 8 1 2.2-1.5 5-1.8 8-1v-13c-3-.8-5.8-.5-8 1Z"/><path d="M12 6.5v13"/></svg>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 6.5c-2.2-1.5-5-1.8-8-1v13c3-.8 5.8-.5 8 1 2.2-1.5 5-1.8 8-1v-13c-3-.8-5.8-.5-8 1Z"/><path d="M12 6.5v13"/></svg>
         </a>
         <a href="index.html#work" title="The Sandbox" aria-label="The Sandbox">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 3h6"/><path d="M10 3v6l-5 8.5A2 2 0 0 0 6.7 20h10.6a2 2 0 0 0 1.7-2.5L14 9V3"/><path d="M7 15h10"/></svg>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 3h6"/><path d="M10 3v6l-5 8.5A2 2 0 0 0 6.7 20h10.6a2 2 0 0 0 1.7-2.5L14 9V3"/><path d="M7 15h10"/></svg>
         </a>
         <a href="./" title="Nnotes App" aria-label="Nnotes App">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 3h9l5 5v13H5z"/><path d="M14 3v5h5"/><path d="M8.5 12h7"/><path d="M8.5 16h5"/></svg>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 3h9l5 5v13H5z"/><path d="M14 3v5h5"/><path d="M8.5 12h7"/><path d="M8.5 16h5"/></svg>
         </a>
         <a href="https://p2pcompanion.com" target="_blank" rel="noopener noreferrer" title="P2P Terminal" aria-label="P2P Terminal">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="m7 9 3 3-3 3"/><path d="M13 15h4"/></svg>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="m7 9 3 3-3 3"/><path d="M13 15h4"/></svg>
         </a>
     </nav>
 
     <div class="container">
+        <!-- Header -->
         <header>
-            <a href="./" class="brand-link">
-                <div class="brand-avatar">
-                    <img src="../image/Nnotes-static.svg" alt="Nnotes Logo" width="38" height="38">
+            <a href="./" class="logo-wrap">
+                <div class="logo-avatar">
+                    <img src="../image/Nnotes-static.svg" alt="Nnotes Logo" width="40" height="40">
                 </div>
                 <div>
-                    <span class="brand-name">Nnotes</span>
-                    <span class="brand-version">v1.4.0</span>
+                    <span class="logo-title">Nnotes</span>
+                    <span class="logo-tag">v1.4.0</span>
                 </div>
             </a>
-            <div class="nav-actions">
-                <a href="privacy/" class="nav-btn">Privacy &amp; Terms</a>
-                <a href="../index.html" class="nav-btn">← Portfolio Home</a>
+            <div class="header-actions">
+                <a href="privacy/" class="clay-btn" style="padding: 10px 18px; font-size: 0.85rem;">Privacy &amp; Terms</a>
+                <a href="../index.html" class="clay-btn" style="padding: 10px 18px; font-size: 0.85rem;">← Portfolio Home</a>
             </div>
         </header>
 
         <main>
             <!-- Hero -->
-            <section class="hero-section">
-                <div class="hero-label">
-                    <span class="hero-label-indicator"></span>
-                    <span>Android Handwriting • On-Device AI • No Cloud Accounts</span>
+            <section class="hero">
+                <div class="clay-badge">
+                    <span class="badge-dot"></span>
+                    <span>Version 1.4.0 • Android Handwriting • On-Device AI • No Cloud Accounts</span>
                 </div>
-                <h1 class="hero-headline">
+                <h1 class="hero-title">
                     Infinite vector canvas notes with on-device Whisper AI.
                 </h1>
-                <p class="hero-summary">
+                <p class="hero-subtitle">
                     Write with stylus pressure and accurate palm rejection. Transcribe speech locally using <strong>whisper.cpp</strong> with zero network requests. Annotate PDF textbooks, test yourself with active recall tape, and organize ideas into collapsible mind maps.
                 </p>
 
                 <div class="hero-ctas">
-                    <a href="https://play.google.com/store/apps/details?id=com.nnote.Drn" target="_blank" rel="noopener noreferrer" class="btn-action btn-primary">
+                    <a href="https://play.google.com/store/apps/details?id=com.nnote.Drn" target="_blank" rel="noopener noreferrer" class="clay-btn clay-btn-primary">
                         <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4 2v20l17-10L4 2zm2 3.86L15.42 12 6 18.14V5.86z"/></svg>
                         Get on Google Play
                     </a>
-                    <a href="#demo-canvas" class="btn-action btn-secondary">
+                    <a href="#demo-canvas" class="clay-btn">
                         Try Canvas Playground
                     </a>
-                    <a href="#study-tools" class="btn-action btn-secondary">
+                    <a href="#study-tools" class="clay-btn">
                         View Study Tools
                     </a>
                 </div>
 
-                <div class="facts-bar">
+                <div class="facts-strip clay-card">
                     <div class="fact-item">
-                        <svg class="fact-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/></svg>
+                        <svg class="fact-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/></svg>
                         <span>Whisper AI: <strong>100% Offline</strong></span>
                     </div>
                     <div class="fact-item">
-                        <svg class="fact-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1-2.5-2.5Z"/></svg>
+                        <svg class="fact-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1-2.5-2.5Z"/></svg>
                         <span>Canvas Zoom: <strong>10% to 5000%</strong></span>
                     </div>
                     <div class="fact-item">
-                        <svg class="fact-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                        <svg class="fact-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
                         <span>Storage: <strong>Local SAF (No Cloud)</strong></span>
                     </div>
                     <div class="fact-item">
-                        <svg class="fact-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="m4.93 4.93 4.24 4.24M14.83 14.83l4.24 4.24"/></svg>
+                        <svg class="fact-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="m4.93 4.93 4.24 4.24M14.83 14.83l4.24 4.24"/></svg>
                         <span>Companions: <strong>10 Mascots</strong></span>
                     </div>
                 </div>
             </section>
 
-            <!-- Interactive Demo Section -->
+            <!-- Interactive Clay Canvas Simulator -->
             <section id="demo-canvas" class="demo-section">
-                <div class="demo-canvas-wrapper">
-                    <div class="demo-header-bar">
-                        <div class="demo-dot-group">
-                            <span class="demo-dot"></span>
-                            <span class="demo-dot"></span>
-                            <span class="demo-dot"></span>
+                <div class="demo-window clay-card">
+                    <div class="demo-bar">
+                        <div class="demo-cam-group">
+                            <span class="demo-cam"></span>
+                            <span>Nnotes Canvas Simulator • Android Vector Engine</span>
                         </div>
-                        <div>Nnotes Canvas Simulator • Android Vector Engine</div>
-                        <div style="color: var(--brand-emerald);">● Local Inking Active</div>
+                        <div style="color: var(--cyan);">● Local Inking Engine</div>
                     </div>
 
                     <div class="demo-canvas-body">
-                        <!-- Floating Tool Bar with Soft Corners & Gradient -->
-                        <div class="canvas-toolbar" role="toolbar" aria-label="Tools">
-                            <button type="button" class="tool-icon-btn active" title="Ballpoint Pen" onclick="pickTool(this, 'pen')" aria-label="Pen">
+                        <!-- Floating Clay Toolbar -->
+                        <div class="canvas-toolbar clay-card" role="toolbar" aria-label="Tools">
+                            <button type="button" class="tool-btn active" title="Ballpoint Pen" onclick="pickTool(this, 'pen')" aria-label="Pen">
                                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m4 20 4-1 11-11-3-3L5 16l-1 4Z"/><path d="m14 6 3 3"/></svg>
                             </button>
-                            <button type="button" class="tool-icon-btn" title="Calligraphy" onclick="pickTool(this, 'calligraphy')" aria-label="Calligraphy">
+                            <button type="button" class="tool-btn" title="Calligraphy" onclick="pickTool(this, 'calligraphy')" aria-label="Calligraphy">
                                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m4 20 4-1 11-11-3-3L5 16l-1 4Z"/><path d="M8 19l-2 2"/></svg>
                             </button>
-                            <button type="button" class="tool-icon-btn" title="Highlighter" onclick="pickTool(this, 'highlighter')" aria-label="Highlighter">
+                            <button type="button" class="tool-btn" title="Highlighter" onclick="pickTool(this, 'highlighter')" aria-label="Highlighter">
                                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="8" width="13" height="8" rx="2"/><path d="M17 10h3v4h-3"/><path d="M4 20h16"/></svg>
                             </button>
-                            <button type="button" class="tool-icon-btn" title="Auto-Beautify" onclick="pickTool(this, 'beautify')" aria-label="Auto Beautify">
+                            <button type="button" class="tool-btn" title="Auto-Beautify" onclick="pickTool(this, 'beautify')" aria-label="Auto Beautify">
                                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="8"/><path d="m8 12 3 3 5-6"/></svg>
                             </button>
-                            <button type="button" class="tool-icon-btn" title="Whisper Audio" onclick="pickTool(this, 'whisper')" aria-label="Whisper Audio">
+                            <button type="button" class="tool-btn" title="Whisper Audio" onclick="pickTool(this, 'whisper')" aria-label="Whisper Audio">
                                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/></svg>
                             </button>
-                            <button type="button" class="tool-icon-btn" title="Study Tape" onclick="pickTool(this, 'tape')" aria-label="Study Tape">
+                            <button type="button" class="tool-btn" title="Study Tape" onclick="pickTool(this, 'tape')" aria-label="Study Tape">
                                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="6" width="20" height="12" rx="3"/><circle cx="7" cy="12" r="2"/><circle cx="17" cy="12" r="2"/></svg>
                             </button>
-                            <button type="button" class="tool-icon-btn" title="Mind Map" onclick="pickTool(this, 'mindmap')" aria-label="Mind Map">
+                            <button type="button" class="tool-btn" title="Mind Map" onclick="pickTool(this, 'mindmap')" aria-label="Mind Map">
                                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><circle cx="5" cy="6" r="2"/><circle cx="19" cy="6" r="2"/><circle cx="19" cy="18" r="2"/><path d="M7 7.5 10 10.5M17 7.5 14 10.5"/></svg>
                             </button>
                         </div>
 
-                        <!-- Canvas Centerpiece with Soft Corners & Gradient -->
-                        <div class="canvas-active-preview">
-                            <div class="canvas-tab-switcher">
-                                <button type="button" class="canvas-tab active" onclick="loadMode('beautify')">Auto-Beautify</button>
-                                <button type="button" class="canvas-tab" onclick="loadMode('whisper')">Whisper Voice</button>
-                                <button type="button" class="canvas-tab" onclick="loadMode('tape')">Study Tape</button>
-                                <button type="button" class="canvas-tab" onclick="loadMode('mindmap')">Mind Map</button>
+                        <!-- Clay Centerpiece -->
+                        <div class="canvas-preview-card clay-card">
+                            <div class="tab-switcher">
+                                <button type="button" class="tab-pill active" onclick="loadMode('beautify')">Auto-Beautify</button>
+                                <button type="button" class="tab-pill" onclick="loadMode('whisper')">Whisper Voice</button>
+                                <button type="button" class="tab-pill" onclick="loadMode('tape')">Study Tape</button>
+                                <button type="button" class="tab-pill" onclick="loadMode('mindmap')">Mind Map</button>
                             </div>
 
-                            <div class="preview-content-box">
+                            <div class="preview-box clay-inset">
                                 <div class="preview-lead" id="live-display-lead">"mEsSy handwriting &amp; rough formulas..."</div>
                                 <div class="preview-sub" id="live-display-sub">Tap button below to convert strokes to clean text via on-device ML Kit</div>
                             </div>
 
-                            <button type="button" class="preview-action-btn" id="live-action-btn" onclick="executeModeAction()">
+                            <button type="button" class="clay-btn clay-btn-primary" id="live-action-btn" onclick="executeModeAction()">
                                 <span id="live-action-label">Convert to Clean Text</span>
                             </button>
                         </div>
 
-                        <!-- Companion Dock with Soft Corners & Gradient -->
-                        <div class="companion-bar" onclick="stepCompanion()" role="button" tabindex="0" aria-label="Cycle companion mascot">
+                        <!-- Clay Companion Bar -->
+                        <div class="companion-card clay-card" onclick="stepCompanion()" role="button" tabindex="0" aria-label="Cycle companion mascot">
                             <div class="companion-face" id="mascot-face">🩺</div>
                             <div class="companion-text-col">
-                                <div class="companion-title-row">
+                                <div class="companion-name-row">
                                     <span class="companion-name" id="mascot-name">Doki</span>
-                                    <span class="companion-discipline" id="mascot-role">Medical Student</span>
+                                    <span class="companion-role">Medical Student</span>
                                 </div>
-                                <div class="companion-quote" id="mascot-line">"Deep breaths. Focus on the core clinical concept!"</div>
-                                <div class="companion-stepper">Mascot <span id="mascot-num">1</span> of 10 • Tap to switch</div>
+                                <div class="companion-speech" id="mascot-line">"Deep breaths. Focus on the core clinical concept!"</div>
+                                <div class="companion-counter">Mascot <span id="mascot-num">1</span> of 10 • Tap to switch</div>
                             </div>
                         </div>
                     </div>
@@ -1014,7 +940,7 @@
             </section>
 
             <!-- 1. The Inking Engine -->
-            <section class="section-block">
+            <section class="section">
                 <div class="section-header">
                     <span class="section-tag">Vector Drawing Core</span>
                     <h2 class="section-title">Hardware Stylus Inking</h2>
@@ -1022,74 +948,74 @@
                 </div>
 
                 <div class="cards-grid-3">
-                    <div class="tool-card">
+                    <div class="feature-card clay-card">
                         <div>
-                            <h3 class="tool-card-title">6 Distinct Pen Types</h3>
-                            <p class="tool-card-desc">Switch between Ballpoint, Fountain (fast inking), Graphite Pencil, Calligraphy, Dotted lines, and Velocity-Tapered strokes. Every stroke is vector-based so zooming never blurs.</p>
+                            <h3 class="feature-card-title">6 Distinct Pen Types</h3>
+                            <p class="feature-card-desc">Switch between Ballpoint, Fountain (fast inking), Graphite Pencil, Calligraphy, Dotted lines, and Velocity-Tapered strokes. Every stroke is vector-based so zooming never blurs.</p>
                         </div>
-                        <div class="tool-card-meta">Ballpoint • Fountain • Pencil • Taper</div>
+                        <div class="feature-card-meta">Ballpoint • Fountain • Pencil • Taper</div>
                     </div>
 
-                    <div class="tool-card">
+                    <div class="feature-card clay-card">
                         <div>
-                            <h3 class="tool-card-title">Hardware Stylus Buttons</h3>
-                            <p class="tool-card-desc">Full support for Samsung S-Pen, Lenovo Tab Pen Plus, Xiaomi Smart Pen, and Honor Magic-Pencil. Click the barrel button to toggle between pen and stroke eraser instantly.</p>
+                            <h3 class="feature-card-title">Hardware Stylus Buttons</h3>
+                            <p class="feature-card-desc">Full support for Samsung S-Pen, Lenovo Tab Pen Plus, Xiaomi Smart Pen, and Honor Magic-Pencil. Click the barrel button to toggle between pen and stroke eraser instantly.</p>
                         </div>
-                        <div class="tool-card-meta">S-Pen • Lenovo • Xiaomi • Honor</div>
+                        <div class="feature-card-meta">S-Pen • Lenovo • Xiaomi • Honor</div>
                     </div>
 
-                    <div class="tool-card">
+                    <div class="feature-card clay-card">
                         <div>
-                            <h3 class="tool-card-title">Palm Rejection &amp; Rulers</h3>
-                            <p class="tool-card-desc">Rest your hand comfortably on screen. Use the digital ruler for straight angles, interactive tables for organized notes, and lasso selection to scale or duplicate handwriting.</p>
+                            <h3 class="feature-card-title">Palm Rejection &amp; Rulers</h3>
+                            <p class="feature-card-desc">Rest your hand comfortably on screen. Use the digital ruler for straight angles, interactive tables for organized notes, and lasso selection to scale or duplicate handwriting.</p>
                         </div>
-                        <div class="tool-card-meta">Lasso • Shape Snap • Digital Ruler</div>
+                        <div class="feature-card-meta">Lasso • Shape Snap • Digital Ruler</div>
                     </div>
                 </div>
             </section>
 
             <!-- 2. On-Device Whisper Voice Notes -->
-            <section class="section-block">
+            <section class="section">
                 <div class="section-header">
                     <span class="section-tag">Zero Cloud Transmissions</span>
                     <h2 class="section-title">On-Device Whisper Speech-to-Text</h2>
                     <p class="section-desc">Record lectures and dictate notes right into the canvas. Transcription runs on your tablet's local processor using <code>whisper.cpp</code>.</p>
                 </div>
 
-                <div class="feature-showcase-box">
+                <div class="feature-block clay-card">
                     <div>
-                        <h3 class="feature-lead-title">No Audio Leaves Your Device</h3>
-                        <p class="feature-lead-text">
+                        <h3 class="feature-block-title">No Audio Leaves Your Device</h3>
+                        <p class="feature-block-text">
                             Most speech apps send recordings to remote server farms. Nnotes packages an optimized local Whisper model running on Android's native CPU/GPU runtime.
                         </p>
-                        <ul class="feature-specs-list">
-                            <li class="feature-spec-item">
+                        <ul class="specs-list">
+                            <li class="spec-item">
                                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
-                                <span><strong>0 bytes sent over network:</strong> works in airplane mode.</span>
+                                <span><strong>0 bytes sent over network:</strong> works completely offline.</span>
                             </li>
-                            <li class="feature-spec-item">
+                            <li class="spec-item">
                                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
                                 <span><strong>Instant markdown nodes:</strong> text inserts directly onto canvas.</span>
                             </li>
-                            <li class="feature-spec-item">
+                            <li class="spec-item">
                                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
                                 <span><strong>No time limits:</strong> record study sessions without subscriptions.</span>
                             </li>
                         </ul>
                     </div>
-                    <div class="terminal-block">
-                        <div class="terminal-line-highlight">[Whisper.cpp Engine Status]</div>
+                    <div class="clay-inset" style="padding: 22px; font-family: var(--font-mono); font-size: 0.82rem; line-height: 1.7;">
+                        <div style="color: var(--cyan); font-weight: 700; margin-bottom: 8px;">[Whisper.cpp Engine Status]</div>
                         <div>• Model: whisper-tiny.en (embedded)</div>
                         <div>• Audio format: 16kHz Mono PCM</div>
                         <div>• Inference hardware: Local CPU/NEON</div>
-                        <div class="terminal-line-success">✓ Speech recognized: "Patient heart rate 72 bpm"</div>
-                        <div>• Remote server connection: NONE (air-gapped)</div>
+                        <div style="color: var(--emerald); font-weight: 700; margin-top: 6px;">✓ Speech recognized: "Patient heart rate 72 bpm"</div>
+                        <div>• Cloud connection: NONE (air-gapped)</div>
                     </div>
                 </div>
             </section>
 
             <!-- 3. Study Tools: Active Recall & PDF -->
-            <section id="study-tools" class="section-block">
+            <section id="study-tools" class="section">
                 <div class="section-header">
                     <span class="section-tag">Exam Preparation</span>
                     <h2 class="section-title">Study Tools for High-Volume Learning</h2>
@@ -1097,50 +1023,50 @@
                 </div>
 
                 <div class="cards-grid-3">
-                    <div class="tool-card">
+                    <div class="feature-card clay-card">
                         <div>
-                            <h3 class="tool-card-title">Study Tape (Cloze Recall)</h3>
-                            <p class="tool-card-desc">Lay strips of opaque study tape over handwritten formulas or textbook terms. Tap to peel and check your answer; tap again to re-mask. Active recall without making separate flashcards.</p>
+                            <h3 class="feature-card-title">Study Tape (Cloze Recall)</h3>
+                            <p class="feature-card-desc">Lay strips of opaque study tape over handwritten formulas or textbook terms. Tap to peel and check your answer; tap again to re-mask. Active recall without making separate flashcards.</p>
                         </div>
-                        <div class="tool-card-meta">Self-Testing • Exam Cloze Deletions</div>
+                        <div class="feature-card-meta">Self-Testing • Exam Cloze Deletions</div>
                     </div>
 
-                    <div class="tool-card">
+                    <div class="feature-card clay-card">
                         <div>
-                            <h3 class="tool-card-title">Stanford Bassett Anatomy Plates</h3>
-                            <p class="tool-card-desc">Direct access to the Bassett stereoscopic clinical dissection collection from Stanford University School of Medicine. Insert real anatomical dissections as high-resolution stickers.</p>
+                            <h3 class="feature-card-title">Stanford Bassett Anatomy Plates</h3>
+                            <p class="feature-card-desc">Direct access to the Bassett stereoscopic clinical dissection collection from Stanford University School of Medicine. Insert real anatomical dissections as high-resolution stickers.</p>
                         </div>
-                        <div class="tool-card-meta">Stanford Medicine CC BY-SA 4.0</div>
+                        <div class="feature-card-meta">Stanford Medicine CC BY-SA 4.0</div>
                     </div>
 
-                    <div class="tool-card">
+                    <div class="feature-card clay-card">
                         <div>
-                            <h3 class="tool-card-title">PDF Split Screen</h3>
-                            <p class="tool-card-desc">Open heavy medical or engineering textbooks side-by-side with your canvas. Highlight text, draw diagrams, and export finished notebooks as vector PDFs or PNGs.</p>
+                            <h3 class="feature-card-title">PDF Split Screen</h3>
+                            <p class="feature-card-desc">Open heavy medical or engineering textbooks side-by-side with your canvas. Highlight text, draw diagrams, and export finished notebooks as vector PDFs or PNGs.</p>
                         </div>
-                        <div class="tool-card-meta">Vector PDF Import &amp; Export</div>
+                        <div class="feature-card-meta">Vector PDF Import &amp; Export</div>
                     </div>
                 </div>
             </section>
 
             <!-- 4. Mind Maps, Screen Recording & Stream -->
-            <section class="section-block">
+            <section class="section">
                 <div class="section-header">
                     <span class="section-tag">Organization &amp; Broadcast</span>
                     <h2 class="section-title">Mind Maps &amp; Zero-Cost Class Streaming</h2>
                     <p class="section-desc">Connect concepts visually and broadcast your whiteboard to classmates without third-party services.</p>
                 </div>
 
-                <div class="feature-showcase-box">
+                <div class="feature-block clay-card">
                     <div>
-                        <h3 class="feature-lead-title">Collapsible Mind Maps</h3>
-                        <p class="feature-lead-text">
+                        <h3 class="feature-block-title">Collapsible Mind Maps</h3>
+                        <p class="feature-block-text">
                             Organize tangled ideas into expandable concept trees. Fold away dense sub-branches when you want an overview, or expand them when drilling into details. Attach long paragraph notes and reference images directly to any node.
                         </p>
                     </div>
                     <div>
-                        <h3 class="feature-lead-title">Screen Record &amp; Audience QR Streaming</h3>
-                        <p class="feature-lead-text">
+                        <h3 class="feature-block-title">Screen Record &amp; Audience QR Streaming</h3>
+                        <p class="feature-block-text">
                             Record your screen and microphone to clean MP4 video for exam review. To teach or study with friends, generate an Audience QR Code to stream your live canvas directly over local Wi-Fi. No accounts or video server costs.
                         </p>
                     </div>
@@ -1148,164 +1074,164 @@
             </section>
 
             <!-- 5. 10 Companions -->
-            <section class="section-block">
+            <section class="section">
                 <div class="section-header">
                     <span class="section-tag">Study Focus Partners</span>
                     <h2 class="section-title">All 10 Study Companions</h2>
                     <p class="section-desc">Pick a companion that sits on your toolbar to keep track of study streaks and offer motivation.</p>
                 </div>
 
-                <div class="companions-roster">
-                    <div class="roster-cell">
-                        <div class="roster-icon">🩺</div>
-                        <div class="roster-char-name">Doki</div>
-                        <div class="roster-char-role">Medical Student</div>
-                        <div class="roster-char-line">"Deep breaths. Focus on the core clinical concept!"</div>
+                <div class="companions-grid">
+                    <div class="roster-card clay-card">
+                        <div class="roster-avatar">🩺</div>
+                        <div class="roster-name">Doki</div>
+                        <div class="roster-role">Medical Student</div>
+                        <div class="roster-quote">"Deep breaths. Focus on the core clinical concept!"</div>
                     </div>
-                    <div class="roster-cell">
-                        <div class="roster-icon">💻</div>
-                        <div class="roster-char-name">Lesso</div>
-                        <div class="roster-char-role">Software Engineer</div>
-                        <div class="roster-char-line">"Write clean loops. Debug one stroke at a time!"</div>
+                    <div class="roster-card clay-card">
+                        <div class="roster-avatar">💻</div>
+                        <div class="roster-name">Lesso</div>
+                        <div class="roster-role">Software Engineer</div>
+                        <div class="roster-quote">"Write clean loops. Debug one stroke at a time!"</div>
                     </div>
-                    <div class="roster-cell">
-                        <div class="roster-icon">⚙️</div>
-                        <div class="roster-char-name">Torque</div>
-                        <div class="roster-char-role">Mechanical Guru</div>
-                        <div class="roster-char-line">"Build solid foundations. Precision matters!"</div>
+                    <div class="roster-card clay-card">
+                        <div class="roster-avatar">⚙️</div>
+                        <div class="roster-name">Torque</div>
+                        <div class="roster-role">Mechanical Guru</div>
+                        <div class="roster-quote">"Build solid foundations. Precision matters!"</div>
                     </div>
-                    <div class="roster-cell">
-                        <div class="roster-icon">🎨</div>
-                        <div class="roster-char-name">Vector</div>
-                        <div class="roster-char-role">Creative Designer</div>
-                        <div class="roster-char-line">"Lines tell stories. Keep your visual balance!"</div>
+                    <div class="roster-card clay-card">
+                        <div class="roster-avatar">🎨</div>
+                        <div class="roster-name">Vector</div>
+                        <div class="roster-role">Creative Designer</div>
+                        <div class="roster-quote">"Lines tell stories. Keep your visual balance!"</div>
                     </div>
-                    <div class="roster-cell">
-                        <div class="roster-icon">⚖️</div>
-                        <div class="roster-char-name">Clause</div>
-                        <div class="roster-char-role">Legal Scholar</div>
-                        <div class="roster-char-line">"Precision in every word and clause. You got this!"</div>
+                    <div class="roster-card clay-card">
+                        <div class="roster-avatar">⚖️</div>
+                        <div class="roster-name">Clause</div>
+                        <div class="roster-role">Legal Scholar</div>
+                        <div class="roster-quote">"Precision in every word and clause. You got this!"</div>
                     </div>
-                    <div class="roster-cell">
-                        <div class="roster-icon">🐙</div>
-                        <div class="roster-char-name">Inky</div>
-                        <div class="roster-char-role">Octopus Multi-tasker</div>
-                        <div class="roster-char-line">"Eight tentacles, zero stress. Flow with thoughts!"</div>
+                    <div class="roster-card clay-card">
+                        <div class="roster-avatar">🐙</div>
+                        <div class="roster-name">Inky</div>
+                        <div class="roster-role">Octopus Multi-tasker</div>
+                        <div class="roster-quote">"Eight tentacles, zero stress. Flow with thoughts!"</div>
                     </div>
-                    <div class="roster-cell">
-                        <div class="roster-icon">🐢</div>
-                        <div class="roster-char-name">Shelly</div>
-                        <div class="roster-char-role">Mindful Turtle</div>
-                        <div class="roster-char-line">"Slow and steady masters the topic. Don't rush!"</div>
+                    <div class="roster-card clay-card">
+                        <div class="roster-avatar">🐢</div>
+                        <div class="roster-name">Shelly</div>
+                        <div class="roster-role">Mindful Turtle</div>
+                        <div class="roster-quote">"Slow and steady masters the topic. Don't rush!"</div>
                     </div>
-                    <div class="roster-cell">
-                        <div class="roster-icon">🧘</div>
-                        <div class="roster-char-name">Serena &amp; Cat</div>
-                        <div class="roster-char-role">Zen Meditation</div>
-                        <div class="roster-char-line">"Take a mindful breath. Let thoughts settle softly."</div>
+                    <div class="roster-card clay-card">
+                        <div class="roster-avatar">🧘</div>
+                        <div class="roster-name">Serena &amp; Cat</div>
+                        <div class="roster-role">Zen Meditation</div>
+                        <div class="roster-quote">"Take a mindful breath. Let thoughts settle softly."</div>
                     </div>
-                    <div class="roster-cell">
-                        <div class="roster-icon">🐱</div>
-                        <div class="roster-char-name">Mochi</div>
-                        <div class="roster-char-role">Kawaii Cat</div>
-                        <div class="roster-char-line">"Paw-some progress! You are doing amazing today!"</div>
+                    <div class="roster-card clay-card">
+                        <div class="roster-avatar">🐱</div>
+                        <div class="roster-name">Mochi</div>
+                        <div class="roster-role">Kawaii Cat</div>
+                        <div class="roster-quote">"Paw-some progress! You are doing amazing today!"</div>
                     </div>
-                    <div class="roster-cell">
-                        <div class="roster-icon">🐕</div>
-                        <div class="roster-char-name">Beacon</div>
-                        <div class="roster-char-role">Guard Dog Sentinel</div>
-                        <div class="roster-char-line">"Eyes on the goal! I'm guarding your focus!"</div>
+                    <div class="roster-card clay-card">
+                        <div class="roster-avatar">🐕</div>
+                        <div class="roster-name">Beacon</div>
+                        <div class="roster-role">Guard Dog Sentinel</div>
+                        <div class="roster-quote">"Eyes on the goal! I'm guarding your focus!"</div>
                     </div>
                 </div>
             </section>
 
             <!-- 6. Transparent Pricing -->
-            <section class="section-block">
+            <section class="section">
                 <div class="section-header" style="text-align: center;">
                     <span class="section-tag">Straightforward Pricing</span>
                     <h2 class="section-title">Free Core or Nnotes Pro</h2>
                     <p class="section-desc" style="margin: 0 auto;">No locked canvas features. Use the app 100% free with 2-hour ad passes, or get Pro for permanent uninterrupted study.</p>
                 </div>
 
-                <div class="pricing-deck">
+                <div class="pricing-grid">
                     <!-- Free Tier -->
-                    <div class="pricing-tier">
+                    <div class="pricing-card clay-card">
                         <div>
-                            <div class="tier-label">Free with 2-Hour Pass</div>
-                            <div class="tier-desc">Complete, unlocked canvas. No trial expiration.</div>
-                            <div class="tier-price-row">
-                                <span class="tier-cost">$0</span>
-                                <span class="tier-period">/ forever</span>
+                            <div class="pricing-tier-name">Free with 2-Hour Pass</div>
+                            <div class="pricing-tier-desc">Complete, unlocked canvas. No trial expiration.</div>
+                            <div class="pricing-price-box">
+                                <span class="pricing-val">$0</span>
+                                <span class="pricing-period">/ forever</span>
                             </div>
-                            <ul class="tier-perks">
-                                <li class="tier-perk">
+                            <ul class="pricing-perks">
+                                <li class="pricing-perk">
                                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
                                     <span>Full Infinite Vector Canvas</span>
                                 </li>
-                                <li class="tier-perk">
+                                <li class="pricing-perk">
                                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
                                     <span>On-Device Whisper Voice Notes</span>
                                 </li>
-                                <li class="tier-perk">
+                                <li class="pricing-perk">
                                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
                                     <span>PDF Textbook Annotation &amp; Export</span>
                                 </li>
-                                <li class="tier-perk">
+                                <li class="pricing-perk">
                                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
                                     <span><strong>Watch 1 Ad = 2 Hours Completely Ad-Free</strong></span>
                                 </li>
                             </ul>
                         </div>
-                        <a href="https://play.google.com/store/apps/details?id=com.nnote.Drn" target="_blank" rel="noopener noreferrer" class="btn-action btn-secondary" style="width: 100%;">
+                        <a href="https://play.google.com/store/apps/details?id=com.nnote.Drn" target="_blank" rel="noopener noreferrer" class="clay-btn" style="width: 100%;">
                             Download Free App
                         </a>
                     </div>
 
                     <!-- Pro Tier -->
-                    <div class="pricing-tier pricing-tier--featured">
+                    <div class="pricing-card clay-card pricing-card--featured">
                         <div>
-                            <div class="tier-label">Nnotes Pro</div>
-                            <div class="tier-desc">Support independent Android development.</div>
-                            <div class="tier-price-row">
-                                <span class="tier-cost">$0.99</span>
-                                <span class="tier-period">/ month (or $7.00/yr with 7-Day Free Trial)</span>
+                            <div class="pricing-tier-name">Nnotes Pro</div>
+                            <div class="pricing-tier-desc">Support independent Android development.</div>
+                            <div class="pricing-price-box">
+                                <span class="pricing-val">$0.99</span>
+                                <span class="pricing-period">/ month (or $7.00/yr with 7-Day Free Trial)</span>
                             </div>
-                            <ul class="tier-perks">
-                                <li class="tier-perk">
+                            <ul class="pricing-perks">
+                                <li class="pricing-perk">
                                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
                                     <span><strong>100% Ad-Free Always</strong></span>
                                 </li>
-                                <li class="tier-perk">
+                                <li class="pricing-perk">
                                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
                                     <span>All 10 Companions Permanently Unlocked</span>
                                 </li>
-                                <li class="tier-perk">
+                                <li class="pricing-perk">
                                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
                                     <span>Unlimited Screen Recording &amp; Streaming</span>
                                 </li>
-                                <li class="tier-perk">
+                                <li class="pricing-perk">
                                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
                                     <span>Direct Priority Developer Support</span>
                                 </li>
                             </ul>
                         </div>
-                        <a href="https://play.google.com/store/apps/details?id=com.nnote.Drn" target="_blank" rel="noopener noreferrer" class="btn-action btn-primary" style="width: 100%;">
+                        <a href="https://play.google.com/store/apps/details?id=com.nnote.Drn" target="_blank" rel="noopener noreferrer" class="clay-btn clay-btn-primary" style="width: 100%;">
                             Start 7-Day Free Trial
                         </a>
                     </div>
                 </div>
             </section>
 
-            <!-- 7. Attribution & Authorship Panel with Soft Corners -->
-            <section class="authorship-panel">
+            <!-- 7. Attribution & Authorship Box -->
+            <section class="authorship-box clay-card">
                 <div>
-                    <div class="team-lead">Crafted by Harshita &amp; Dr.N</div>
-                    <div class="team-sub">
+                    <div class="authorship-lead">Crafted by Harshita &amp; Dr.N</div>
+                    <div class="authorship-sub">
                         Lead Developer: <strong>Harshita</strong> • Co-Developer: <strong>Dr.N</strong>.<br>
                         Built for students, doctors, and engineers who need reliable offline notes.
                     </div>
                 </div>
-                <div class="license-notice">
+                <div class="authorship-license">
                     Inspired by the open-source Xnote project under the <strong>MIT License</strong>. Anatomical stereoscopic dissections provided courtesy of the <strong>Bassett Collection, Stanford University School of Medicine (CC BY-SA 4.0)</strong>.
                 </div>
             </section>
@@ -1313,16 +1239,16 @@
 
         <!-- Footer -->
         <footer>
-            <div class="footer-nav">
-                <a href="privacy/">Privacy Policy &amp; Terms</a>
-                <a href="../index.html">Portfolio Home</a>
-                <a href="https://github.com/drnitz" target="_blank" rel="noopener noreferrer">GitHub</a>
-                <a href="https://play.google.com/store/apps/details?id=com.nnote.Drn" target="_blank" rel="noopener noreferrer">Google Play Store</a>
+            <div class="footer-links">
+                <a href="privacy/" class="footer-link">Privacy Policy &amp; Terms</a>
+                <a href="../index.html" class="footer-link">Portfolio Home</a>
+                <a href="https://github.com/drnitz" target="_blank" rel="noopener noreferrer" class="footer-link">GitHub</a>
+                <a href="https://play.google.com/store/apps/details?id=com.nnote.Drn" target="_blank" rel="noopener noreferrer" class="footer-link">Google Play Store</a>
             </div>
-            <div class="footer-caffeine-note">
-                "Nobody likes ads, Including US, <strong style="color: #10B981; font-weight: 800;">Sorry</strong> but. They pay for our caffeine so N-Notes stays 100% free for you." Enjoy the free app.
+            <div class="footer-phrase">
+                "Nobody likes ads, Including US, <strong style="color: #065F46; font-weight: 800;">Sorry</strong> but. They pay for our caffeine so N-Notes stays 100% free for you." Enjoy the free app.
             </div>
-            <div class="footer-legal-copy">
+            <div class="footer-copy">
                 © 2026 Nnotes • Developed by Lead Developer Harshita &amp; Co-Developer Dr.N.
             </div>
         </footer>
@@ -1337,7 +1263,7 @@
                 btnText: "Convert to Clean Text",
                 activeLead: 'E = mc² + ∫ f(x)dx [Formatted Math]',
                 activeSub: "Processed on-device in ~80ms via ML Kit without network requests.",
-                activeColor: "var(--brand-cyan)"
+                activeColor: "var(--cyan)"
             },
             whisper: {
                 initialLead: '🎙️ "Patient presenting with systolic murmur..."',
@@ -1345,7 +1271,7 @@
                 btnText: "Transcribe Speech Locally",
                 activeLead: '"Patient presents with systolic murmur, resting BP 120/80."',
                 activeSub: "Transcribed in 180ms locally on device. 0 bytes sent to cloud.",
-                activeColor: "var(--brand-emerald)"
+                activeColor: "var(--emerald)"
             },
             tape: {
                 initialLead: 'Recall test: The [████████████] generates cellular ATP.',
@@ -1353,7 +1279,7 @@
                 btnText: "Peel Study Tape",
                 activeLead: 'Recall test: The [Mitochondria] generates cellular ATP.',
                 activeSub: "Active recall tape peeled! Tap again to re-mask before your exam.",
-                activeColor: "var(--brand-amber)"
+                activeColor: "#D97706"
             },
             mindmap: {
                 initialLead: '🌿 Concept Node: Neuroscience [Tap to expand branches]',
@@ -1361,7 +1287,7 @@
                 btnText: "Expand Concept Tree",
                 activeLead: '├─ Neurons (Axon, Synapse) ├─ Glia └─ Action Potential',
                 activeSub: "Branches expanded! Tap to collapse and declutter your canvas.",
-                activeColor: "#818CF8"
+                activeColor: "var(--purple)"
             }
         };
 
@@ -1372,7 +1298,7 @@
             activeModeKey = modeKey;
             isSimulated = false;
 
-            document.querySelectorAll('.canvas-tab').forEach(tab => {
+            document.querySelectorAll('.tab-pill').forEach(tab => {
                 tab.classList.toggle('active', tab.textContent.toLowerCase().includes(modeKey.toLowerCase()) || 
                     (modeKey === 'tape' && tab.textContent.toLowerCase().includes('study')) ||
                     (modeKey === 'beautify' && tab.textContent.toLowerCase().includes('auto')));
@@ -1380,7 +1306,7 @@
 
             const mode = playgroundModes[modeKey];
             const lead = document.getElementById('live-display-lead');
-            lead.style.color = "var(--text-primary)";
+            lead.style.color = "var(--text)";
             lead.textContent = mode.initialLead;
             document.getElementById('live-display-sub').textContent = mode.initialSub;
             document.getElementById('live-action-label').textContent = mode.btnText;
@@ -1400,7 +1326,7 @@
                 isSimulated = true;
             } else {
                 lead.textContent = mode.initialLead;
-                lead.style.color = "var(--text-primary)";
+                lead.style.color = "var(--text)";
                 sub.textContent = mode.initialSub;
                 btnLabel.textContent = mode.btnText;
                 isSimulated = false;
@@ -1408,7 +1334,7 @@
         }
 
         function pickTool(btn, toolKey) {
-            document.querySelectorAll('.tool-icon-btn').forEach(b => b.classList.remove('active'));
+            document.querySelectorAll('.tool-btn').forEach(b => b.classList.remove('active'));
             btn.classList.add('active');
 
             if (toolKey === 'beautify') loadMode('beautify');
